@@ -1,7 +1,7 @@
-## Giới thiệu
+# Giới thiệu
 
 ### Đối tượng nghiên cứu
-Dữ liệu phim của 500 trang, với khoảng 10,000 bộ phim từ năm 2024 trở về trước, được thu thập từ API công khai, cụ thể là The Movie Database (TMDB) API. Dữ liệu bao gồm các thông tin như mã phim, tựa đề, thể loại, năm sản xuất, thời lượng phim, đánh giá, và các chi tiết khác.
+Dữ liệu phim của 500 trang, với khoảng 10,000 bộ phim từ năm 2024 trở về trước, được thu thập từ API công khai, cụ thể là The Movie Database (TMDB) API. Dữ liệu bao gồm các thông tin như mã phim, tựa đề, thể loại, năm sản xuất, thời lượng phim, đánh giá và các chi tiết khác.
 
 ### Phạm vi nghiên cứu
 Dự án tập trung vào xây dựng và triển khai hệ thống ETL(Extract_Transform_Load) trên môi trường cục bộ với khả năng mở rộng để xử lý dữ liệu lớn. Sau đó, thực hiện phân tích dữ liệu phim hiện có và ứng dụng dữ liệu vào mô hình máy học để tạo nên hệ thống gợi ý phim cho người dùng. Chi tiết như sau:
@@ -11,7 +11,7 @@ Dự án tập trung vào xây dựng và triển khai hệ thống ETL(Extract_
 - **Công cụ phân tích và học máy**: Sử dụng Apache Spark để phân tích dữ liệu và xây dựng hệ thống gợi ý phim dựa trên các thuật toán học máy.
 - **Hệ thống tự động hóa**: Tích hợp và tự động hóa quy trình bằng Airflow được cài đặt trên Docker.
 
-## Quy trình hệ thống
+# Quy trình hệ thống
 <img src="image/taskflow.png" alt="Task Flow">
 
 ### 1. Thu thập dữ liệu (Extract)
@@ -40,7 +40,7 @@ Dự án tập trung vào xây dựng và triển khai hệ thống ETL(Extract_
 Quy trình tự động hóa bằng DAG trên Airflow được tổ chức theo luồng công việc cụ thể để thu thập, xử lý, và tải dữ liệu từ API của The Movie DB.
 <img src="image/DAGs.png" alt="DAGs Design">
 
-## Phân tích dữ liệu phim:
+# Phân tích dữ liệu phim:
 Quá trình phân tích sử dụng ngôn ngữ lập trình **Python** để xử lý dữ liệu và thư viện **Matplotlib** để trực quan hóa, nhằm trả lời các câu hỏi sau:
 1. **Ngôn ngữ nào chiếm đa số trong các bộ phim?**
 2. **Số lượng đánh giá và điểm đánh giá nằm trong khoảng nào?**
@@ -51,12 +51,12 @@ Quá trình phân tích sử dụng ngôn ngữ lập trình **Python** để x�
 
 Chi tiết: ![Data_Analysis](DE_project/DA/DataAnalysis.ipynb)
 
-## Mô hình gợi ý phim
+# Mô hình gợi ý phim
 Việc so sánh giữa thuật toán ALS và SGD đánh giá giá trị RMSE cũng như trực quan hóa giá trị này lên biểu đồ, đề đánh giá các thuật toán sẽ phù hợp với các bộ dữ liệu như thế nào từ đó đưa ra mô hình gợi ý phim hiệu quả nhất đến người dùng. 
 
 Chi tiết: ![Recommender_system](DE_project/Recommender_System/ML_Recommender_system.ipynb) 
 
-## Cài đặt và chạy dự án:
+# Cài đặt và chạy dự án:
 Để có thể chạy dự án cần thực hiện các bước sau:
 1. Cài đặt [Docker](https://docs.docker.com/engine/install/)
 2. Cài đặt Apache [Airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html) trên **docker**
