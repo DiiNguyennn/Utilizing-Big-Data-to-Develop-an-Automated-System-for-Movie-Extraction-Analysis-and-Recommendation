@@ -12,7 +12,7 @@ Dự án tập trung vào xây dựng và triển khai hệ thống ETL trên m�
 - **Hệ thống tự động hóa**: Tích hợp và tự động hóa quy trình bằng Airflow được cài đặt trên Docker.
 
 ## Quy trình hệ thống
-<img src="/home/diin/HocKi_7/image/taskflow.png" alt="Task Flow">
+<img src="image/taskflow.png" alt="Task Flow">
 ### 1. Thu thập dữ liệu (Extract)
 - **Nguồn dữ liệu**: Truy vấn API để lấy:
   - **Thông tin phim**: id, tiêu đề, ngày phát hành, ngôn ngữ, điểm đánh giá, thể loại, tóm tắt, v.v.
@@ -32,12 +32,12 @@ Dự án tập trung vào xây dựng và triển khai hệ thống ETL trên m�
 - **Hệ thống gợi ý**:
   - Áp dụng các thuật toán học máy như SGD và ALS.
   - Tạo danh sách phim cá nhân hóa cho người dùng.
-<img src="/home/diin/HocKi_7/image/etl_tools.png" alt="ETL tools">
-<img src="/home/diin/HocKi_7/image/file_system.pngg" alt="File system">
+<img src="image/etl_tools.png" alt="ETL tools">
+<img src="image/file_system.png" alt="File system">
 
 ### 5.  Tự động hóa với Apache Airflow
 Quy trình tự động hóa bằng DAG trên Airflow được tổ chức theo luồng công việc cụ thể để thu thập, xử lý, và tải dữ liệu từ API của The Movie DB.
-![DAGs design](/home/diin/HocKi_7/image/DAGs.png) 
+<img src="image/DAGs.png" alt="DAGs Design">
 
 ## Phân tích dữ liệu phim:
 Quá trình phân tích sử dụng ngôn ngữ lập trình **Python** để xử lý dữ liệu và thư viện **Matplotlib** để trực quan hóa, nhằm trả lời các câu hỏi sau:
@@ -46,10 +46,14 @@ Quá trình phân tích sử dụng ngôn ngữ lập trình **Python** để x�
 3. **Thể loại phim nào được xem nhiều nhất?**
 4. **Khoảng thời gian phát hành của các bộ phim là khi nào?**
 5. **Sự tương quan của các giá trị trong bộ dữ liệu?**
-6. **Xu hướng dữ liệu của số lượng đánh giá và trung bình đánh giá diễn ra như thế nào?**
+6. **Xu hướng dữ liệu của số lượng đánh giá và trung bình đánh giá diễn ra như thế nào?** 
+
+Chi tiết: ![Data_Analysis](DE_project/DA/DataAnalysis.ipynb)
 
 ## Mô hình gợi ý phim
-Việc so sánh giữa thuật toán ALS và SGD đánh giá giá trị RMSE cũng như trực quan hóa giá trị này lên biểu đồ, đề đánh giá các thuật toán sẽ phù hợp với các bộ dữ liệu như thế nào từ đó đưa ra mô hình gợi ý phim hiệu quả nhất đến người dùng.
+Việc so sánh giữa thuật toán ALS và SGD đánh giá giá trị RMSE cũng như trực quan hóa giá trị này lên biểu đồ, đề đánh giá các thuật toán sẽ phù hợp với các bộ dữ liệu như thế nào từ đó đưa ra mô hình gợi ý phim hiệu quả nhất đến người dùng. 
+
+Chi tiết: ![Recommender_system](DE_project/Recommender_System/ML_Recommender_system.ipynb) 
 
 ## Cài đặt và chạy dự án:
 Để có thể chạy dự án cần thực hiện các bước sau:
@@ -57,7 +61,7 @@ Việc so sánh giữa thuật toán ALS và SGD đánh giá giá trị RMSE cũ
 2. Cài đặt Apache [Airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html) trên **docker**
 3. Mở terminal ở file **airflow_docker**
 4. Thực hiện câu lệnh **docker-compose up**
-5. Truy cập vào địa chỉ **localhost:8080**
+5. Truy cập vào địa chỉ ![**localhost:8080**](http://localhost:8080/home)
 6. Đăng nhập với **user: admin**, **password: admin**
 7. Thực hiện chạy **hệ thống ETL** đã được cài đặt
 
