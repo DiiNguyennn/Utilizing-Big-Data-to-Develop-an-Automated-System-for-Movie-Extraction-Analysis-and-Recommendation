@@ -6,13 +6,14 @@ Dữ liệu phim của 500 trang, với khoảng 10,000 bộ phim từ năm 2024
 ### Phạm vi nghiên cứu
 Dự án tập trung vào xây dựng và triển khai hệ thống ETL trên môi trường cục bộ với khả năng mở rộng để xử lý dữ liệu lớn. Sau đó, thực hiện phân tích dữ liệu phim hiện có và ứng dụng dữ liệu vào mô hình máy học để tạo nên hệ thống gợi ý phim cho người dùng. Chi tiết như sau:
 
-- **Quy trình ETL**: Sử dụng ngôn ngữ lập trình Python và API để thu thập dữ liệu, sau đó dùng Apache Spark để xử lý và lưu trữ dữ liệu phim.
+- **Quy trình ETL(Extract_Transform_Load)**: Sử dụng ngôn ngữ lập trình Python và API để thu thập dữ liệu, sau đó dùng Apache Spark để xử lý và lưu trữ dữ liệu phim.
 - **Hệ thống quản lý cơ sở dữ liệu**: Lưu trữ dữ liệu trong DuckDB.
 - **Công cụ phân tích và học máy**: Sử dụng Apache Spark để phân tích dữ liệu và xây dựng hệ thống gợi ý phim dựa trên các thuật toán học máy.
 - **Hệ thống tự động hóa**: Tích hợp và tự động hóa quy trình bằng Airflow được cài đặt trên Docker.
 
 ## Quy trình hệ thống
 <img src="image/taskflow.png" alt="Task Flow">
+
 ### 1. Thu thập dữ liệu (Extract)
 - **Nguồn dữ liệu**: Truy vấn API để lấy:
   - **Thông tin phim**: id, tiêu đề, ngày phát hành, ngôn ngữ, điểm đánh giá, thể loại, tóm tắt, v.v.
