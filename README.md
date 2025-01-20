@@ -65,7 +65,7 @@ Chi tiết: ![Recommender_system](DE_project/Recommender_System/ML_Recommender_s
 5. Truy cập vào địa chỉ ![**localhost:8080**](http://localhost:8080/home)
 6. Đăng nhập với **user: admin**, **password: admin**
 7. Thực hiện chạy **hệ thống ETL** đã được cài đặt
-8. Chạy các file ![Data_Analysis](DE_project/DA/DataAnalysis.ipynb) để thực hiện ***phân tích phim*** và file ![Recommender_system](DE_project/Recommender_System/ML_Recommender_system.ipynb) để thực hiện ***hệ thống gợi ý***.
+8. Chạy các file ![Data_Analysis](DE_project/DA/DataAnalysis.ipynb) để thực hiện **phân tích phim** và file ![Recommender_system](DE_project/Recommender_System/ML_Recommender_system.ipynb) để thực hiện **hệ thống gợi ý**.
 
 
 
