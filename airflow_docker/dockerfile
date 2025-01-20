@@ -1,0 +1,19 @@
+FROM apache/airflow:2.7.0
+
+USER root
+
+# Cài đặt Java và các phụ thuộc khác
+RUN apt-get update && apt-get install -y \
+    openjdk-11-jdk \
+    procps \
+    && apt-get clean
+
+# Thiết lập JAVA_HOME
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
+
+# Chuyển sang người dùng airflow và cài đặt package
+USER airflow
+RUN pip install --no-cache-dir \
+    pyspark \
+    duckdb

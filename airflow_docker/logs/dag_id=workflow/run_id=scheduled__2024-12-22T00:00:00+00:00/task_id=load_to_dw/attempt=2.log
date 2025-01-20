@@ -1,0 +1,47 @@
+[2024-12-23T08:08:55.514+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T08:08:55.530+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: workflow.load_to_dw scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T08:08:55.542+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: workflow.load_to_dw scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T08:08:55.543+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2024-12-23T08:08:55.555+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): load_to_dw> on 2024-12-22 00:00:00+00:00
+[2024-12-23T08:08:55.559+0000] {standard_task_runner.py:57} INFO - Started process 226 to run task
+[2024-12-23T08:08:55.562+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'workflow', 'load_to_dw', 'scheduled__2024-12-22T00:00:00+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpx2gb6gqm']
+[2024-12-23T08:08:55.564+0000] {standard_task_runner.py:85} INFO - Job 41: Subtask load_to_dw
+[2024-12-23T08:08:55.581+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T08:08:55.621+0000] {task_command.py:415} INFO - Running <TaskInstance: workflow.load_to_dw scheduled__2024-12-22T00:00:00+00:00 [running]> on host 023362aefa72
+[2024-12-23T08:08:55.636+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T08:08:55.703+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='workflow' AIRFLOW_CTX_TASK_ID='load_to_dw' AIRFLOW_CTX_EXECUTION_DATE='2024-12-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-22T00:00:00+00:00'
+[2024-12-23T08:08:55.705+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T08:08:55.706+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/load/load_moviedf_to_dw.py']
+[2024-12-23T08:08:55.718+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T08:08:56.295+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.8/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-12-23T08:08:56.296+0000] {subprocess.py:93} INFO - JAVA_HOME is not set
+[2024-12-23T08:08:56.385+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-12-23T08:08:56.385+0000] {subprocess.py:93} INFO -   File "/opt/***/DE_project/ETL/load/load_moviedf_to_dw.py", line 5, in <module>
+[2024-12-23T08:08:56.386+0000] {subprocess.py:93} INFO -     spark = SparkSession.builder \
+[2024-12-23T08:08:56.386+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 497, in getOrCreate
+[2024-12-23T08:08:56.386+0000] {subprocess.py:93} INFO -     sc = SparkContext.getOrCreate(sparkConf)
+[2024-12-23T08:08:56.387+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/context.py", line 515, in getOrCreate
+[2024-12-23T08:08:56.387+0000] {subprocess.py:93} INFO -     SparkContext(conf=conf or SparkConf())
+[2024-12-23T08:08:56.388+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/context.py", line 201, in __init__
+[2024-12-23T08:08:56.388+0000] {subprocess.py:93} INFO -     SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+[2024-12-23T08:08:56.389+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/context.py", line 436, in _ensure_initialized
+[2024-12-23T08:08:56.391+0000] {subprocess.py:93} INFO -     SparkContext._gateway = gateway or launch_gateway(conf)
+[2024-12-23T08:08:56.392+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/java_gateway.py", line 107, in launch_gateway
+[2024-12-23T08:08:56.394+0000] {subprocess.py:93} INFO -     raise PySparkRuntimeError(
+[2024-12-23T08:08:56.395+0000] {subprocess.py:93} INFO - pyspark.errors.exceptions.base.PySparkRuntimeError: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+[2024-12-23T08:08:56.435+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-12-23T08:08:56.451+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-12-23T08:08:56.457+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=workflow, task_id=load_to_dw, execution_date=20241222T000000, start_date=20241223T080855, end_date=20241223T080856
+[2024-12-23T08:08:56.469+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 41 for task load_to_dw (Bash command failed. The command returned a non-zero exit code 1.; 226)
+[2024-12-23T08:08:56.480+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-23T08:08:56.503+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

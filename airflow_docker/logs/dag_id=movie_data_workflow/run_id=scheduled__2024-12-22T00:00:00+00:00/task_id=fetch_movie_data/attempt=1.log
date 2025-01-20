@@ -1,0 +1,46 @@
+[2024-12-23T08:56:29.783+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T08:56:29.798+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_workflow.fetch_movie_data scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T08:56:29.810+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_workflow.fetch_movie_data scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T08:56:29.811+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T08:56:29.824+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): fetch_movie_data> on 2024-12-22 00:00:00+00:00
+[2024-12-23T08:56:29.828+0000] {standard_task_runner.py:57} INFO - Started process 1693 to run task
+[2024-12-23T08:56:29.832+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_workflow', 'fetch_movie_data', 'scheduled__2024-12-22T00:00:00+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpwy_waiba']
+[2024-12-23T08:56:29.833+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask fetch_movie_data
+[2024-12-23T08:56:29.856+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T08:56:29.906+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_workflow.fetch_movie_data scheduled__2024-12-22T00:00:00+00:00 [running]> on host 6e594a6ef2a4
+[2024-12-23T08:56:29.926+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T08:56:30.008+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_workflow' AIRFLOW_CTX_TASK_ID='fetch_movie_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-22T00:00:00+00:00'
+[2024-12-23T08:56:30.010+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T08:56:30.011+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/extract/API_movie_Themoviedb.py']
+[2024-12-23T08:56:30.021+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T09:03:20.858+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-12-23T09:03:20.869+0000] {process_utils.py:131} INFO - Sending 15 to group 1693. PIDs of all processes in the group: [1694, 1693]
+[2024-12-23T09:03:20.878+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 1693
+[2024-12-23T09:03:20.879+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-12-23T09:03:20.882+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-12-23T09:03:20.930+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-12-23T09:03:20.954+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_data_workflow, task_id=fetch_movie_data, execution_date=20241222T000000, start_date=20241223T085629, end_date=20241223T090320
+[2024-12-23T09:03:21.002+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 47 for task fetch_movie_data (Task received SIGTERM signal; 1693)
+[2024-12-23T09:03:21.026+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1694, status='terminated', started='08:56:29') (1694) terminated with exit code None
+[2024-12-23T09:03:21.027+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1693, status='terminated', exitcode=1, started='08:56:29') (1693) terminated with exit code 1
+[2024-12-23T09:03:21.028+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2024-12-23T09:03:21.095+0000] {dagrun.py:749} ERROR - Failed to get task for ti <TaskInstance: movie_data_workflow.fetch_rating_data scheduled__2024-12-22T00:00:00+00:00 [up_for_retry]>. Marking it as removed.
+[2024-12-23T09:03:21.102+0000] {dagrun.py:749} ERROR - Failed to get task for ti <TaskInstance: movie_data_workflow.movie_json_to_csv scheduled__2024-12-22T00:00:00+00:00 [None]>. Marking it as removed.
+[2024-12-23T09:03:21.105+0000] {dagrun.py:749} ERROR - Failed to get task for ti <TaskInstance: movie_data_workflow.rating_json_to_csv scheduled__2024-12-22T00:00:00+00:00 [None]>. Marking it as removed.
+[2024-12-23T09:03:21.122+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-23T09:03:24.066+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-12-23T09:03:24.066+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143

@@ -1,0 +1,41 @@
+[2024-12-24T06:12:29.757+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-24T06:12:29.784+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test.fetch_rating_data scheduled__2024-12-23T00:00:00+00:00 [queued]>
+[2024-12-24T06:12:29.810+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test.fetch_rating_data scheduled__2024-12-23T00:00:00+00:00 [queued]>
+[2024-12-24T06:12:29.812+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-24T06:12:29.854+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): fetch_rating_data> on 2024-12-23 00:00:00+00:00
+[2024-12-24T06:12:29.864+0000] {standard_task_runner.py:57} INFO - Started process 2032 to run task
+[2024-12-24T06:12:29.870+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'test', 'fetch_rating_data', 'scheduled__2024-12-23T00:00:00+00:00', '--job-id', '202', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpvb2_or2l']
+[2024-12-24T06:12:29.871+0000] {standard_task_runner.py:85} INFO - Job 202: Subtask fetch_rating_data
+[2024-12-24T06:12:29.906+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-24T06:12:30.003+0000] {task_command.py:415} INFO - Running <TaskInstance: test.fetch_rating_data scheduled__2024-12-23T00:00:00+00:00 [running]> on host 4170f75a0525
+[2024-12-24T06:12:30.038+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-24T06:12:30.182+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='test' AIRFLOW_CTX_TASK_ID='fetch_rating_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-23T00:00:00+00:00'
+[2024-12-24T06:12:30.188+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-24T06:12:30.191+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/extract/API_rating_Themoviedb.py']
+[2024-12-24T06:12:30.216+0000] {subprocess.py:86} INFO - Output:
+[2024-12-24T06:12:49.792+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-12-24T06:12:49.819+0000] {process_utils.py:131} INFO - Sending 15 to group 2032. PIDs of all processes in the group: [2037, 2032]
+[2024-12-24T06:12:49.828+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 2032
+[2024-12-24T06:12:49.834+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-12-24T06:12:49.835+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-12-24T06:12:49.897+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-12-24T06:12:49.967+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=test, task_id=fetch_rating_data, execution_date=20241223T000000, start_date=20241224T061229, end_date=20241224T061249
+[2024-12-24T06:12:50.050+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 202 for task fetch_rating_data (Task received SIGTERM signal; 2032)
+[2024-12-24T06:12:50.111+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=2032, status='terminated', exitcode=1, started='06:12:29') (2032) terminated with exit code 1
+[2024-12-24T06:12:50.119+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=2037, status='terminated', started='06:12:30') (2037) terminated with exit code None
+[2024-12-24T06:12:50.120+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2024-12-24T06:12:50.169+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

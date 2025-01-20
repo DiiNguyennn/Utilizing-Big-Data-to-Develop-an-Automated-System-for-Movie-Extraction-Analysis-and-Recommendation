@@ -1,0 +1,78 @@
+[2024-12-24T06:17:13.219+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-24T06:17:13.231+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow_test.load_to_dw scheduled__2024-12-23T00:00:00+00:00 [queued]>
+[2024-12-24T06:17:13.240+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow_test.load_to_dw scheduled__2024-12-23T00:00:00+00:00 [queued]>
+[2024-12-24T06:17:13.240+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-24T06:17:13.252+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): load_to_dw> on 2024-12-23 00:00:00+00:00
+[2024-12-24T06:17:13.256+0000] {standard_task_runner.py:57} INFO - Started process 1483 to run task
+[2024-12-24T06:17:13.260+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow_test', 'load_to_dw', 'scheduled__2024-12-23T00:00:00+00:00', '--job-id', '216', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmp5dv440ca']
+[2024-12-24T06:17:13.261+0000] {standard_task_runner.py:85} INFO - Job 216: Subtask load_to_dw
+[2024-12-24T06:17:13.277+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-24T06:17:13.317+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow_test.load_to_dw scheduled__2024-12-23T00:00:00+00:00 [running]> on host 59d26c1a31c1
+[2024-12-24T06:17:13.332+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-24T06:17:13.398+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow_test' AIRFLOW_CTX_TASK_ID='load_to_dw' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-23T00:00:00+00:00'
+[2024-12-24T06:17:13.399+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-24T06:17:13.400+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/load/load_moviedf_to_dw.py']
+[2024-12-24T06:17:13.409+0000] {subprocess.py:86} INFO - Output:
+[2024-12-24T06:17:15.757+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-12-24T06:17:15.758+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-12-24T06:17:16.035+0000] {subprocess.py:93} INFO - 24/12/24 06:17:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-12-24T06:17:25.224+0000] {subprocess.py:93} INFO - root
+[2024-12-24T06:17:25.225+0000] {subprocess.py:93} INFO -  |-- id: integer (nullable = true)
+[2024-12-24T06:17:25.225+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2024-12-24T06:17:25.226+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2024-12-24T06:17:25.227+0000] {subprocess.py:93} INFO -  |-- vote_average: double (nullable = true)
+[2024-12-24T06:17:25.228+0000] {subprocess.py:93} INFO -  |-- vote_count: integer (nullable = true)
+[2024-12-24T06:17:25.229+0000] {subprocess.py:93} INFO -  |-- popularity: double (nullable = true)
+[2024-12-24T06:17:25.229+0000] {subprocess.py:93} INFO -  |-- runtime: integer (nullable = true)
+[2024-12-24T06:17:25.230+0000] {subprocess.py:93} INFO -  |-- genre: string (nullable = true)
+[2024-12-24T06:17:25.230+0000] {subprocess.py:93} INFO -  |-- release_year: integer (nullable = true)
+[2024-12-24T06:17:25.231+0000] {subprocess.py:93} INFO -  |-- release_month: integer (nullable = true)
+[2024-12-24T06:17:25.231+0000] {subprocess.py:93} INFO -  |-- release_day: integer (nullable = true)
+[2024-12-24T06:17:25.232+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:17:25.232+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T06:17:25.233+0000] {subprocess.py:93} INFO - |     id|               title|original_language|vote_average|vote_count|popularity|runtime|          genre|release_year|release_month|release_day|
+[2024-12-24T06:17:25.233+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T06:17:25.233+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|               en|       7.518|        56|   693.497|     89|      Animation|        2024|           11|         25|
+[2024-12-24T06:17:25.234+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|               en|       7.518|        56|   693.497|     89|        Mystery|        2024|           11|         25|
+[2024-12-24T06:17:25.234+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|               en|       7.518|        56|   693.497|     89|Science Fiction|        2024|           11|         25|
+[2024-12-24T06:17:25.235+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|               en|       7.518|        56|   693.497|     89|         Action|        2024|           11|         25|
+[2024-12-24T06:17:25.235+0000] {subprocess.py:93} INFO - | 287903|             Krampus|               en|         6.2|      2184|   214.328|     98|         Horror|        2015|           11|         26|
+[2024-12-24T06:17:25.236+0000] {subprocess.py:93} INFO - | 287903|             Krampus|               en|         6.2|      2184|   214.328|     98|         Comedy|        2015|           11|         26|
+[2024-12-24T06:17:25.236+0000] {subprocess.py:93} INFO - | 287903|             Krampus|               en|         6.2|      2184|   214.328|     98|        Fantasy|        2015|           11|         26|
+[2024-12-24T06:17:25.237+0000] {subprocess.py:93} INFO - | 592831|         Megalopolis|               en|       5.467|       523|   154.506|    138|Science Fiction|        2024|            9|         25|
+[2024-12-24T06:17:25.237+0000] {subprocess.py:93} INFO - | 592831|         Megalopolis|               en|       5.467|       523|   154.506|    138|          Drama|        2024|            9|         25|
+[2024-12-24T06:17:25.238+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|               en|       7.955|     20235|   201.637|    148|         Action|        2021|           12|         15|
+[2024-12-24T06:17:25.238+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|               en|       7.955|     20235|   201.637|    148|      Adventure|        2021|           12|         15|
+[2024-12-24T06:17:25.238+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|               en|       7.955|     20235|   201.637|    148|Science Fiction|        2021|           12|         15|
+[2024-12-24T06:17:25.239+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|               en|        7.52|      3591|   206.452|    149|         Action|        2024|            5|         22|
+[2024-12-24T06:17:25.239+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|               en|        7.52|      3591|   206.452|    149|Science Fiction|        2024|            5|         22|
+[2024-12-24T06:17:25.240+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|               en|        7.52|      3591|   206.452|    149|      Adventure|        2024|            5|         22|
+[2024-12-24T06:17:25.240+0000] {subprocess.py:93} INFO - |   5825|National Lampoon'...|               en|         7.2|      2387|   160.487|     97|         Comedy|        1989|           11|         30|
+[2024-12-24T06:17:25.241+0000] {subprocess.py:93} INFO - |1290034|Defying Gravity: ...|               en|         8.6|         5|    134.71|     41|    Documentary|        2024|           11|         16|
+[2024-12-24T06:17:25.242+0000] {subprocess.py:93} INFO - |1208808|The Haunting of t...|               es|         6.3|        10|   167.887|    107|         Horror|        2024|           10|         31|
+[2024-12-24T06:17:25.242+0000] {subprocess.py:93} INFO - | 519182|     Despicable Me 4|               en|       7.085|      2319|   653.067|     94|      Animation|        2024|            6|         20|
+[2024-12-24T06:17:25.243+0000] {subprocess.py:93} INFO - | 519182|     Despicable Me 4|               en|       7.085|      2319|   653.067|     94|         Family|        2024|            6|         20|
+[2024-12-24T06:17:25.243+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T06:17:25.243+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T06:17:25.244+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:17:25.244+0000] {subprocess.py:93} INFO - Data has been successfully inserted into table movie in DuckDB!
+[2024-12-24T06:17:25.245+0000] {subprocess.py:93} INFO - (1299652, 'Watchmen: Chapter II', 'en', Decimal('7.5'), 56, Decimal('693.50'), 89, 'Animation', 2024, 11, 25)
+[2024-12-24T06:17:25.245+0000] {subprocess.py:93} INFO - (1299652, 'Watchmen: Chapter II', 'en', Decimal('7.5'), 56, Decimal('693.50'), 89, 'Mystery', 2024, 11, 25)
+[2024-12-24T06:17:25.245+0000] {subprocess.py:93} INFO - (1299652, 'Watchmen: Chapter II', 'en', Decimal('7.5'), 56, Decimal('693.50'), 89, 'Science Fiction', 2024, 11, 25)
+[2024-12-24T06:17:25.246+0000] {subprocess.py:93} INFO - (1299652, 'Watchmen: Chapter II', 'en', Decimal('7.5'), 56, Decimal('693.50'), 89, 'Action', 2024, 11, 25)
+[2024-12-24T06:17:25.246+0000] {subprocess.py:93} INFO - (287903, 'Krampus', 'en', Decimal('6.2'), 2184, Decimal('214.33'), 98, 'Horror', 2015, 11, 26)
+[2024-12-24T06:17:25.247+0000] {subprocess.py:93} INFO - (287903, 'Krampus', 'en', Decimal('6.2'), 2184, Decimal('214.33'), 98, 'Comedy', 2015, 11, 26)
+[2024-12-24T06:17:25.247+0000] {subprocess.py:93} INFO - (287903, 'Krampus', 'en', Decimal('6.2'), 2184, Decimal('214.33'), 98, 'Fantasy', 2015, 11, 26)
+[2024-12-24T06:17:25.247+0000] {subprocess.py:93} INFO - (592831, 'Megalopolis', 'en', Decimal('5.5'), 523, Decimal('154.51'), 138, 'Science Fiction', 2024, 9, 25)
+[2024-12-24T06:17:25.248+0000] {subprocess.py:93} INFO - (592831, 'Megalopolis', 'en', Decimal('5.5'), 523, Decimal('154.51'), 138, 'Drama', 2024, 9, 25)
+[2024-12-24T06:17:25.248+0000] {subprocess.py:93} INFO - (634649, 'Spider-Man: No Way Home', 'en', Decimal('8.0'), 20235, Decimal('201.64'), 148, 'Action', 2021, 12, 15)
+[2024-12-24T06:17:25.750+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-24T06:17:25.784+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow_test, task_id=load_to_dw, execution_date=20241223T000000, start_date=20241224T061713, end_date=20241224T061725
+[2024-12-24T06:17:25.818+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-24T06:17:25.837+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

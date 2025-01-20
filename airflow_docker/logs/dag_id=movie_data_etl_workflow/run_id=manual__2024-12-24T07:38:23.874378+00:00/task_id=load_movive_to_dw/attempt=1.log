@@ -1,0 +1,72 @@
+[2024-12-24T08:06:47.179+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.load_movive_to_dw manual__2024-12-24T07:38:23.874378+00:00 [queued]>
+[2024-12-24T08:06:47.190+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.load_movive_to_dw manual__2024-12-24T07:38:23.874378+00:00 [queued]>
+[2024-12-24T08:06:47.190+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-24T08:06:47.205+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): load_movive_to_dw> on 2024-12-24 07:38:23.874378+00:00
+[2024-12-24T08:06:47.209+0000] {standard_task_runner.py:57} INFO - Started process 455 to run task
+[2024-12-24T08:06:47.213+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'load_movive_to_dw', 'manual__2024-12-24T07:38:23.874378+00:00', '--job-id', '232', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmplct4say4']
+[2024-12-24T08:06:47.214+0000] {standard_task_runner.py:85} INFO - Job 232: Subtask load_movive_to_dw
+[2024-12-24T08:06:47.232+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-24T08:06:47.270+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.load_movive_to_dw manual__2024-12-24T07:38:23.874378+00:00 [running]> on host 1d5d3d5ac065
+[2024-12-24T08:06:47.370+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='load_movive_to_dw' AIRFLOW_CTX_EXECUTION_DATE='2024-12-24T07:38:23.874378+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-24T07:38:23.874378+00:00'
+[2024-12-24T08:06:47.372+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-24T08:06:47.373+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/load/load_moviedf_to_dw.py']
+[2024-12-24T08:06:47.384+0000] {subprocess.py:86} INFO - Output:
+[2024-12-24T08:06:50.421+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-12-24T08:06:50.421+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-12-24T08:06:50.737+0000] {subprocess.py:93} INFO - 24/12/24 08:06:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-12-24T08:07:02.223+0000] {subprocess.py:93} INFO - [Stage 1:>                                                          (0 + 1) / 1]                                                                                root
+[2024-12-24T08:07:02.225+0000] {subprocess.py:93} INFO -  |-- id: string (nullable = true)
+[2024-12-24T08:07:02.229+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2024-12-24T08:07:02.232+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2024-12-24T08:07:02.233+0000] {subprocess.py:93} INFO -  |-- vote_average: string (nullable = true)
+[2024-12-24T08:07:02.235+0000] {subprocess.py:93} INFO -  |-- vote_count: string (nullable = true)
+[2024-12-24T08:07:02.236+0000] {subprocess.py:93} INFO -  |-- popularity: string (nullable = true)
+[2024-12-24T08:07:02.238+0000] {subprocess.py:93} INFO -  |-- runtime: string (nullable = true)
+[2024-12-24T08:07:02.240+0000] {subprocess.py:93} INFO -  |-- genre: string (nullable = true)
+[2024-12-24T08:07:02.242+0000] {subprocess.py:93} INFO -  |-- release_year: integer (nullable = true)
+[2024-12-24T08:07:02.243+0000] {subprocess.py:93} INFO -  |-- release_month: integer (nullable = true)
+[2024-12-24T08:07:02.245+0000] {subprocess.py:93} INFO -  |-- release_day: integer (nullable = true)
+[2024-12-24T08:07:02.247+0000] {subprocess.py:93} INFO - 
+[2024-12-24T08:07:02.249+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T08:07:02.250+0000] {subprocess.py:93} INFO - |     id|               title|original_language|vote_average|vote_count|popularity|runtime|          genre|release_year|release_month|release_day|
+[2024-12-24T08:07:02.251+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T08:07:02.253+0000] {subprocess.py:93} INFO - |1000075|The Price of Mone...|               fr|         5.6|        56|  1181.322|    100|         Action|        2024|            7|         31|
+[2024-12-24T08:07:02.254+0000] {subprocess.py:93} INFO - |1000075|The Price of Mone...|               fr|         5.6|        56|  1181.322|    100|      Adventure|        2024|            7|         31|
+[2024-12-24T08:07:02.256+0000] {subprocess.py:93} INFO - |1000075|The Price of Mone...|               fr|         5.6|        56|  1181.322|    100|       Thriller|        2024|            7|         31|
+[2024-12-24T08:07:02.258+0000] {subprocess.py:93} INFO - | 572802|Aquaman and the L...|               en|         6.7|      2845|   120.553|    124|         Action|        2023|           12|         20|
+[2024-12-24T08:07:02.259+0000] {subprocess.py:93} INFO - | 572802|Aquaman and the L...|               en|         6.7|      2845|   120.553|    124|      Adventure|        2023|           12|         20|
+[2024-12-24T08:07:02.261+0000] {subprocess.py:93} INFO - | 572802|Aquaman and the L...|               en|         6.7|      2845|   120.553|    124|        Fantasy|        2023|           12|         20|
+[2024-12-24T08:07:02.263+0000] {subprocess.py:93} INFO - | 493529|Dungeons & Dragon...|               en|       7.353|      3645|   108.369|    134|      Adventure|        2023|            3|         23|
+[2024-12-24T08:07:02.264+0000] {subprocess.py:93} INFO - | 493529|Dungeons & Dragon...|               en|       7.353|      3645|   108.369|    134|        Fantasy|        2023|            3|         23|
+[2024-12-24T08:07:02.266+0000] {subprocess.py:93} INFO - | 493529|Dungeons & Dragon...|               en|       7.353|      3645|   108.369|    134|         Comedy|        2023|            3|         23|
+[2024-12-24T08:07:02.267+0000] {subprocess.py:93} INFO - | 436969|   The Suicide Squad|               en|         7.5|      8646|    86.791|    132|         Action|        2021|            7|         28|
+[2024-12-24T08:07:02.269+0000] {subprocess.py:93} INFO - | 436969|   The Suicide Squad|               en|         7.5|      8646|    86.791|    132|         Comedy|        2021|            7|         28|
+[2024-12-24T08:07:02.270+0000] {subprocess.py:93} INFO - | 436969|   The Suicide Squad|               en|         7.5|      8646|    86.791|    132|      Adventure|        2021|            7|         28|
+[2024-12-24T08:07:02.271+0000] {subprocess.py:93} INFO - | 351523|  Purpose of Reunion|               ko|         5.3|        19|    82.209|    100|        Romance|        2015|            8|          6|
+[2024-12-24T08:07:02.273+0000] {subprocess.py:93} INFO - | 351523|  Purpose of Reunion|               ko|         5.3|        19|    82.209|    100|          Drama|        2015|            8|          6|
+[2024-12-24T08:07:02.275+0000] {subprocess.py:93} INFO - | 294254|Maze Runner: The ...|               en|         6.7|     10365|    63.656|    131|Science Fiction|        2015|            9|          9|
+[2024-12-24T08:07:02.277+0000] {subprocess.py:93} INFO - | 294254|Maze Runner: The ...|               en|         6.7|     10365|    63.656|    131|         Action|        2015|            9|          9|
+[2024-12-24T08:07:02.278+0000] {subprocess.py:93} INFO - | 294254|Maze Runner: The ...|               en|         6.7|     10365|    63.656|    131|       Thriller|        2015|            9|          9|
+[2024-12-24T08:07:02.280+0000] {subprocess.py:93} INFO - | 294254|Maze Runner: The ...|               en|         6.7|     10365|    63.656|    131|      Adventure|        2015|            9|          9|
+[2024-12-24T08:07:02.282+0000] {subprocess.py:93} INFO - |  14258|      Wonderful Days|               ko|       6.146|       158|    43.897|     86|      Animation|        2003|            7|         17|
+[2024-12-24T08:07:02.284+0000] {subprocess.py:93} INFO - |  14258|      Wonderful Days|               ko|       6.146|       158|    43.897|     86|Science Fiction|        2003|            7|         17|
+[2024-12-24T08:07:02.286+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T08:07:02.288+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T08:07:02.289+0000] {subprocess.py:93} INFO - 
+[2024-12-24T08:07:02.291+0000] {subprocess.py:93} INFO - Data has been successfully inserted into table movie in DuckDB!
+[2024-12-24T08:07:02.292+0000] {subprocess.py:93} INFO - (1000075, 'The Price of Money: A Largo Winch Adventure', 'fr', Decimal('5.6'), 56, Decimal('1181.32'), 100, 'Action', 2024, 7, 31)
+[2024-12-24T08:07:02.294+0000] {subprocess.py:93} INFO - (1000075, 'The Price of Money: A Largo Winch Adventure', 'fr', Decimal('5.6'), 56, Decimal('1181.32'), 100, 'Adventure', 2024, 7, 31)
+[2024-12-24T08:07:02.296+0000] {subprocess.py:93} INFO - (1000075, 'The Price of Money: A Largo Winch Adventure', 'fr', Decimal('5.6'), 56, Decimal('1181.32'), 100, 'Thriller', 2024, 7, 31)
+[2024-12-24T08:07:02.298+0000] {subprocess.py:93} INFO - (572802, 'Aquaman and the Lost Kingdom', 'en', Decimal('6.7'), 2845, Decimal('120.55'), 124, 'Action', 2023, 12, 20)
+[2024-12-24T08:07:02.299+0000] {subprocess.py:93} INFO - (572802, 'Aquaman and the Lost Kingdom', 'en', Decimal('6.7'), 2845, Decimal('120.55'), 124, 'Adventure', 2023, 12, 20)
+[2024-12-24T08:07:02.301+0000] {subprocess.py:93} INFO - (572802, 'Aquaman and the Lost Kingdom', 'en', Decimal('6.7'), 2845, Decimal('120.55'), 124, 'Fantasy', 2023, 12, 20)
+[2024-12-24T08:07:02.303+0000] {subprocess.py:93} INFO - (493529, 'Dungeons & Dragons: Honor Among Thieves', 'en', Decimal('7.4'), 3645, Decimal('108.37'), 134, 'Adventure', 2023, 3, 23)
+[2024-12-24T08:07:02.304+0000] {subprocess.py:93} INFO - (493529, 'Dungeons & Dragons: Honor Among Thieves', 'en', Decimal('7.4'), 3645, Decimal('108.37'), 134, 'Fantasy', 2023, 3, 23)
+[2024-12-24T08:07:02.305+0000] {subprocess.py:93} INFO - (493529, 'Dungeons & Dragons: Honor Among Thieves', 'en', Decimal('7.4'), 3645, Decimal('108.37'), 134, 'Comedy', 2023, 3, 23)
+[2024-12-24T08:07:02.306+0000] {subprocess.py:93} INFO - (436969, 'The Suicide Squad', 'en', Decimal('7.5'), 8646, Decimal('86.79'), 132, 'Action', 2021, 7, 28)
+[2024-12-24T08:07:02.831+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-24T08:07:02.864+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow, task_id=load_movive_to_dw, execution_date=20241224T073823, start_date=20241224T080647, end_date=20241224T080702
+[2024-12-24T08:07:02.912+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-24T08:07:02.967+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

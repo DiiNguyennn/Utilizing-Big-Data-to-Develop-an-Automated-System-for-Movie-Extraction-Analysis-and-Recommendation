@@ -1,0 +1,35 @@
+[2024-12-23T10:24:45.968+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_etl_workflow.fetch_movie_data manual__2024-12-23T10:19:17.253045+00:00 [queued]>
+[2024-12-23T10:24:46.002+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_etl_workflow.fetch_movie_data manual__2024-12-23T10:19:17.253045+00:00 [queued]>
+[2024-12-23T10:24:46.002+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2024-12-23T10:24:46.039+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): fetch_movie_data> on 2024-12-23 10:19:17.253045+00:00
+[2024-12-23T10:24:46.050+0000] {standard_task_runner.py:57} INFO - Started process 127 to run task
+[2024-12-23T10:24:46.057+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_etl_workflow', 'fetch_movie_data', 'manual__2024-12-23T10:19:17.253045+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpko6hvf0z']
+[2024-12-23T10:24:46.059+0000] {standard_task_runner.py:85} INFO - Job 73: Subtask fetch_movie_data
+[2024-12-23T10:24:46.101+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T10:24:46.195+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_etl_workflow.fetch_movie_data manual__2024-12-23T10:19:17.253045+00:00 [running]> on host 706f06857b2f
+[2024-12-23T10:24:46.392+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_etl_workflow' AIRFLOW_CTX_TASK_ID='fetch_movie_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T10:19:17.253045+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-23T10:19:17.253045+00:00'
+[2024-12-23T10:24:46.402+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T10:24:46.404+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/extract/API_movie_Themoviedb.py']
+[2024-12-23T10:24:46.425+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T10:39:18.312+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-12-23T10:39:18.321+0000] {process_utils.py:131} INFO - Sending 15 to group 127. PIDs of all processes in the group: [128, 127]
+[2024-12-23T10:39:18.324+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 127
+[2024-12-23T10:39:18.325+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-12-23T10:39:18.332+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-12-23T10:39:18.422+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-12-23T10:39:18.442+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=movie_etl_workflow, task_id=fetch_movie_data, execution_date=20241223T101917, start_date=20241223T102445, end_date=20241223T103918
+[2024-12-23T10:39:18.504+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 73 for task fetch_movie_data (Task received SIGTERM signal; 127)
+[2024-12-23T10:39:18.609+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=127, status='terminated', exitcode=1, started='10:24:45') (127) terminated with exit code 1
+[2024-12-23T10:39:18.620+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=128, status='terminated', started='10:24:45') (128) terminated with exit code None
+[2024-12-23T10:39:18.622+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2024-12-23T10:39:18.721+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

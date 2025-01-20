@@ -1,0 +1,72 @@
+[2024-12-23T08:28:25.876+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: workflow.load_to_dw manual__2024-12-23T08:28:24.782931+00:00 [queued]>
+[2024-12-23T08:28:25.888+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: workflow.load_to_dw manual__2024-12-23T08:28:24.782931+00:00 [queued]>
+[2024-12-23T08:28:25.888+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T08:28:25.901+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): load_to_dw> on 2024-12-23 08:28:24.782931+00:00
+[2024-12-23T08:28:25.905+0000] {standard_task_runner.py:57} INFO - Started process 1440 to run task
+[2024-12-23T08:28:25.909+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'workflow', 'load_to_dw', 'manual__2024-12-23T08:28:24.782931+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmplu1o7_sw']
+[2024-12-23T08:28:25.910+0000] {standard_task_runner.py:85} INFO - Job 46: Subtask load_to_dw
+[2024-12-23T08:28:25.928+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T08:28:25.968+0000] {task_command.py:415} INFO - Running <TaskInstance: workflow.load_to_dw manual__2024-12-23T08:28:24.782931+00:00 [running]> on host 6e594a6ef2a4
+[2024-12-23T08:28:26.065+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='workflow' AIRFLOW_CTX_TASK_ID='load_to_dw' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T08:28:24.782931+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-23T08:28:24.782931+00:00'
+[2024-12-23T08:28:26.067+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T08:28:26.068+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/load/load_moviedf_to_dw.py']
+[2024-12-23T08:28:26.077+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T08:28:28.362+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-12-23T08:28:28.362+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-12-23T08:28:28.513+0000] {subprocess.py:93} INFO - 24/12/23 08:28:28 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-12-23T08:28:37.693+0000] {subprocess.py:93} INFO - [Stage 0:>                                                          (0 + 1) / 1]                                                                                root
+[2024-12-23T08:28:37.693+0000] {subprocess.py:93} INFO -  |-- id: string (nullable = true)
+[2024-12-23T08:28:37.694+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2024-12-23T08:28:37.695+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2024-12-23T08:28:37.695+0000] {subprocess.py:93} INFO -  |-- vote_average: string (nullable = true)
+[2024-12-23T08:28:37.696+0000] {subprocess.py:93} INFO -  |-- vote_count: string (nullable = true)
+[2024-12-23T08:28:37.696+0000] {subprocess.py:93} INFO -  |-- popularity: string (nullable = true)
+[2024-12-23T08:28:37.697+0000] {subprocess.py:93} INFO -  |-- runtime: string (nullable = true)
+[2024-12-23T08:28:37.697+0000] {subprocess.py:93} INFO -  |-- genre: string (nullable = true)
+[2024-12-23T08:28:37.698+0000] {subprocess.py:93} INFO -  |-- release_year: integer (nullable = true)
+[2024-12-23T08:28:37.699+0000] {subprocess.py:93} INFO -  |-- release_month: integer (nullable = true)
+[2024-12-23T08:28:37.700+0000] {subprocess.py:93} INFO -  |-- release_day: integer (nullable = true)
+[2024-12-23T08:28:37.700+0000] {subprocess.py:93} INFO - 
+[2024-12-23T08:28:37.702+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T08:28:37.702+0000] {subprocess.py:93} INFO - |     id|               title|original_language|vote_average|vote_count|popularity|runtime|          genre|release_year|release_month|release_day|
+[2024-12-23T08:28:37.703+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T08:28:37.704+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|               en|         6.7|       460|  5590.757|    109|Science Fiction|        2024|           10|         22|
+[2024-12-23T08:28:37.705+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|               en|         6.7|       460|  5590.757|    109|         Action|        2024|           10|         22|
+[2024-12-23T08:28:37.706+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|               en|         6.7|       460|  5590.757|    109|      Adventure|        2024|           10|         22|
+[2024-12-23T08:28:37.707+0000] {subprocess.py:93} INFO - |1317218|         Mr. Crocket|               en|       5.065|        46|   170.123|     88|         Horror|        2024|            9|         26|
+[2024-12-23T08:28:37.707+0000] {subprocess.py:93} INFO - | 840326|                Sisu|               fi|        7.45|      2074|    86.238|     91|         Action|        2022|            9|          9|
+[2024-12-23T08:28:37.708+0000] {subprocess.py:93} INFO - | 840326|                Sisu|               fi|        7.45|      2074|    86.238|     91|            War|        2022|            9|          9|
+[2024-12-23T08:28:37.708+0000] {subprocess.py:93} INFO - | 840326|                Sisu|               fi|        7.45|      2074|    86.238|     91|      Adventure|        2022|            9|          9|
+[2024-12-23T08:28:37.709+0000] {subprocess.py:93} INFO - |    489|   Good Will Hunting|               en|        8.16|     12282|    75.725|    127|          Drama|        1997|           12|          5|
+[2024-12-23T08:28:37.709+0000] {subprocess.py:93} INFO - |    604| The Matrix Reloaded|               en|       7.053|     10892|    74.888|    138|      Adventure|        2003|            5|         15|
+[2024-12-23T08:28:37.710+0000] {subprocess.py:93} INFO - |    604| The Matrix Reloaded|               en|       7.053|     10892|    74.888|    138|         Action|        2003|            5|         15|
+[2024-12-23T08:28:37.710+0000] {subprocess.py:93} INFO - |    604| The Matrix Reloaded|               en|       7.053|     10892|    74.888|    138|       Thriller|        2003|            5|         15|
+[2024-12-23T08:28:37.711+0000] {subprocess.py:93} INFO - |    604| The Matrix Reloaded|               en|       7.053|     10892|    74.888|    138|Science Fiction|        2003|            5|         15|
+[2024-12-23T08:28:37.711+0000] {subprocess.py:93} INFO - |  16869|Inglourious Basterds|               en|       8.218|     22148|    72.272|    153|          Drama|        2009|            8|          2|
+[2024-12-23T08:28:37.712+0000] {subprocess.py:93} INFO - |  16869|Inglourious Basterds|               en|       8.218|     22148|    72.272|    153|       Thriller|        2009|            8|          2|
+[2024-12-23T08:28:37.712+0000] {subprocess.py:93} INFO - |  16869|Inglourious Basterds|               en|       8.218|     22148|    72.272|    153|            War|        2009|            8|          2|
+[2024-12-23T08:28:37.713+0000] {subprocess.py:93} INFO - | 868759|             Ghosted|               en|       6.957|      1757|    63.584|    117|         Action|        2023|            4|         18|
+[2024-12-23T08:28:37.714+0000] {subprocess.py:93} INFO - | 868759|             Ghosted|               en|       6.957|      1757|    63.584|    117|         Comedy|        2023|            4|         18|
+[2024-12-23T08:28:37.715+0000] {subprocess.py:93} INFO - | 868759|             Ghosted|               en|       6.957|      1757|    63.584|    117|        Romance|        2023|            4|         18|
+[2024-12-23T08:28:37.717+0000] {subprocess.py:93} INFO - |    855|     Black Hawk Down|               en|       7.385|      5682|     50.65|    145|         Action|        2001|           12|         28|
+[2024-12-23T08:28:37.718+0000] {subprocess.py:93} INFO - |    855|     Black Hawk Down|               en|       7.385|      5682|     50.65|    145|            War|        2001|           12|         28|
+[2024-12-23T08:28:37.718+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T08:28:37.719+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-23T08:28:37.720+0000] {subprocess.py:93} INFO - 
+[2024-12-23T08:28:37.720+0000] {subprocess.py:93} INFO - Data has been successfully inserted into table movie in DuckDB!
+[2024-12-23T08:28:37.721+0000] {subprocess.py:93} INFO - (912649, 'Venom: The Last Dance', 'en', Decimal('6.7'), 460, Decimal('5590.76'), 109, 'Science Fiction', 2024, 10, 22)
+[2024-12-23T08:28:37.721+0000] {subprocess.py:93} INFO - (912649, 'Venom: The Last Dance', 'en', Decimal('6.7'), 460, Decimal('5590.76'), 109, 'Action', 2024, 10, 22)
+[2024-12-23T08:28:37.722+0000] {subprocess.py:93} INFO - (912649, 'Venom: The Last Dance', 'en', Decimal('6.7'), 460, Decimal('5590.76'), 109, 'Adventure', 2024, 10, 22)
+[2024-12-23T08:28:37.722+0000] {subprocess.py:93} INFO - (1317218, 'Mr. Crocket', 'en', Decimal('5.1'), 46, Decimal('170.12'), 88, 'Horror', 2024, 9, 26)
+[2024-12-23T08:28:37.723+0000] {subprocess.py:93} INFO - (840326, 'Sisu', 'fi', Decimal('7.5'), 2074, Decimal('86.24'), 91, 'Action', 2022, 9, 9)
+[2024-12-23T08:28:37.723+0000] {subprocess.py:93} INFO - (840326, 'Sisu', 'fi', Decimal('7.5'), 2074, Decimal('86.24'), 91, 'War', 2022, 9, 9)
+[2024-12-23T08:28:37.724+0000] {subprocess.py:93} INFO - (840326, 'Sisu', 'fi', Decimal('7.5'), 2074, Decimal('86.24'), 91, 'Adventure', 2022, 9, 9)
+[2024-12-23T08:28:37.724+0000] {subprocess.py:93} INFO - (489, 'Good Will Hunting', 'en', Decimal('8.2'), 12282, Decimal('75.73'), 127, 'Drama', 1997, 12, 5)
+[2024-12-23T08:28:37.725+0000] {subprocess.py:93} INFO - (604, 'The Matrix Reloaded', 'en', Decimal('7.1'), 10892, Decimal('74.89'), 138, 'Adventure', 2003, 5, 15)
+[2024-12-23T08:28:37.725+0000] {subprocess.py:93} INFO - (604, 'The Matrix Reloaded', 'en', Decimal('7.1'), 10892, Decimal('74.89'), 138, 'Action', 2003, 5, 15)
+[2024-12-23T08:28:38.265+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-23T08:28:38.300+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=workflow, task_id=load_to_dw, execution_date=20241223T082824, start_date=20241223T082825, end_date=20241223T082838
+[2024-12-23T08:28:38.351+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-23T08:28:38.369+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

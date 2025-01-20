@@ -1,0 +1,14 @@
+[2024-12-22T14:23:50.608+0000] {processor.py:157} INFO - Started process (PID=33) to work on /opt/airflow/dags/tets.py
+[2024-12-22T14:23:50.610+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tets.py for tasks to queue
+[2024-12-22T14:23:50.615+0000] {logging_mixin.py:151} INFO - [2024-12-22T14:23:50.614+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/tets.py
+[2024-12-22T14:23:50.649+0000] {processor.py:839} INFO - DAG(s) dict_keys(['TEST_1']) retrieved from /opt/airflow/dags/tets.py
+[2024-12-22T14:23:50.696+0000] {logging_mixin.py:151} INFO - [2024-12-22T14:23:50.696+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2024-12-22T14:23:50.727+0000] {logging_mixin.py:151} INFO - [2024-12-22T14:23:50.727+0000] {dag.py:3677} INFO - Setting next_dagrun for TEST_1 to 2024-12-22T00:00:00+00:00, run_after=2024-12-23T00:00:00+00:00
+[2024-12-22T14:23:50.748+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tets.py took 0.145 seconds
+[2024-12-22T14:24:20.840+0000] {processor.py:157} INFO - Started process (PID=34) to work on /opt/airflow/dags/tets.py
+[2024-12-22T14:24:20.841+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/tets.py for tasks to queue
+[2024-12-22T14:24:20.844+0000] {logging_mixin.py:151} INFO - [2024-12-22T14:24:20.843+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/tets.py
+[2024-12-22T14:24:20.857+0000] {processor.py:839} INFO - DAG(s) dict_keys(['TEST_1']) retrieved from /opt/airflow/dags/tets.py
+[2024-12-22T14:24:20.899+0000] {logging_mixin.py:151} INFO - [2024-12-22T14:24:20.899+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2024-12-22T14:24:21.027+0000] {logging_mixin.py:151} INFO - [2024-12-22T14:24:21.027+0000] {dag.py:3677} INFO - Setting next_dagrun for TEST_1 to 2024-12-22T00:00:00+00:00, run_after=2024-12-23T00:00:00+00:00
+[2024-12-22T14:24:21.045+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/tets.py took 0.209 seconds

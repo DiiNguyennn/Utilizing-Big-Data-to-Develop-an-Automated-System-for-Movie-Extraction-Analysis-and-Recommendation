@@ -1,0 +1,310 @@
+[2024-12-23T13:19:22.483+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_etl_workflow.transform_data_movie manual__2024-12-23T13:18:52.642936+00:00 [queued]>
+[2024-12-23T13:19:22.493+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_etl_workflow.transform_data_movie manual__2024-12-23T13:18:52.642936+00:00 [queued]>
+[2024-12-23T13:19:22.493+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T13:19:22.507+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data_movie> on 2024-12-23 13:18:52.642936+00:00
+[2024-12-23T13:19:22.513+0000] {standard_task_runner.py:57} INFO - Started process 120 to run task
+[2024-12-23T13:19:22.517+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_etl_workflow', 'transform_data_movie', 'manual__2024-12-23T13:18:52.642936+00:00', '--job-id', '139', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpgk43wil_']
+[2024-12-23T13:19:22.518+0000] {standard_task_runner.py:85} INFO - Job 139: Subtask transform_data_movie
+[2024-12-23T13:19:22.539+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T13:19:22.590+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_etl_workflow.transform_data_movie manual__2024-12-23T13:18:52.642936+00:00 [running]> on host c498c9d7df3d
+[2024-12-23T13:19:22.701+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_etl_workflow' AIRFLOW_CTX_TASK_ID='transform_data_movie' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T13:18:52.642936+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-23T13:18:52.642936+00:00'
+[2024-12-23T13:19:22.703+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T13:19:22.704+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/transform/tranform_moviedf.py']
+[2024-12-23T13:19:22.715+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T13:19:26.003+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-12-23T13:19:26.007+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-12-23T13:19:26.282+0000] {subprocess.py:93} INFO - 24/12/23 13:19:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-12-23T13:19:27.229+0000] {subprocess.py:93} INFO - 24/12/23 13:19:27 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2024-12-23T13:19:38.627+0000] {subprocess.py:93} INFO - [Stage 3:===========================================================(1 + 0) / 1]                                                                                +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-23T13:19:38.629+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2024-12-23T13:19:38.633+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-23T13:19:38.634+0000] {subprocess.py:93} INFO - | 845781|             Red One|  2024-10-31|               en|         7.0|      1159|  6943.482|    124|false|Action, Fantasy, ...|After Santa Claus...|
+[2024-12-23T13:19:38.635+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|  2024-10-22|               en|       6.781|      1790|  5276.718|    109|false|Action, Science F...|Eddie and Venom a...|
+[2024-12-23T13:19:38.637+0000] {subprocess.py:93} INFO - | 762509|Mufasa: The Lion ...|  2024-12-18|               en|         6.9|       129|  3314.587|    118|false|Adventure, Family...|Told in flashback...|
+[2024-12-23T13:19:38.638+0000] {subprocess.py:93} INFO - |1241982|             Moana 2|  2024-11-21|               en|         7.0|       574|  3256.547|    100|false|Animation, Advent...|After receiving a...|
+[2024-12-23T13:19:38.640+0000] {subprocess.py:93} INFO - | 939243|Sonic the Hedgehog 3|  2024-12-19|               en|         7.8|        49|  2230.916|    110|false|Science Fiction, ...|Sonic, Knuckles, ...|
+[2024-12-23T13:19:38.641+0000] {subprocess.py:93} INFO - |1005331|            Carry-On|  2024-12-05|               en|        6.99|       765|  2561.052|    119|false|Action, Mystery, ...|An airport securi...|
+[2024-12-23T13:19:38.642+0000] {subprocess.py:93} INFO - |1035048|           Elevation|  2024-11-07|               en|         6.4|       184|  1553.921|     91|false|Action, Science F...|A single father a...|
+[2024-12-23T13:19:38.643+0000] {subprocess.py:93} INFO - |1000075|The Price of Mone...|  2024-07-31|               fr|         5.5|        54|   1545.04|    100|false|Action, Adventure...|Largo Winch, deva...|
+[2024-12-23T13:19:38.645+0000] {subprocess.py:93} INFO - |1043905|        Dirty Angels|  2024-12-11|               en|       5.818|        22|  1256.233|    104|false|Action, Drama, Th...|During the United...|
+[2024-12-23T13:19:38.648+0000] {subprocess.py:93} INFO - | 539972|   Kraven the Hunter|  2024-12-11|               en|         5.8|       183|  1178.718|    127|false|Action, Adventure...|Kraven Kravinoff'...|
+[2024-12-23T13:19:38.648+0000] {subprocess.py:93} INFO - | 974453|          Absolution|  2024-10-31|               en|       6.088|       153|  1353.445|    112|false|Action, Crime, Th...|An aging ex-boxer...|
+[2024-12-23T13:19:38.649+0000] {subprocess.py:93} INFO - |1184918|      The Wild Robot|  2024-09-08|               en|         8.4|      3562|  1063.664|    102|false|Animation, Action...|After a shipwreck...|
+[2024-12-23T13:19:38.650+0000] {subprocess.py:93} INFO - | 558449|        Gladiator II|  2024-11-05|               en|       6.672|      1158|  1161.198|    148|false|Action, Adventure...|Years after witne...|
+[2024-12-23T13:19:38.651+0000] {subprocess.py:93} INFO - |1138194|             Heretic|  2024-10-31|               en|       7.171|       497|   966.568|    111|false|    Horror, Thriller|Two young mission...|
+[2024-12-23T13:19:38.654+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|        7.34|       197|   911.704|     96|false|Animation, Comedy...|It's an unforgett...|
+[2024-12-23T13:19:38.655+0000] {subprocess.py:93} INFO - |1182387|               Armor|  2024-10-30|               en|         5.6|        79|    930.94|     89|false|Action, Crime, Th...|Armored truck sec...|
+[2024-12-23T13:19:38.656+0000] {subprocess.py:93} INFO - |1010581|            My Fault|  2023-06-08|               es|       7.911|      3143|   888.096|    117|false|      Romance, Drama|Noah must leave h...|
+[2024-12-23T13:19:38.656+0000] {subprocess.py:93} INFO - | 533535|Deadpool & Wolverine|  2024-07-24|               en|         7.7|      6000|   847.101|    128|false|Action, Comedy, S...|A listless Wade W...|
+[2024-12-23T13:19:38.657+0000] {subprocess.py:93} INFO - | 933260|       The Substance|  2024-09-07|               en|       7.226|      2707|   851.503|    141|false|Horror, Science F...|A fading celebrit...|
+[2024-12-23T13:19:38.657+0000] {subprocess.py:93} INFO - |1167271|   Weekend in Taipei|  2024-09-19|               en|         6.1|        79|   758.673|    101|false|Action, Adventure...|A former DEA agen...|
+[2024-12-23T13:19:38.660+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-23T13:19:38.661+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-23T13:19:38.662+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:38.664+0000] {subprocess.py:93} INFO - root
+[2024-12-23T13:19:38.666+0000] {subprocess.py:93} INFO -  |-- id: integer (nullable = true)
+[2024-12-23T13:19:38.667+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2024-12-23T13:19:38.671+0000] {subprocess.py:93} INFO -  |-- release_date: date (nullable = true)
+[2024-12-23T13:19:38.672+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2024-12-23T13:19:38.674+0000] {subprocess.py:93} INFO -  |-- vote_average: double (nullable = true)
+[2024-12-23T13:19:38.676+0000] {subprocess.py:93} INFO -  |-- vote_count: integer (nullable = true)
+[2024-12-23T13:19:38.677+0000] {subprocess.py:93} INFO -  |-- popularity: double (nullable = true)
+[2024-12-23T13:19:38.678+0000] {subprocess.py:93} INFO -  |-- runtime: integer (nullable = true)
+[2024-12-23T13:19:38.679+0000] {subprocess.py:93} INFO -  |-- adult: boolean (nullable = true)
+[2024-12-23T13:19:38.680+0000] {subprocess.py:93} INFO -  |-- genres: string (nullable = true)
+[2024-12-23T13:19:38.682+0000] {subprocess.py:93} INFO -  |-- overview: string (nullable = true)
+[2024-12-23T13:19:38.683+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:38.684+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-23T13:19:38.685+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2024-12-23T13:19:38.687+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-23T13:19:38.688+0000] {subprocess.py:93} INFO - |  0|    0|           0|                0|           0|         0|         0|      0|    0|     0|       1|
+[2024-12-23T13:19:38.689+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-23T13:19:38.690+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:38.691+0000] {subprocess.py:93} INFO - +-------+------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+--------------------+-----+
+[2024-12-23T13:19:38.692+0000] {subprocess.py:93} INFO - |     id|       title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|         genres|            overview|count|
+[2024-12-23T13:19:38.692+0000] {subprocess.py:93} INFO - +-------+------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+--------------------+-----+
+[2024-12-23T13:19:38.693+0000] {subprocess.py:93} INFO - |1191611|Camp Crasher|  2024-12-05|               es|        6.88|        25|   146.629|     95|false|Comedy, Romance|In a bid to save ...|    2|
+[2024-12-23T13:19:38.695+0000] {subprocess.py:93} INFO - +-------+------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+--------------------+-----+
+[2024-12-23T13:19:38.696+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:41.928+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-23T13:19:41.930+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2024-12-23T13:19:41.931+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-23T13:19:41.932+0000] {subprocess.py:93} INFO - |1038263|               Maria|  2024-11-27|               en|         6.8|        45|   202.988|    123|false|        Drama, Music|Maria Callas, the...|
+[2024-12-23T13:19:41.934+0000] {subprocess.py:93} INFO - |1287717|        Do Not Enter|  2024-08-06|               es|         7.2|        93|   216.018|     80|false|              Horror|Two working class...|
+[2024-12-23T13:19:41.936+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|  2024-11-07|               en|         8.0|        33|   197.496|     99|false|Comedy, Drama, Fa...|The Herdman kids ...|
+[2024-12-23T13:19:41.937+0000] {subprocess.py:93} INFO - |1106739|            Juror #2|  2024-10-30|               en|       7.003|       772|    342.32|    114|false|        Crime, Drama|While serving as ...|
+[2024-12-23T13:19:41.938+0000] {subprocess.py:93} INFO - | 482600|        Japanese Mom|  2017-02-09|               ko|         6.2|        30|   343.962|     91|false|      Romance, Drama|    """Innocent face|
+[2024-12-23T13:19:41.940+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|        7.34|       197|   911.704|     96|false|Animation, Comedy...|It's an unforgett...|
+[2024-12-23T13:19:41.941+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|  2018-11-08|               en|         6.9|      3999|   407.762|     85|false|Animation, Family...|The Grinch hatche...|
+[2024-12-23T13:19:41.942+0000] {subprocess.py:93} INFO - |1125510|      The Platform 2|  2024-09-27|               es|         5.6|       953|   279.024|    101|false|Science Fiction, ...|After a mysteriou...|
+[2024-12-23T13:19:41.943+0000] {subprocess.py:93} INFO - |   8871|How the Grinch St...|  2000-11-17|               en|         6.8|      7507|   576.505|    104|false|Family, Comedy, F...|The Grinch decide...|
+[2024-12-23T13:19:41.945+0000] {subprocess.py:93} INFO - | 974453|          Absolution|  2024-10-31|               en|       6.088|       153|  1353.445|    112|false|Action, Crime, Th...|An aging ex-boxer...|
+[2024-12-23T13:19:41.947+0000] {subprocess.py:93} INFO - | 558449|        Gladiator II|  2024-11-05|               en|       6.672|      1158|  1161.198|    148|false|Action, Adventure...|Years after witne...|
+[2024-12-23T13:19:41.948+0000] {subprocess.py:93} INFO - | 365177|         Borderlands|  2024-08-07|               en|       5.795|       876|   226.192|    101|false|Action, Science F...|Returning to her ...|
+[2024-12-23T13:19:41.948+0000] {subprocess.py:93} INFO - |1068518|       Haunted Heart|  2024-08-23|               en|         5.9|         9|   194.242|    128|false|   Romance, Thriller|On a beautiful re...|
+[2024-12-23T13:19:41.949+0000] {subprocess.py:93} INFO - |  76600|Avatar: The Way o...|  2022-12-14|               en|       7.619|     12002|   173.675|    192|false|Science Fiction, ...|Set more than a d...|
+[2024-12-23T13:19:41.951+0000] {subprocess.py:93} INFO - |    674|Harry Potter and ...|  2005-11-16|               en|         7.8|     20713|   180.897|    157|false|  Adventure, Fantasy|When Harry Potter...|
+[2024-12-23T13:19:41.951+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|  2024-11-25|               en|       7.518|        56|   835.844|     89|false|Animation, Myster...|Suspicious of the...|
+[2024-12-23T13:19:41.952+0000] {subprocess.py:93} INFO - |1252470|Sikandar Ka Muqaddar|  2024-11-29|               hi|         6.1|        13|   445.303|    143|false|Thriller, Crime, ...|After an unsolved...|
+[2024-12-23T13:19:41.953+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|  2024-10-22|               en|       6.781|      1790|  5276.718|    109|false|Action, Science F...|Eddie and Venom a...|
+[2024-12-23T13:19:41.954+0000] {subprocess.py:93} INFO - |1241982|             Moana 2|  2024-11-21|               en|         7.0|       574|  3256.547|    100|false|Animation, Advent...|After receiving a...|
+[2024-12-23T13:19:41.955+0000] {subprocess.py:93} INFO - |1010581|            My Fault|  2023-06-08|               es|       7.911|      3143|   888.096|    117|false|      Romance, Drama|Noah must leave h...|
+[2024-12-23T13:19:41.955+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-23T13:19:41.957+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-23T13:19:41.958+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:41.959+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-23T13:19:41.959+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2024-12-23T13:19:41.961+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-23T13:19:41.962+0000] {subprocess.py:93} INFO - |  0|    0|           0|                0|           0|         0|         0|      0|    0|     0|       0|
+[2024-12-23T13:19:41.963+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-23T13:19:41.963+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:41.964+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2024-12-23T13:19:41.965+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|count|
+[2024-12-23T13:19:41.965+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2024-12-23T13:19:41.966+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2024-12-23T13:19:41.966+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:41.967+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2024-12-23T13:19:41.968+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|          genre|
+[2024-12-23T13:19:41.968+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2024-12-23T13:19:41.969+0000] {subprocess.py:93} INFO - |1038263|               Maria|  2024-11-27|               en|         6.8|        45|   202.988|    123|false|          Drama|
+[2024-12-23T13:19:41.970+0000] {subprocess.py:93} INFO - |1038263|               Maria|  2024-11-27|               en|         6.8|        45|   202.988|    123|false|          Music|
+[2024-12-23T13:19:41.971+0000] {subprocess.py:93} INFO - |1287717|        Do Not Enter|  2024-08-06|               es|         7.2|        93|   216.018|     80|false|         Horror|
+[2024-12-23T13:19:41.972+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|  2024-11-07|               en|         8.0|        33|   197.496|     99|false|         Comedy|
+[2024-12-23T13:19:41.972+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|  2024-11-07|               en|         8.0|        33|   197.496|     99|false|          Drama|
+[2024-12-23T13:19:41.973+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|  2024-11-07|               en|         8.0|        33|   197.496|     99|false|         Family|
+[2024-12-23T13:19:41.975+0000] {subprocess.py:93} INFO - |1106739|            Juror #2|  2024-10-30|               en|       7.003|       772|    342.32|    114|false|          Crime|
+[2024-12-23T13:19:41.976+0000] {subprocess.py:93} INFO - |1106739|            Juror #2|  2024-10-30|               en|       7.003|       772|    342.32|    114|false|          Drama|
+[2024-12-23T13:19:41.977+0000] {subprocess.py:93} INFO - | 482600|        Japanese Mom|  2017-02-09|               ko|         6.2|        30|   343.962|     91|false|        Romance|
+[2024-12-23T13:19:41.978+0000] {subprocess.py:93} INFO - | 482600|        Japanese Mom|  2017-02-09|               ko|         6.2|        30|   343.962|     91|false|          Drama|
+[2024-12-23T13:19:41.979+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|        7.34|       197|   911.704|     96|false|      Animation|
+[2024-12-23T13:19:41.979+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|        7.34|       197|   911.704|     96|false|         Comedy|
+[2024-12-23T13:19:41.980+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|        7.34|       197|   911.704|     96|false|         Family|
+[2024-12-23T13:19:41.980+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|        7.34|       197|   911.704|     96|false|        Fantasy|
+[2024-12-23T13:19:41.982+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|        7.34|       197|   911.704|     96|false|      Adventure|
+[2024-12-23T13:19:41.983+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|  2018-11-08|               en|         6.9|      3999|   407.762|     85|false|      Animation|
+[2024-12-23T13:19:41.983+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|  2018-11-08|               en|         6.9|      3999|   407.762|     85|false|         Family|
+[2024-12-23T13:19:41.983+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|  2018-11-08|               en|         6.9|      3999|   407.762|     85|false|         Comedy|
+[2024-12-23T13:19:41.984+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|  2018-11-08|               en|         6.9|      3999|   407.762|     85|false|        Fantasy|
+[2024-12-23T13:19:41.984+0000] {subprocess.py:93} INFO - |1125510|      The Platform 2|  2024-09-27|               es|         5.6|       953|   279.024|    101|false|Science Fiction|
+[2024-12-23T13:19:41.984+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2024-12-23T13:19:41.985+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-23T13:19:41.986+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:44.091+0000] {subprocess.py:93} INFO - [Stage 35:>                                                         (0 + 1) / 1]24/12/23 13:19:44 WARN BasicWriteTaskStatsTracker: Expected 1 files, but only saw 0. This could be due to the output format not writing empty files, or files being not immediately visible in the filesystem.
+[2024-12-23T13:19:44.109+0000] {subprocess.py:93} INFO -                                                                                 24/12/23 13:19:44 ERROR FileFormatWriter: Aborting job e2627c21-ce83-4df8-b198-a7d3755f2a3c.
+[2024-12-23T13:19:44.112+0000] {subprocess.py:93} INFO - java.io.FileNotFoundException: File file:/opt/***/DE_project/data/parquet/movie.parquet/_temporary/0 does not exist
+[2024-12-23T13:19:44.114+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.RawLocalFileSystem.listStatus(RawLocalFileSystem.java:597)
+[2024-12-23T13:19:44.120+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+[2024-12-23T13:19:44.121+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+[2024-12-23T13:19:44.123+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.ChecksumFileSystem.listStatus(ChecksumFileSystem.java:761)
+[2024-12-23T13:19:44.125+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+[2024-12-23T13:19:44.125+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+[2024-12-23T13:19:44.128+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.getAllCommittedTaskPaths(FileOutputCommitter.java:334)
+[2024-12-23T13:19:44.131+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJobInternal(FileOutputCommitter.java:404)
+[2024-12-23T13:19:44.132+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJob(FileOutputCommitter.java:377)
+[2024-12-23T13:19:44.133+0000] {subprocess.py:93} INFO - 	at org.apache.parquet.hadoop.ParquetOutputCommitter.commitJob(ParquetOutputCommitter.java:48)
+[2024-12-23T13:19:44.133+0000] {subprocess.py:93} INFO - 	at org.apache.spark.internal.io.HadoopMapReduceCommitProtocol.commitJob(HadoopMapReduceCommitProtocol.scala:192)
+[2024-12-23T13:19:44.133+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$writeAndCommit$3(FileFormatWriter.scala:275)
+[2024-12-23T13:19:44.134+0000] {subprocess.py:93} INFO - 	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-12-23T13:19:44.134+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.timeTakenMs(Utils.scala:552)
+[2024-12-23T13:19:44.135+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:275)
+[2024-12-23T13:19:44.135+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+[2024-12-23T13:19:44.135+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+[2024-12-23T13:19:44.136+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+[2024-12-23T13:19:44.136+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+[2024-12-23T13:19:44.136+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+[2024-12-23T13:19:44.136+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+[2024-12-23T13:19:44.137+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.$anonfun$executeCollect$1(AdaptiveSparkPlanExec.scala:392)
+[2024-12-23T13:19:44.137+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.withFinalPlanUpdate(AdaptiveSparkPlanExec.scala:420)
+[2024-12-23T13:19:44.137+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.executeCollect(AdaptiveSparkPlanExec.scala:392)
+[2024-12-23T13:19:44.138+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+[2024-12-23T13:19:44.138+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+[2024-12-23T13:19:44.138+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+[2024-12-23T13:19:44.138+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+[2024-12-23T13:19:44.139+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2024-12-23T13:19:44.139+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+[2024-12-23T13:19:44.139+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+[2024-12-23T13:19:44.140+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2024-12-23T13:19:44.140+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+[2024-12-23T13:19:44.141+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+[2024-12-23T13:19:44.141+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+[2024-12-23T13:19:44.142+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+[2024-12-23T13:19:44.142+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2024-12-23T13:19:44.143+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2024-12-23T13:19:44.143+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+[2024-12-23T13:19:44.143+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+[2024-12-23T13:19:44.144+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+[2024-12-23T13:19:44.146+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+[2024-12-23T13:19:44.147+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+[2024-12-23T13:19:44.148+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+[2024-12-23T13:19:44.149+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+[2024-12-23T13:19:44.149+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+[2024-12-23T13:19:44.150+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+[2024-12-23T13:19:44.150+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:364)
+[2024-12-23T13:19:44.151+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+[2024-12-23T13:19:44.153+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:802)
+[2024-12-23T13:19:44.153+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2024-12-23T13:19:44.154+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2024-12-23T13:19:44.154+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2024-12-23T13:19:44.155+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[2024-12-23T13:19:44.156+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2024-12-23T13:19:44.157+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2024-12-23T13:19:44.157+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2024-12-23T13:19:44.159+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2024-12-23T13:19:44.159+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2024-12-23T13:19:44.160+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-12-23T13:19:44.161+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-12-23T13:19:44.162+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:829)
+[2024-12-23T13:19:44.171+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T13:19:44.172+0000] {subprocess.py:93} INFO - |     id|               title|original_language|vote_average|vote_count|popularity|runtime|          genre|release_year|release_month|release_day|
+[2024-12-23T13:19:44.174+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T13:19:44.174+0000] {subprocess.py:93} INFO - |1038263|               Maria|               en|         6.8|        45|   202.988|    123|          Drama|        2024|           11|         27|
+[2024-12-23T13:19:44.175+0000] {subprocess.py:93} INFO - |1038263|               Maria|               en|         6.8|        45|   202.988|    123|          Music|        2024|           11|         27|
+[2024-12-23T13:19:44.175+0000] {subprocess.py:93} INFO - |1287717|        Do Not Enter|               es|         7.2|        93|   216.018|     80|         Horror|        2024|            8|          6|
+[2024-12-23T13:19:44.176+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|               en|         8.0|        33|   197.496|     99|         Comedy|        2024|           11|          7|
+[2024-12-23T13:19:44.176+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|               en|         8.0|        33|   197.496|     99|          Drama|        2024|           11|          7|
+[2024-12-23T13:19:44.177+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|               en|         8.0|        33|   197.496|     99|         Family|        2024|           11|          7|
+[2024-12-23T13:19:44.181+0000] {subprocess.py:93} INFO - |1106739|            Juror #2|               en|       7.003|       772|    342.32|    114|          Crime|        2024|           10|         30|
+[2024-12-23T13:19:44.182+0000] {subprocess.py:93} INFO - |1106739|            Juror #2|               en|       7.003|       772|    342.32|    114|          Drama|        2024|           10|         30|
+[2024-12-23T13:19:44.182+0000] {subprocess.py:93} INFO - | 482600|        Japanese Mom|               ko|         6.2|        30|   343.962|     91|        Romance|        2017|            2|          9|
+[2024-12-23T13:19:44.182+0000] {subprocess.py:93} INFO - | 482600|        Japanese Mom|               ko|         6.2|        30|   343.962|     91|          Drama|        2017|            2|          9|
+[2024-12-23T13:19:44.182+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|               en|        7.34|       197|   911.704|     96|      Animation|        2024|           11|         27|
+[2024-12-23T13:19:44.183+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|               en|        7.34|       197|   911.704|     96|         Comedy|        2024|           11|         27|
+[2024-12-23T13:19:44.183+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|               en|        7.34|       197|   911.704|     96|         Family|        2024|           11|         27|
+[2024-12-23T13:19:44.183+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|               en|        7.34|       197|   911.704|     96|        Fantasy|        2024|           11|         27|
+[2024-12-23T13:19:44.184+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|               en|        7.34|       197|   911.704|     96|      Adventure|        2024|           11|         27|
+[2024-12-23T13:19:44.184+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|               en|         6.9|      3999|   407.762|     85|      Animation|        2018|           11|          8|
+[2024-12-23T13:19:44.184+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|               en|         6.9|      3999|   407.762|     85|         Family|        2018|           11|          8|
+[2024-12-23T13:19:44.185+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|               en|         6.9|      3999|   407.762|     85|         Comedy|        2018|           11|          8|
+[2024-12-23T13:19:44.185+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|               en|         6.9|      3999|   407.762|     85|        Fantasy|        2018|           11|          8|
+[2024-12-23T13:19:44.186+0000] {subprocess.py:93} INFO - |1125510|      The Platform 2|               es|         5.6|       953|   279.024|    101|Science Fiction|        2024|            9|         27|
+[2024-12-23T13:19:44.186+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T13:19:44.186+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-23T13:19:44.187+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:44.187+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-12-23T13:19:44.187+0000] {subprocess.py:93} INFO -   File "/opt/***/DE_project/ETL/transform/tranform_moviedf.py", line 66, in <module>
+[2024-12-23T13:19:44.188+0000] {subprocess.py:93} INFO -     movie_df_final.write.mode("overwrite").parquet(output_path)
+[2024-12-23T13:19:44.188+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/sql/readwriter.py", line 1721, in parquet
+[2024-12-23T13:19:44.189+0000] {subprocess.py:93} INFO -     self._jwrite.parquet(path)
+[2024-12-23T13:19:44.189+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1322, in __call__
+[2024-12-23T13:19:44.189+0000] {subprocess.py:93} INFO -     return_value = get_return_value(
+[2024-12-23T13:19:44.190+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2024-12-23T13:19:44.190+0000] {subprocess.py:93} INFO -     return f(*a, **kw)
+[2024-12-23T13:19:44.190+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/py4j/protocol.py", line 326, in get_return_value
+[2024-12-23T13:19:44.190+0000] {subprocess.py:93} INFO -     raise Py4JJavaError(
+[2024-12-23T13:19:44.191+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o213.parquet.
+[2024-12-23T13:19:44.191+0000] {subprocess.py:93} INFO - : java.io.FileNotFoundException: File file:/opt/***/DE_project/data/parquet/movie.parquet/_temporary/0 does not exist
+[2024-12-23T13:19:44.191+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.RawLocalFileSystem.listStatus(RawLocalFileSystem.java:597)
+[2024-12-23T13:19:44.192+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+[2024-12-23T13:19:44.192+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+[2024-12-23T13:19:44.193+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.ChecksumFileSystem.listStatus(ChecksumFileSystem.java:761)
+[2024-12-23T13:19:44.193+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+[2024-12-23T13:19:44.193+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+[2024-12-23T13:19:44.194+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.getAllCommittedTaskPaths(FileOutputCommitter.java:334)
+[2024-12-23T13:19:44.195+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJobInternal(FileOutputCommitter.java:404)
+[2024-12-23T13:19:44.196+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJob(FileOutputCommitter.java:377)
+[2024-12-23T13:19:44.196+0000] {subprocess.py:93} INFO - 	at org.apache.parquet.hadoop.ParquetOutputCommitter.commitJob(ParquetOutputCommitter.java:48)
+[2024-12-23T13:19:44.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.internal.io.HadoopMapReduceCommitProtocol.commitJob(HadoopMapReduceCommitProtocol.scala:192)
+[2024-12-23T13:19:44.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$writeAndCommit$3(FileFormatWriter.scala:275)
+[2024-12-23T13:19:44.198+0000] {subprocess.py:93} INFO - 	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2024-12-23T13:19:44.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.Utils$.timeTakenMs(Utils.scala:552)
+[2024-12-23T13:19:44.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:275)
+[2024-12-23T13:19:44.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+[2024-12-23T13:19:44.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+[2024-12-23T13:19:44.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+[2024-12-23T13:19:44.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+[2024-12-23T13:19:44.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+[2024-12-23T13:19:44.202+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+[2024-12-23T13:19:44.202+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.$anonfun$executeCollect$1(AdaptiveSparkPlanExec.scala:392)
+[2024-12-23T13:19:44.202+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.withFinalPlanUpdate(AdaptiveSparkPlanExec.scala:420)
+[2024-12-23T13:19:44.203+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.executeCollect(AdaptiveSparkPlanExec.scala:392)
+[2024-12-23T13:19:44.203+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+[2024-12-23T13:19:44.203+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+[2024-12-23T13:19:44.204+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+[2024-12-23T13:19:44.204+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+[2024-12-23T13:19:44.204+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2024-12-23T13:19:44.205+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+[2024-12-23T13:19:44.205+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+[2024-12-23T13:19:44.205+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2024-12-23T13:19:44.206+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+[2024-12-23T13:19:44.206+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+[2024-12-23T13:19:44.206+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+[2024-12-23T13:19:44.207+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+[2024-12-23T13:19:44.207+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2024-12-23T13:19:44.207+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2024-12-23T13:19:44.208+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+[2024-12-23T13:19:44.208+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+[2024-12-23T13:19:44.209+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+[2024-12-23T13:19:44.209+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+[2024-12-23T13:19:44.209+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+[2024-12-23T13:19:44.210+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+[2024-12-23T13:19:44.210+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+[2024-12-23T13:19:44.211+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+[2024-12-23T13:19:44.211+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+[2024-12-23T13:19:44.211+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:364)
+[2024-12-23T13:19:44.212+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+[2024-12-23T13:19:44.212+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:802)
+[2024-12-23T13:19:44.213+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2024-12-23T13:19:44.213+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2024-12-23T13:19:44.213+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2024-12-23T13:19:44.214+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[2024-12-23T13:19:44.214+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2024-12-23T13:19:44.214+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2024-12-23T13:19:44.215+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2024-12-23T13:19:44.215+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2024-12-23T13:19:44.216+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2024-12-23T13:19:44.216+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-12-23T13:19:44.217+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-12-23T13:19:44.217+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:829)
+[2024-12-23T13:19:44.217+0000] {subprocess.py:93} INFO - 
+[2024-12-23T13:19:44.729+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-12-23T13:19:44.746+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-12-23T13:19:44.751+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_etl_workflow, task_id=transform_data_movie, execution_date=20241223T131852, start_date=20241223T131922, end_date=20241223T131944
+[2024-12-23T13:19:44.765+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 139 for task transform_data_movie (Bash command failed. The command returned a non-zero exit code 1.; 120)
+[2024-12-23T13:19:44.810+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-23T13:19:44.832+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

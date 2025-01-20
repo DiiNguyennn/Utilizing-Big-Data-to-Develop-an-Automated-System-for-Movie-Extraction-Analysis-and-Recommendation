@@ -1,0 +1,165 @@
+[2024-12-24T06:14:45.860+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test1.transform_data_movie manual__2024-12-24T06:14:42.696339+00:00 [queued]>
+[2024-12-24T06:14:45.870+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test1.transform_data_movie manual__2024-12-24T06:14:42.696339+00:00 [queued]>
+[2024-12-24T06:14:45.870+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-24T06:14:45.885+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data_movie> on 2024-12-24 06:14:42.696339+00:00
+[2024-12-24T06:14:45.890+0000] {standard_task_runner.py:57} INFO - Started process 433 to run task
+[2024-12-24T06:14:45.895+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'test1', 'transform_data_movie', 'manual__2024-12-24T06:14:42.696339+00:00', '--job-id', '209', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmp12q5nkxe']
+[2024-12-24T06:14:45.896+0000] {standard_task_runner.py:85} INFO - Job 209: Subtask transform_data_movie
+[2024-12-24T06:14:45.915+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-24T06:14:45.956+0000] {task_command.py:415} INFO - Running <TaskInstance: test1.transform_data_movie manual__2024-12-24T06:14:42.696339+00:00 [running]> on host 59d26c1a31c1
+[2024-12-24T06:14:46.050+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='test1' AIRFLOW_CTX_TASK_ID='transform_data_movie' AIRFLOW_CTX_EXECUTION_DATE='2024-12-24T06:14:42.696339+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-24T06:14:42.696339+00:00'
+[2024-12-24T06:14:46.052+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-24T06:14:46.053+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/transform/transform_moviedf.py']
+[2024-12-24T06:14:46.062+0000] {subprocess.py:86} INFO - Output:
+[2024-12-24T06:14:49.030+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-12-24T06:14:49.031+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-12-24T06:14:49.213+0000] {subprocess.py:93} INFO - 24/12/24 06:14:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-12-24T06:14:58.150+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:14:58.151+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2024-12-24T06:14:58.152+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:14:58.152+0000] {subprocess.py:93} INFO - | 845781|             Red One|  2024-10-31|               en|       6.962|      1207|  6140.642|    124|false|Action, Fantasy, ...|After Santa Claus...|
+[2024-12-24T06:14:58.153+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|  2024-10-22|               en|       6.783|      1807|  4438.575|    109|false|Action, Science F...|Eddie and Venom a...|
+[2024-12-24T06:14:58.154+0000] {subprocess.py:93} INFO - | 762509|Mufasa: The Lion ...|  2024-12-18|               en|         7.1|       160|  3060.267|    118|false|Adventure, Family...|Told in flashback...|
+[2024-12-24T06:14:58.154+0000] {subprocess.py:93} INFO - |1241982|             Moana 2|  2024-11-21|               en|       6.953|       581|  2817.589|    100|false|Animation, Advent...|After receiving a...|
+[2024-12-24T06:14:58.155+0000] {subprocess.py:93} INFO - |1005331|            Carry-On|  2024-12-05|               en|       6.994|       817|  2554.211|    119|false|Action, Mystery, ...|An airport securi...|
+[2024-12-24T06:14:58.155+0000] {subprocess.py:93} INFO - | 939243|Sonic the Hedgehog 3|  2024-12-19|               en|         8.0|        63|  2200.927|    110|false|Science Fiction, ...|Sonic, Knuckles, ...|
+[2024-12-24T06:14:58.159+0000] {subprocess.py:93} INFO - |1043905|        Dirty Angels|  2024-12-11|               en|         6.0|        27|  1758.726|    104|false|Action, Drama, Th...|During the United...|
+[2024-12-24T06:14:58.160+0000] {subprocess.py:93} INFO - |1035048|           Elevation|  2024-11-07|               en|         6.3|       186|  1386.513|     91|false|Action, Science F...|A single father a...|
+[2024-12-24T06:14:58.162+0000] {subprocess.py:93} INFO - |1000075|The Price of Mone...|  2024-07-31|               fr|         5.6|        56|  1181.322|    100|false|Action, Adventure...|Largo Winch, deva...|
+[2024-12-24T06:14:58.163+0000] {subprocess.py:93} INFO - | 974453|          Absolution|  2024-10-31|               en|         6.1|       154|  1126.387|    112|false|Action, Crime, Th...|An aging ex-boxer...|
+[2024-12-24T06:14:58.164+0000] {subprocess.py:93} INFO - | 539972|   Kraven the Hunter|  2024-12-11|               en|         5.8|       190|  1133.345|    127|false|Action, Adventure...|Kraven Kravinoff'...|
+[2024-12-24T06:14:58.165+0000] {subprocess.py:93} INFO - | 558449|        Gladiator II|  2024-11-05|               en|         6.7|      1176|  1091.838|    148|false|Action, Adventure...|Years after witne...|
+[2024-12-24T06:14:58.166+0000] {subprocess.py:93} INFO - |1184918|      The Wild Robot|  2024-09-08|               en|       8.385|      3574|   978.986|    102|false|Animation, Action...|After a shipwreck...|
+[2024-12-24T06:14:58.167+0000] {subprocess.py:93} INFO - |1182387|               Armor|  2024-10-30|               en|       5.494|        80|   750.154|     89|false|Action, Crime, Th...|Armored truck sec...|
+[2024-12-24T06:14:58.168+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|         7.3|       207|   716.747|     96|false|Animation, Comedy...|It's an unforgett...|
+[2024-12-24T06:14:58.168+0000] {subprocess.py:93} INFO - |1010581|            My Fault|  2023-06-08|               es|         7.9|      3145|   828.998|    117|false|      Romance, Drama|Noah must leave h...|
+[2024-12-24T06:14:58.170+0000] {subprocess.py:93} INFO - | 933260|       The Substance|  2024-09-07|               en|         7.2|      2721|   723.909|    141|false|Horror, Science F...|A fading celebrit...|
+[2024-12-24T06:14:58.171+0000] {subprocess.py:93} INFO - | 533535|Deadpool & Wolverine|  2024-07-24|               en|         7.7|      6011|   755.195|    128|false|Action, Comedy, S...|A listless Wade W...|
+[2024-12-24T06:14:58.172+0000] {subprocess.py:93} INFO - |1034541|         Terrifier 3|  2024-10-09|               en|       6.871|      1272|   771.444|    125|false|    Horror, Thriller|Five years after ...|
+[2024-12-24T06:14:58.173+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|  2024-11-25|               en|       7.518|        56|   693.497|     89|false|Animation, Myster...|Suspicious of the...|
+[2024-12-24T06:14:58.174+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:14:58.176+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T06:14:58.177+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:14:58.178+0000] {subprocess.py:93} INFO - root
+[2024-12-24T06:14:58.179+0000] {subprocess.py:93} INFO -  |-- id: integer (nullable = true)
+[2024-12-24T06:14:58.181+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2024-12-24T06:14:58.184+0000] {subprocess.py:93} INFO -  |-- release_date: date (nullable = true)
+[2024-12-24T06:14:58.187+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2024-12-24T06:14:58.190+0000] {subprocess.py:93} INFO -  |-- vote_average: double (nullable = true)
+[2024-12-24T06:14:58.190+0000] {subprocess.py:93} INFO -  |-- vote_count: integer (nullable = true)
+[2024-12-24T06:14:58.192+0000] {subprocess.py:93} INFO -  |-- popularity: double (nullable = true)
+[2024-12-24T06:14:58.193+0000] {subprocess.py:93} INFO -  |-- runtime: integer (nullable = true)
+[2024-12-24T06:14:58.193+0000] {subprocess.py:93} INFO -  |-- adult: boolean (nullable = true)
+[2024-12-24T06:14:58.194+0000] {subprocess.py:93} INFO -  |-- genres: string (nullable = true)
+[2024-12-24T06:14:58.195+0000] {subprocess.py:93} INFO -  |-- overview: string (nullable = true)
+[2024-12-24T06:14:58.196+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:14:58.196+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:14:58.197+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2024-12-24T06:14:58.198+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:14:58.199+0000] {subprocess.py:93} INFO - |  0|    0|           0|                0|           0|         0|         0|      0|    0|     0|       1|
+[2024-12-24T06:14:58.199+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:14:58.200+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:14:58.200+0000] {subprocess.py:93} INFO - +-------+---------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2024-12-24T06:14:58.201+0000] {subprocess.py:93} INFO - |     id|    title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|count|
+[2024-12-24T06:14:58.202+0000] {subprocess.py:93} INFO - +-------+---------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2024-12-24T06:14:58.203+0000] {subprocess.py:93} INFO - |1155095| The Moor|  2024-06-14|               en|         5.0|        21|   279.108|    120|false|Horror, Mystery, ...|Claire is approac...|    2|
+[2024-12-24T06:14:58.204+0000] {subprocess.py:93} INFO - |1038263|    Maria|  2024-11-27|               en|         6.9|        48|   175.129|    123|false|        Drama, Music|Maria Callas, the...|    2|
+[2024-12-24T06:14:58.204+0000] {subprocess.py:93} INFO - | 426063|Nosferatu|  2024-12-25|               en|         7.5|        12|   199.351|    133|false|Horror, Fantasy, ...|A gothic tale of ...|    2|
+[2024-12-24T06:14:58.205+0000] {subprocess.py:93} INFO - +-------+---------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2024-12-24T06:14:58.206+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:15:00.044+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:15:00.044+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2024-12-24T06:15:00.045+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:15:00.046+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|  2024-11-25|               en|       7.518|        56|   693.497|     89|false|Animation, Myster...|Suspicious of the...|
+[2024-12-24T06:15:00.046+0000] {subprocess.py:93} INFO - | 287903|             Krampus|  2015-11-26|               en|         6.2|      2184|   214.328|     98|false|Horror, Comedy, F...|When his dysfunct...|
+[2024-12-24T06:15:00.047+0000] {subprocess.py:93} INFO - | 592831|         Megalopolis|  2024-09-25|               en|       5.467|       523|   154.506|    138|false|Science Fiction, ...|Genius artist Ces...|
+[2024-12-24T06:15:00.047+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|  2021-12-15|               en|       7.955|     20235|   201.637|    148|false|Action, Adventure...|Peter Parker is u...|
+[2024-12-24T06:15:00.048+0000] {subprocess.py:93} INFO - | 414906|          The Batman|  2022-03-01|               en|         7.7|     10405|   131.202|    177|false|Crime, Mystery, T...|In his second yea...|
+[2024-12-24T06:15:00.048+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|  2024-05-22|               en|        7.52|      3591|   206.452|    149|false|Action, Science F...|As the world fall...|
+[2024-12-24T06:15:00.049+0000] {subprocess.py:93} INFO - |   5825|National Lampoon'...|  1989-11-30|               en|         7.2|      2387|   160.487|     97|false|              Comedy|It's Christmastim...|
+[2024-12-24T06:15:00.049+0000] {subprocess.py:93} INFO - |1290034|Defying Gravity: ...|  2024-11-16|               en|         8.6|         5|    134.71|     41|false|         Documentary|A behind-the-scen...|
+[2024-12-24T06:15:00.049+0000] {subprocess.py:93} INFO - |1208808|The Haunting of t...|  2024-10-31|               es|         6.3|        10|   167.887|    107|false|              Horror|A young nurse wit...|
+[2024-12-24T06:15:00.050+0000] {subprocess.py:93} INFO - | 519182|     Despicable Me 4|  2024-06-20|               en|       7.085|      2319|   653.067|     94|false|Animation, Family...|Gru and Lucy and ...|
+[2024-12-24T06:15:00.050+0000] {subprocess.py:93} INFO - |1165466|             Wake Up|  2024-05-08|               en|       7.203|        79|     206.4|     80|false|Horror, Thriller,...|A group of young ...|
+[2024-12-24T06:15:00.051+0000] {subprocess.py:93} INFO - |1114513|       Speak No Evil|  2024-09-11|               en|       7.309|      1075|   131.386|    110|false|    Horror, Thriller|When an American ...|
+[2024-12-24T06:15:00.051+0000] {subprocess.py:93} INFO - | 330457|           Frozen II|  2019-11-20|               en|         7.3|      9726|    132.48|    103|false|Family, Animation...|Elsa, Anna, Krist...|
+[2024-12-24T06:15:00.052+0000] {subprocess.py:93} INFO - |  24428|        The Avengers|  2012-04-25|               en|       7.724|     30886|   128.805|    143|false|Science Fiction, ...|When an unexpecte...|
+[2024-12-24T06:15:00.052+0000] {subprocess.py:93} INFO - |1203236|         Nutcrackers|  2024-09-05|               en|       5.625|        84|   132.073|    104|false|       Drama, Comedy|Just as Mike is o...|
+[2024-12-24T06:15:00.052+0000] {subprocess.py:93} INFO - |1035048|           Elevation|  2024-11-07|               en|         6.3|       186|  1386.513|     91|false|Action, Science F...|A single father a...|
+[2024-12-24T06:15:00.053+0000] {subprocess.py:93} INFO - | 558449|        Gladiator II|  2024-11-05|               en|         6.7|      1176|  1091.838|    148|false|Action, Adventure...|Years after witne...|
+[2024-12-24T06:15:00.053+0000] {subprocess.py:93} INFO - |1219685|     An Ideal Father|  2024-04-21|               fr|         6.3|        99|   149.705|     90|false|     Drama, TV Movie|Michel, the jovia...|
+[2024-12-24T06:15:00.053+0000] {subprocess.py:93} INFO - | 762509|Mufasa: The Lion ...|  2024-12-18|               en|         7.1|       160|  3060.267|    118|false|Adventure, Family...|Told in flashback...|
+[2024-12-24T06:15:00.054+0000] {subprocess.py:93} INFO - |1182387|               Armor|  2024-10-30|               en|       5.494|        80|   750.154|     89|false|Action, Crime, Th...|Armored truck sec...|
+[2024-12-24T06:15:00.054+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:15:00.055+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T06:15:00.055+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:15:00.055+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:15:00.056+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2024-12-24T06:15:00.056+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:15:00.057+0000] {subprocess.py:93} INFO - |  0|    0|           0|                0|           0|         0|         0|      0|    0|     0|       0|
+[2024-12-24T06:15:00.057+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:15:00.058+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:15:00.058+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2024-12-24T06:15:00.058+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|count|
+[2024-12-24T06:15:00.059+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2024-12-24T06:15:00.060+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2024-12-24T06:15:00.060+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:15:00.061+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2024-12-24T06:15:00.061+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|          genre|
+[2024-12-24T06:15:00.062+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2024-12-24T06:15:00.062+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|  2024-11-25|               en|       7.518|        56|   693.497|     89|false|      Animation|
+[2024-12-24T06:15:00.063+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|  2024-11-25|               en|       7.518|        56|   693.497|     89|false|        Mystery|
+[2024-12-24T06:15:00.064+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|  2024-11-25|               en|       7.518|        56|   693.497|     89|false|Science Fiction|
+[2024-12-24T06:15:00.064+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|  2024-11-25|               en|       7.518|        56|   693.497|     89|false|         Action|
+[2024-12-24T06:15:00.064+0000] {subprocess.py:93} INFO - | 287903|             Krampus|  2015-11-26|               en|         6.2|      2184|   214.328|     98|false|         Horror|
+[2024-12-24T06:15:00.065+0000] {subprocess.py:93} INFO - | 287903|             Krampus|  2015-11-26|               en|         6.2|      2184|   214.328|     98|false|         Comedy|
+[2024-12-24T06:15:00.065+0000] {subprocess.py:93} INFO - | 287903|             Krampus|  2015-11-26|               en|         6.2|      2184|   214.328|     98|false|        Fantasy|
+[2024-12-24T06:15:00.066+0000] {subprocess.py:93} INFO - | 592831|         Megalopolis|  2024-09-25|               en|       5.467|       523|   154.506|    138|false|Science Fiction|
+[2024-12-24T06:15:00.066+0000] {subprocess.py:93} INFO - | 592831|         Megalopolis|  2024-09-25|               en|       5.467|       523|   154.506|    138|false|          Drama|
+[2024-12-24T06:15:00.067+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|  2021-12-15|               en|       7.955|     20235|   201.637|    148|false|         Action|
+[2024-12-24T06:15:00.067+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|  2021-12-15|               en|       7.955|     20235|   201.637|    148|false|      Adventure|
+[2024-12-24T06:15:00.068+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|  2021-12-15|               en|       7.955|     20235|   201.637|    148|false|Science Fiction|
+[2024-12-24T06:15:00.068+0000] {subprocess.py:93} INFO - | 414906|          The Batman|  2022-03-01|               en|         7.7|     10405|   131.202|    177|false|          Crime|
+[2024-12-24T06:15:00.068+0000] {subprocess.py:93} INFO - | 414906|          The Batman|  2022-03-01|               en|         7.7|     10405|   131.202|    177|false|        Mystery|
+[2024-12-24T06:15:00.069+0000] {subprocess.py:93} INFO - | 414906|          The Batman|  2022-03-01|               en|         7.7|     10405|   131.202|    177|false|       Thriller|
+[2024-12-24T06:15:00.069+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|  2024-05-22|               en|        7.52|      3591|   206.452|    149|false|         Action|
+[2024-12-24T06:15:00.070+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|  2024-05-22|               en|        7.52|      3591|   206.452|    149|false|Science Fiction|
+[2024-12-24T06:15:00.070+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|  2024-05-22|               en|        7.52|      3591|   206.452|    149|false|      Adventure|
+[2024-12-24T06:15:00.071+0000] {subprocess.py:93} INFO - |   5825|National Lampoon'...|  1989-11-30|               en|         7.2|      2387|   160.487|     97|false|         Comedy|
+[2024-12-24T06:15:00.071+0000] {subprocess.py:93} INFO - |1290034|Defying Gravity: ...|  2024-11-16|               en|         8.6|         5|    134.71|     41|false|    Documentary|
+[2024-12-24T06:15:00.071+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2024-12-24T06:15:00.072+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T06:15:00.072+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:15:01.988+0000] {subprocess.py:93} INFO - [Stage 35:>                                                         (0 + 1) / 1]                                                                                +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T06:15:01.989+0000] {subprocess.py:93} INFO - |     id|               title|original_language|vote_average|vote_count|popularity|runtime|          genre|release_year|release_month|release_day|
+[2024-12-24T06:15:01.991+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T06:15:01.992+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|               en|       7.518|        56|   693.497|     89|      Animation|        2024|           11|         25|
+[2024-12-24T06:15:01.994+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|               en|       7.518|        56|   693.497|     89|        Mystery|        2024|           11|         25|
+[2024-12-24T06:15:01.996+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|               en|       7.518|        56|   693.497|     89|Science Fiction|        2024|           11|         25|
+[2024-12-24T06:15:01.998+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|               en|       7.518|        56|   693.497|     89|         Action|        2024|           11|         25|
+[2024-12-24T06:15:02.000+0000] {subprocess.py:93} INFO - | 287903|             Krampus|               en|         6.2|      2184|   214.328|     98|         Horror|        2015|           11|         26|
+[2024-12-24T06:15:02.001+0000] {subprocess.py:93} INFO - | 287903|             Krampus|               en|         6.2|      2184|   214.328|     98|         Comedy|        2015|           11|         26|
+[2024-12-24T06:15:02.003+0000] {subprocess.py:93} INFO - | 287903|             Krampus|               en|         6.2|      2184|   214.328|     98|        Fantasy|        2015|           11|         26|
+[2024-12-24T06:15:02.005+0000] {subprocess.py:93} INFO - | 592831|         Megalopolis|               en|       5.467|       523|   154.506|    138|Science Fiction|        2024|            9|         25|
+[2024-12-24T06:15:02.007+0000] {subprocess.py:93} INFO - | 592831|         Megalopolis|               en|       5.467|       523|   154.506|    138|          Drama|        2024|            9|         25|
+[2024-12-24T06:15:02.008+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|               en|       7.955|     20235|   201.637|    148|         Action|        2021|           12|         15|
+[2024-12-24T06:15:02.010+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|               en|       7.955|     20235|   201.637|    148|      Adventure|        2021|           12|         15|
+[2024-12-24T06:15:02.012+0000] {subprocess.py:93} INFO - | 634649|Spider-Man: No Wa...|               en|       7.955|     20235|   201.637|    148|Science Fiction|        2021|           12|         15|
+[2024-12-24T06:15:02.014+0000] {subprocess.py:93} INFO - | 414906|          The Batman|               en|         7.7|     10405|   131.202|    177|          Crime|        2022|            3|          1|
+[2024-12-24T06:15:02.015+0000] {subprocess.py:93} INFO - | 414906|          The Batman|               en|         7.7|     10405|   131.202|    177|        Mystery|        2022|            3|          1|
+[2024-12-24T06:15:02.018+0000] {subprocess.py:93} INFO - | 414906|          The Batman|               en|         7.7|     10405|   131.202|    177|       Thriller|        2022|            3|          1|
+[2024-12-24T06:15:02.020+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|               en|        7.52|      3591|   206.452|    149|         Action|        2024|            5|         22|
+[2024-12-24T06:15:02.021+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|               en|        7.52|      3591|   206.452|    149|Science Fiction|        2024|            5|         22|
+[2024-12-24T06:15:02.023+0000] {subprocess.py:93} INFO - | 786892|Furiosa: A Mad Ma...|               en|        7.52|      3591|   206.452|    149|      Adventure|        2024|            5|         22|
+[2024-12-24T06:15:02.025+0000] {subprocess.py:93} INFO - |   5825|National Lampoon'...|               en|         7.2|      2387|   160.487|     97|         Comedy|        1989|           11|         30|
+[2024-12-24T06:15:02.026+0000] {subprocess.py:93} INFO - |1290034|Defying Gravity: ...|               en|         8.6|         5|    134.71|     41|    Documentary|        2024|           11|         16|
+[2024-12-24T06:15:02.027+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-24T06:15:02.029+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T06:15:02.031+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:15:02.033+0000] {subprocess.py:93} INFO - Data successfully transformed and saved to: /opt/***/DE_project/data/parquet/movie.parquet
+[2024-12-24T06:15:02.513+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-24T06:15:02.546+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=test1, task_id=transform_data_movie, execution_date=20241224T061442, start_date=20241224T061445, end_date=20241224T061502
+[2024-12-24T06:15:02.584+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-24T06:15:02.602+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

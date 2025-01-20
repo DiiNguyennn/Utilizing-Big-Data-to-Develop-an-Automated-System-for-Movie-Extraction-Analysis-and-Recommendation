@@ -1,0 +1,803 @@
+[2024-12-23T13:10:19.412+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.fetch_rating_data manual__2024-12-23T13:10:18.064302+00:00 [queued]>
+[2024-12-23T13:10:19.425+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.fetch_rating_data manual__2024-12-23T13:10:18.064302+00:00 [queued]>
+[2024-12-23T13:10:19.425+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T13:10:19.439+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): fetch_rating_data> on 2024-12-23 13:10:18.064302+00:00
+[2024-12-23T13:10:19.443+0000] {standard_task_runner.py:57} INFO - Started process 348 to run task
+[2024-12-23T13:10:19.448+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'fetch_rating_data', 'manual__2024-12-23T13:10:18.064302+00:00', '--job-id', '129', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpk5q8mns4']
+[2024-12-23T13:10:19.450+0000] {standard_task_runner.py:85} INFO - Job 129: Subtask fetch_rating_data
+[2024-12-23T13:10:19.472+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T13:10:19.513+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.fetch_rating_data manual__2024-12-23T13:10:18.064302+00:00 [running]> on host 1d9ed8d569bb
+[2024-12-23T13:10:19.604+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='fetch_rating_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T13:10:18.064302+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-23T13:10:18.064302+00:00'
+[2024-12-23T13:10:19.606+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T13:10:19.606+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/extract/API_rating_Themoviedb.py']
+[2024-12-23T13:10:19.618+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T13:11:24.626+0000] {subprocess.py:93} INFO - Fetched page 1, number of movies: 20
+[2024-12-23T13:11:24.627+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 845781, page 1, number of reviews: 5
+[2024-12-23T13:11:24.629+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 912649, page 1, number of reviews: 6
+[2024-12-23T13:11:24.631+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1241982, page 1, number of reviews: 1
+[2024-12-23T13:11:24.632+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1005331, page 1, number of reviews: 4
+[2024-12-23T13:11:24.634+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1035048, page 1, number of reviews: 1
+[2024-12-23T13:11:24.635+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1000075, page 1, number of reviews: 1
+[2024-12-23T13:11:24.636+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1043905, page 1, number of reviews: 1
+[2024-12-23T13:11:24.637+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 539972, page 1, number of reviews: 3
+[2024-12-23T13:11:24.638+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1184918, page 1, number of reviews: 5
+[2024-12-23T13:11:24.638+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 558449, page 1, number of reviews: 11
+[2024-12-23T13:11:24.639+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1138194, page 1, number of reviews: 5
+[2024-12-23T13:11:24.640+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1182387, page 1, number of reviews: 1
+[2024-12-23T13:11:24.641+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1010581, page 1, number of reviews: 1
+[2024-12-23T13:11:24.641+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 533535, page 1, number of reviews: 18
+[2024-12-23T13:11:24.642+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 933260, page 1, number of reviews: 10
+[2024-12-23T13:11:24.642+0000] {subprocess.py:93} INFO - Fetched page 2, number of movies: 20
+[2024-12-23T13:11:24.643+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1034541, page 1, number of reviews: 4
+[2024-12-23T13:11:24.643+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 698687, page 1, number of reviews: 2
+[2024-12-23T13:11:24.644+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 402431, page 1, number of reviews: 7
+[2024-12-23T13:11:24.645+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1022789, page 1, number of reviews: 9
+[2024-12-23T13:11:24.645+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1118031, page 1, number of reviews: 1
+[2024-12-23T13:11:24.646+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 41446, page 1, number of reviews: 1
+[2024-12-23T13:11:24.647+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 519182, page 1, number of reviews: 8
+[2024-12-23T13:11:24.647+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1100782, page 1, number of reviews: 6
+[2024-12-23T13:11:24.648+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 945961, page 1, number of reviews: 9
+[2024-12-23T13:11:24.648+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 8871, page 1, number of reviews: 6
+[2024-12-23T13:11:24.649+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1064213, page 1, number of reviews: 2
+[2024-12-23T13:11:24.650+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1051896, page 1, number of reviews: 4
+[2024-12-23T13:11:24.650+0000] {subprocess.py:93} INFO - Fetched page 3, number of movies: 20
+[2024-12-23T13:11:24.650+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 360920, page 1, number of reviews: 6
+[2024-12-23T13:11:24.651+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1029235, page 1, number of reviews: 2
+[2024-12-23T13:11:24.651+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1196470, page 1, number of reviews: 1
+[2024-12-23T13:11:24.652+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 772, page 1, number of reviews: 3
+[2024-12-23T13:11:24.652+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 420818, page 1, number of reviews: 5
+[2024-12-23T13:11:24.652+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1100099, page 1, number of reviews: 2
+[2024-12-23T13:11:24.653+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 957452, page 1, number of reviews: 3
+[2024-12-23T13:11:24.653+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1064028, page 1, number of reviews: 2
+[2024-12-23T13:11:24.654+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1124641, page 1, number of reviews: 2
+[2024-12-23T13:11:24.654+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1154223, page 1, number of reviews: 1
+[2024-12-23T13:11:24.655+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1357633, page 1, number of reviews: 1
+[2024-12-23T13:11:24.655+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 675353, page 1, number of reviews: 8
+[2024-12-23T13:11:24.655+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1084736, page 1, number of reviews: 2
+[2024-12-23T13:11:24.656+0000] {subprocess.py:93} INFO - Fetched page 4, number of movies: 20
+[2024-12-23T13:11:24.656+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 573435, page 1, number of reviews: 8
+[2024-12-23T13:11:24.657+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1106739, page 1, number of reviews: 2
+[2024-12-23T13:11:24.657+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 823219, page 1, number of reviews: 1
+[2024-12-23T13:11:24.657+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 592695, page 1, number of reviews: 1
+[2024-12-23T13:11:24.658+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1084863, page 1, number of reviews: 2
+[2024-12-23T13:11:24.659+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 889737, page 1, number of reviews: 8
+[2024-12-23T13:11:24.659+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 157336, page 1, number of reviews: 17
+[2024-12-23T13:11:24.659+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 748783, page 1, number of reviews: 5
+[2024-12-23T13:11:24.660+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 335983, page 1, number of reviews: 11
+[2024-12-23T13:11:24.660+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 98, page 1, number of reviews: 5
+[2024-12-23T13:11:24.661+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 974576, page 1, number of reviews: 5
+[2024-12-23T13:11:24.661+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 693134, page 1, number of reviews: 14
+[2024-12-23T13:11:24.661+0000] {subprocess.py:93} INFO - Fetched page 5, number of movies: 20
+[2024-12-23T13:11:24.662+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1011985, page 1, number of reviews: 5
+[2024-12-23T13:11:24.662+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 917496, page 1, number of reviews: 7
+[2024-12-23T13:11:24.663+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1014505, page 1, number of reviews: 1
+[2024-12-23T13:11:24.663+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 385687, page 1, number of reviews: 12
+[2024-12-23T13:11:24.663+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 726139, page 1, number of reviews: 1
+[2024-12-23T13:11:24.664+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 671, page 1, number of reviews: 4
+[2024-12-23T13:11:24.664+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 653346, page 1, number of reviews: 9
+[2024-12-23T13:11:24.664+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 634649, page 1, number of reviews: 15
+[2024-12-23T13:11:24.665+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 639720, page 1, number of reviews: 6
+[2024-12-23T13:11:24.665+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 839033, page 1, number of reviews: 1
+[2024-12-23T13:11:24.665+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 454626, page 1, number of reviews: 11
+[2024-12-23T13:11:24.666+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1296753, page 1, number of reviews: 1
+[2024-12-23T13:11:24.666+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 823464, page 1, number of reviews: 15
+[2024-12-23T13:11:24.666+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 569094, page 1, number of reviews: 9
+[2024-12-23T13:11:24.667+0000] {subprocess.py:93} INFO - Fetched page 6, number of movies: 20
+[2024-12-23T13:11:24.667+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 829557, page 1, number of reviews: 4
+[2024-12-23T13:11:24.668+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 976734, page 1, number of reviews: 1
+[2024-12-23T13:11:24.668+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 8587, page 1, number of reviews: 2
+[2024-12-23T13:11:24.669+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 667538, page 1, number of reviews: 7
+[2024-12-23T13:11:24.669+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 786892, page 1, number of reviews: 13
+[2024-12-23T13:11:24.670+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 5255, page 1, number of reviews: 4
+[2024-12-23T13:11:24.670+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 597, page 1, number of reviews: 6
+[2024-12-23T13:11:24.671+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 718821, page 1, number of reviews: 9
+[2024-12-23T13:11:24.671+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 365177, page 1, number of reviews: 7
+[2024-12-23T13:11:24.671+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1079091, page 1, number of reviews: 5
+[2024-12-23T13:11:24.672+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 507241, page 1, number of reviews: 1
+[2024-12-23T13:11:24.672+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 762441, page 1, number of reviews: 9
+[2024-12-23T13:11:24.673+0000] {subprocess.py:93} INFO - Fetched page 7, number of movies: 20
+[2024-12-23T13:11:24.673+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 502356, page 1, number of reviews: 12
+[2024-12-23T13:11:24.673+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 324857, page 1, number of reviews: 20
+[2024-12-23T13:11:24.674+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 324857, page 2, number of reviews: 20
+[2024-12-23T13:11:24.674+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 324857, page 3, number of reviews: 14
+[2024-12-23T13:11:24.674+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 580489, page 1, number of reviews: 10
+[2024-12-23T13:11:24.675+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 672, page 1, number of reviews: 3
+[2024-12-23T13:11:24.675+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1038263, page 1, number of reviews: 1
+[2024-12-23T13:11:24.675+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 299536, page 1, number of reviews: 20
+[2024-12-23T13:11:24.676+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 299536, page 2, number of reviews: 12
+[2024-12-23T13:11:24.676+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 438631, page 1, number of reviews: 15
+[2024-12-23T13:11:24.676+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 411, page 1, number of reviews: 4
+[2024-12-23T13:11:24.676+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1159311, page 1, number of reviews: 1
+[2024-12-23T13:11:24.677+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 238, page 1, number of reviews: 6
+[2024-12-23T13:11:24.677+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 361743, page 1, number of reviews: 20
+[2024-12-23T13:11:24.677+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 940551, page 1, number of reviews: 3
+[2024-12-23T13:11:24.677+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 278, page 1, number of reviews: 17
+[2024-12-23T13:11:24.678+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 929590, page 1, number of reviews: 11
+[2024-12-23T13:11:24.678+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 603692, page 1, number of reviews: 18
+[2024-12-23T13:11:24.679+0000] {subprocess.py:93} INFO - Fetched page 8, number of movies: 20
+[2024-12-23T13:11:24.679+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1063877, page 1, number of reviews: 1
+[2024-12-23T13:11:24.680+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 346698, page 1, number of reviews: 17
+[2024-12-23T13:11:24.680+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 315162, page 1, number of reviews: 6
+[2024-12-23T13:11:24.680+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 673, page 1, number of reviews: 3
+[2024-12-23T13:11:24.681+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 370663, page 1, number of reviews: 2
+[2024-12-23T13:11:24.681+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 674, page 1, number of reviews: 3
+[2024-12-23T13:11:24.681+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 12444, page 1, number of reviews: 2
+[2024-12-23T13:11:24.682+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1094974, page 1, number of reviews: 1
+[2024-12-23T13:11:24.682+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 216015, page 1, number of reviews: 3
+[2024-12-23T13:11:24.683+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1129598, page 1, number of reviews: 2
+[2024-12-23T13:11:24.683+0000] {subprocess.py:93} INFO - Fetched page 9, number of movies: 20
+[2024-12-23T13:11:24.683+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 76600, page 1, number of reviews: 20
+[2024-12-23T13:11:24.684+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1029281, page 1, number of reviews: 4
+[2024-12-23T13:11:24.684+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 866398, page 1, number of reviews: 8
+[2024-12-23T13:11:24.685+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 675, page 1, number of reviews: 3
+[2024-12-23T13:11:24.685+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 198663, page 1, number of reviews: 8
+[2024-12-23T13:11:24.685+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 287903, page 1, number of reviews: 3
+[2024-12-23T13:11:24.685+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 7451, page 1, number of reviews: 1
+[2024-12-23T13:11:24.686+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1104844, page 1, number of reviews: 1
+[2024-12-23T13:11:24.686+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1102493, page 1, number of reviews: 2
+[2024-12-23T13:11:24.686+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 637649, page 1, number of reviews: 9
+[2024-12-23T13:11:24.687+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 12445, page 1, number of reviews: 3
+[2024-12-23T13:11:24.687+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1216191, page 1, number of reviews: 1
+[2024-12-23T13:12:55.235+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 150540, page 1, number of reviews: 10
+[2024-12-23T13:12:55.235+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 616446, page 1, number of reviews: 1
+[2024-12-23T13:12:55.236+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 120, page 1, number of reviews: 9
+[2024-12-23T13:12:55.236+0000] {subprocess.py:93} INFO - Fetched page 10, number of movies: 20
+[2024-12-23T13:12:55.237+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 940721, page 1, number of reviews: 10
+[2024-12-23T13:12:55.238+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1154304, page 1, number of reviews: 1
+[2024-12-23T13:12:55.238+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 81188, page 1, number of reviews: 4
+[2024-12-23T13:12:55.240+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 109445, page 1, number of reviews: 7
+[2024-12-23T13:12:55.241+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1151949, page 1, number of reviews: 1
+[2024-12-23T13:12:55.241+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 170, page 1, number of reviews: 6
+[2024-12-23T13:12:55.242+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1226578, page 1, number of reviews: 6
+[2024-12-23T13:12:55.243+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 27205, page 1, number of reviews: 8
+[2024-12-23T13:12:55.244+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 767, page 1, number of reviews: 5
+[2024-12-23T13:12:55.245+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 22, page 1, number of reviews: 3
+[2024-12-23T13:12:55.245+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 785542, page 1, number of reviews: 2
+[2024-12-23T13:12:55.246+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 335984, page 1, number of reviews: 12
+[2024-12-23T13:12:55.246+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 177572, page 1, number of reviews: 16
+[2024-12-23T13:12:55.247+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1022796, page 1, number of reviews: 3
+[2024-12-23T13:12:55.248+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 877817, page 1, number of reviews: 3
+[2024-12-23T13:12:55.248+0000] {subprocess.py:93} INFO - Fetched page 11, number of movies: 20
+[2024-12-23T13:12:55.249+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1079485, page 1, number of reviews: 1
+[2024-12-23T13:12:55.250+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 974262, page 1, number of reviews: 2
+[2024-12-23T13:12:55.250+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 537915, page 1, number of reviews: 2
+[2024-12-23T13:12:55.251+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 592831, page 1, number of reviews: 4
+[2024-12-23T13:12:55.251+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 14836, page 1, number of reviews: 3
+[2024-12-23T13:12:55.252+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1154215, page 1, number of reviews: 1
+[2024-12-23T13:12:55.252+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 490132, page 1, number of reviews: 7
+[2024-12-23T13:12:55.253+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 829560, page 1, number of reviews: 2
+[2024-12-23T13:12:55.253+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 24428, page 1, number of reviews: 20
+[2024-12-23T13:12:55.254+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 24428, page 2, number of reviews: 20
+[2024-12-23T13:12:55.254+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 24428, page 3, number of reviews: 2
+[2024-12-23T13:12:55.255+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 122, page 1, number of reviews: 7
+[2024-12-23T13:12:55.255+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 155, page 1, number of reviews: 14
+[2024-12-23T13:12:55.256+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 974950, page 1, number of reviews: 2
+[2024-12-23T13:12:55.257+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 588648, page 1, number of reviews: 1
+[2024-12-23T13:12:55.257+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10719, page 1, number of reviews: 6
+[2024-12-23T13:12:55.258+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 603, page 1, number of reviews: 9
+[2024-12-23T13:12:55.258+0000] {subprocess.py:93} INFO - Fetched page 12, number of movies: 20
+[2024-12-23T13:12:55.259+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 808, page 1, number of reviews: 4
+[2024-12-23T13:12:55.259+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 150540, page 1, number of reviews: 10
+[2024-12-23T13:12:55.260+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 19995, page 1, number of reviews: 6
+[2024-12-23T13:12:55.261+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 354912, page 1, number of reviews: 5
+[2024-12-23T13:12:55.261+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 475557, page 1, number of reviews: 19
+[2024-12-23T13:12:55.262+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 814889, page 1, number of reviews: 2
+[2024-12-23T13:12:55.262+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 863, page 1, number of reviews: 4
+[2024-12-23T13:12:55.262+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1114513, page 1, number of reviews: 6
+[2024-12-23T13:12:55.263+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 557, page 1, number of reviews: 20
+[2024-12-23T13:12:55.263+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 557, page 2, number of reviews: 14
+[2024-12-23T13:12:55.263+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 269509, page 1, number of reviews: 1
+[2024-12-23T13:12:55.264+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 872585, page 1, number of reviews: 20
+[2024-12-23T13:12:55.264+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 872585, page 2, number of reviews: 3
+[2024-12-23T13:12:55.264+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 787699, page 1, number of reviews: 10
+[2024-12-23T13:12:55.265+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 923667, page 1, number of reviews: 3
+[2024-12-23T13:12:55.265+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1072790, page 1, number of reviews: 2
+[2024-12-23T13:12:55.265+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 330457, page 1, number of reviews: 9
+[2024-12-23T13:12:55.266+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9479, page 1, number of reviews: 2
+[2024-12-23T13:12:55.266+0000] {subprocess.py:93} INFO - Fetched page 13, number of movies: 20
+[2024-12-23T13:12:55.266+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1072790, page 1, number of reviews: 2
+[2024-12-23T13:12:55.267+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9479, page 1, number of reviews: 2
+[2024-12-23T13:12:55.267+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 493529, page 1, number of reviews: 8
+[2024-12-23T13:12:55.267+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 934433, page 1, number of reviews: 8
+[2024-12-23T13:12:55.267+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 882598, page 1, number of reviews: 10
+[2024-12-23T13:12:55.268+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1066262, page 1, number of reviews: 1
+[2024-12-23T13:12:55.268+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 15212, page 1, number of reviews: 1
+[2024-12-23T13:12:55.268+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 615656, page 1, number of reviews: 4
+[2024-12-23T13:12:55.269+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 746036, page 1, number of reviews: 9
+[2024-12-23T13:12:55.269+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 818647, page 1, number of reviews: 1
+[2024-12-23T13:12:55.269+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 562, page 1, number of reviews: 8
+[2024-12-23T13:12:55.270+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 447365, page 1, number of reviews: 7
+[2024-12-23T13:12:55.270+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 947891, page 1, number of reviews: 4
+[2024-12-23T13:12:55.270+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 893723, page 1, number of reviews: 1
+[2024-12-23T13:12:55.271+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1234811, page 1, number of reviews: 1
+[2024-12-23T13:12:55.272+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 228150, page 1, number of reviews: 6
+[2024-12-23T13:12:55.272+0000] {subprocess.py:93} INFO - Fetched page 14, number of movies: 20
+[2024-12-23T13:12:55.273+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 58, page 1, number of reviews: 2
+[2024-12-23T13:12:55.274+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1215162, page 1, number of reviews: 2
+[2024-12-23T13:12:55.275+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10191, page 1, number of reviews: 4
+[2024-12-23T13:12:55.275+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 680, page 1, number of reviews: 6
+[2024-12-23T13:12:55.276+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1087822, page 1, number of reviews: 2
+[2024-12-23T13:12:55.276+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 420634, page 1, number of reviews: 5
+[2024-12-23T13:12:55.277+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 826510, page 1, number of reviews: 1
+[2024-12-23T13:12:55.277+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 414906, page 1, number of reviews: 20
+[2024-12-23T13:12:55.277+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 414906, page 2, number of reviews: 4
+[2024-12-23T13:12:55.278+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 976573, page 1, number of reviews: 7
+[2024-12-23T13:12:55.278+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 396535, page 1, number of reviews: 4
+[2024-12-23T13:12:55.278+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 298618, page 1, number of reviews: 11
+[2024-12-23T13:12:55.279+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 575264, page 1, number of reviews: 12
+[2024-12-23T13:12:55.279+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 122917, page 1, number of reviews: 4
+[2024-12-23T13:12:55.279+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 572802, page 1, number of reviews: 9
+[2024-12-23T13:12:55.280+0000] {subprocess.py:93} INFO - Fetched page 15, number of movies: 20
+[2024-12-23T13:12:55.280+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 437342, page 1, number of reviews: 10
+[2024-12-23T13:12:55.280+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 809, page 1, number of reviews: 1
+[2024-12-23T13:12:55.281+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 156022, page 1, number of reviews: 4
+[2024-12-23T13:12:55.281+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1306764, page 1, number of reviews: 2
+[2024-12-23T13:12:55.281+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11, page 1, number of reviews: 6
+[2024-12-23T13:12:55.282+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 527435, page 1, number of reviews: 4
+[2024-12-23T13:12:55.282+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1059264, page 1, number of reviews: 1
+[2024-12-23T13:12:55.282+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 82702, page 1, number of reviews: 3
+[2024-12-23T13:12:55.283+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 447277, page 1, number of reviews: 5
+[2024-12-23T13:12:55.283+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 508883, page 1, number of reviews: 3
+[2024-12-23T13:12:55.283+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1111873, page 1, number of reviews: 9
+[2024-12-23T13:12:55.284+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 214756, page 1, number of reviews: 2
+[2024-12-23T13:12:55.284+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 550, page 1, number of reviews: 10
+[2024-12-23T13:12:55.284+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 568124, page 1, number of reviews: 5
+[2024-12-23T13:12:55.285+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 980489, page 1, number of reviews: 4
+[2024-12-23T13:12:55.285+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 13673, page 1, number of reviews: 2
+[2024-12-23T13:12:55.285+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 508, page 1, number of reviews: 5
+[2024-12-23T13:12:55.286+0000] {subprocess.py:93} INFO - Fetched page 16, number of movies: 20
+[2024-12-23T13:12:55.286+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 269149, page 1, number of reviews: 11
+[2024-12-23T13:12:55.286+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 436969, page 1, number of reviews: 17
+[2024-12-23T13:12:55.286+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 938614, page 1, number of reviews: 4
+[2024-12-23T13:12:55.287+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 12, page 1, number of reviews: 4
+[2024-12-23T13:12:55.287+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 507086, page 1, number of reviews: 11
+[2024-12-23T13:12:55.287+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 840705, page 1, number of reviews: 7
+[2024-12-23T13:12:55.288+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9732, page 1, number of reviews: 1
+[2024-12-23T13:12:55.288+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 595985, page 1, number of reviews: 1
+[2024-12-23T13:12:55.289+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1865, page 1, number of reviews: 5
+[2024-12-23T13:12:55.290+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 277834, page 1, number of reviews: 4
+[2024-12-23T13:12:55.291+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 559, page 1, number of reviews: 20
+[2024-12-23T13:12:55.292+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 559, page 2, number of reviews: 15
+[2024-12-23T13:12:55.292+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 384018, page 1, number of reviews: 6
+[2024-12-23T13:12:55.293+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 566525, page 1, number of reviews: 7
+[2024-12-23T13:12:55.293+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 293660, page 1, number of reviews: 11
+[2024-12-23T13:12:55.293+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 106646, page 1, number of reviews: 6
+[2024-12-23T13:12:55.294+0000] {subprocess.py:93} INFO - Fetched page 17, number of movies: 20
+[2024-12-23T13:12:55.294+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1160018, page 1, number of reviews: 2
+[2024-12-23T13:12:55.294+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 585, page 1, number of reviews: 2
+[2024-12-23T13:12:55.295+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 843527, page 1, number of reviews: 5
+[2024-12-23T13:14:06.755+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 899112, page 1, number of reviews: 9
+[2024-12-23T13:14:06.756+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 588228, page 1, number of reviews: 5
+[2024-12-23T13:14:06.757+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 799583, page 1, number of reviews: 2
+[2024-12-23T13:14:06.758+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9279, page 1, number of reviews: 2
+[2024-12-23T13:14:06.760+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 268, page 1, number of reviews: 9
+[2024-12-23T13:14:06.761+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 359410, page 1, number of reviews: 4
+[2024-12-23T13:14:06.761+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 38757, page 1, number of reviews: 4
+[2024-12-23T13:14:06.762+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 129, page 1, number of reviews: 1
+[2024-12-23T13:14:06.762+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 424, page 1, number of reviews: 2
+[2024-12-23T13:14:06.763+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 447277, page 1, number of reviews: 5
+[2024-12-23T13:14:06.764+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 299054, page 1, number of reviews: 5
+[2024-12-23T13:14:06.764+0000] {subprocess.py:93} INFO - Fetched page 18, number of movies: 20
+[2024-12-23T13:14:06.765+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 425, page 1, number of reviews: 2
+[2024-12-23T13:14:06.765+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 505642, page 1, number of reviews: 13
+[2024-12-23T13:14:06.766+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 926393, page 1, number of reviews: 8
+[2024-12-23T13:14:06.766+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10193, page 1, number of reviews: 6
+[2024-12-23T13:14:06.766+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 138843, page 1, number of reviews: 5
+[2024-12-23T13:14:06.767+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9714, page 1, number of reviews: 1
+[2024-12-23T13:14:06.768+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1290287, page 1, number of reviews: 2
+[2024-12-23T13:14:06.769+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 496243, page 1, number of reviews: 15
+[2024-12-23T13:14:06.769+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 595985, page 1, number of reviews: 1
+[2024-12-23T13:14:06.770+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 121, page 1, number of reviews: 6
+[2024-12-23T13:14:06.771+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 337167, page 1, number of reviews: 2
+[2024-12-23T13:14:06.771+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 508965, page 1, number of reviews: 2
+[2024-12-23T13:14:06.771+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 118, page 1, number of reviews: 3
+[2024-12-23T13:14:06.772+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11036, page 1, number of reviews: 2
+[2024-12-23T13:14:06.772+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 12, page 1, number of reviews: 4
+[2024-12-23T13:14:06.773+0000] {subprocess.py:93} INFO - Fetched page 19, number of movies: 20
+[2024-12-23T13:14:06.773+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1008042, page 1, number of reviews: 5
+[2024-12-23T13:14:06.774+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10625, page 1, number of reviews: 5
+[2024-12-23T13:14:06.774+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 49051, page 1, number of reviews: 6
+[2024-12-23T13:14:06.775+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 285, page 1, number of reviews: 2
+[2024-12-23T13:14:06.775+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10674, page 1, number of reviews: 3
+[2024-12-23T13:14:06.775+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 744, page 1, number of reviews: 4
+[2024-12-23T13:14:06.776+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 507089, page 1, number of reviews: 10
+[2024-12-23T13:14:06.776+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 91314, page 1, number of reviews: 2
+[2024-12-23T13:14:06.777+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 348, page 1, number of reviews: 10
+[2024-12-23T13:14:06.777+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 744275, page 1, number of reviews: 2
+[2024-12-23T13:14:06.777+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 166428, page 1, number of reviews: 18
+[2024-12-23T13:14:06.778+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 315635, page 1, number of reviews: 12
+[2024-12-23T13:14:06.778+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10681, page 1, number of reviews: 6
+[2024-12-23T13:14:06.778+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1585, page 1, number of reviews: 6
+[2024-12-23T13:14:06.779+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 868759, page 1, number of reviews: 4
+[2024-12-23T13:14:06.779+0000] {subprocess.py:93} INFO - Fetched page 20, number of movies: 20
+[2024-12-23T13:14:06.780+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 321612, page 1, number of reviews: 8
+[2024-12-23T13:14:06.780+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 299534, page 1, number of reviews: 20
+[2024-12-23T13:14:06.781+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 299534, page 2, number of reviews: 20
+[2024-12-23T13:14:06.781+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 299534, page 3, number of reviews: 19
+[2024-12-23T13:14:06.782+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 335977, page 1, number of reviews: 13
+[2024-12-23T13:14:06.782+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 634492, page 1, number of reviews: 9
+[2024-12-23T13:14:06.782+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 76341, page 1, number of reviews: 13
+[2024-12-23T13:14:06.783+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10192, page 1, number of reviews: 2
+[2024-12-23T13:14:06.783+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10138, page 1, number of reviews: 10
+[2024-12-23T13:14:06.783+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 447332, page 1, number of reviews: 12
+[2024-12-23T13:14:06.784+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 372058, page 1, number of reviews: 7
+[2024-12-23T13:14:06.784+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1562, page 1, number of reviews: 5
+[2024-12-23T13:14:06.784+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 240, page 1, number of reviews: 4
+[2024-12-23T13:14:06.785+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 13, page 1, number of reviews: 3
+[2024-12-23T13:14:06.785+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 916192, page 1, number of reviews: 1
+[2024-12-23T13:14:06.785+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 601796, page 1, number of reviews: 1
+[2024-12-23T13:14:06.786+0000] {subprocess.py:93} INFO - Fetched page 21, number of movies: 20
+[2024-12-23T13:14:06.786+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 916192, page 1, number of reviews: 1
+[2024-12-23T13:14:06.786+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 601796, page 1, number of reviews: 1
+[2024-12-23T13:14:06.787+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 792307, page 1, number of reviews: 11
+[2024-12-23T13:14:06.787+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 245891, page 1, number of reviews: 13
+[2024-12-23T13:14:06.787+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 335988, page 1, number of reviews: 4
+[2024-12-23T13:14:06.788+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10198, page 1, number of reviews: 4
+[2024-12-23T13:14:06.788+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 72190, page 1, number of reviews: 4
+[2024-12-23T13:14:06.788+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11970, page 1, number of reviews: 2
+[2024-12-23T13:14:06.789+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 39254, page 1, number of reviews: 2
+[2024-12-23T13:14:06.789+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 713704, page 1, number of reviews: 8
+[2024-12-23T13:14:06.789+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1041613, page 1, number of reviews: 4
+[2024-12-23T13:14:06.790+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 209112, page 1, number of reviews: 13
+[2024-12-23T13:14:06.790+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1001311, page 1, number of reviews: 2
+[2024-12-23T13:14:06.790+0000] {subprocess.py:93} INFO - Fetched page 22, number of movies: 20
+[2024-12-23T13:14:06.791+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1096197, page 1, number of reviews: 2
+[2024-12-23T13:14:06.792+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 271110, page 1, number of reviews: 20
+[2024-12-23T13:14:06.792+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 271110, page 2, number of reviews: 5
+[2024-12-23T13:14:06.793+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 956842, page 1, number of reviews: 3
+[2024-12-23T13:14:06.793+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 429617, page 1, number of reviews: 16
+[2024-12-23T13:14:06.793+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 348893, page 1, number of reviews: 2
+[2024-12-23T13:14:06.793+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10020, page 1, number of reviews: 2
+[2024-12-23T13:14:06.794+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 970347, page 1, number of reviews: 2
+[2024-12-23T13:14:06.794+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 654028, page 1, number of reviews: 3
+[2024-12-23T13:14:06.794+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 337404, page 1, number of reviews: 8
+[2024-12-23T13:14:06.795+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 345887, page 1, number of reviews: 2
+[2024-12-23T13:14:06.795+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 613504, page 1, number of reviews: 3
+[2024-12-23T13:14:06.795+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 324786, page 1, number of reviews: 7
+[2024-12-23T13:14:06.796+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1097549, page 1, number of reviews: 1
+[2024-12-23T13:14:06.796+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1726, page 1, number of reviews: 10
+[2024-12-23T13:14:06.796+0000] {subprocess.py:93} INFO - Fetched page 23, number of movies: 20
+[2024-12-23T13:14:06.796+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 497, page 1, number of reviews: 2
+[2024-12-23T13:14:06.797+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 646097, page 1, number of reviews: 5
+[2024-12-23T13:14:06.797+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 383498, page 1, number of reviews: 9
+[2024-12-23T13:14:06.797+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9502, page 1, number of reviews: 2
+[2024-12-23T13:14:06.798+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 19119, page 1, number of reviews: 2
+[2024-12-23T13:14:06.798+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1244492, page 1, number of reviews: 1
+[2024-12-23T13:14:06.798+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1930, page 1, number of reviews: 4
+[2024-12-23T13:14:06.798+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 949484, page 1, number of reviews: 1
+[2024-12-23T13:14:06.799+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 635302, page 1, number of reviews: 3
+[2024-12-23T13:14:06.799+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 594767, page 1, number of reviews: 7
+[2024-12-23T13:14:06.799+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 646385, page 1, number of reviews: 9
+[2024-12-23T13:14:06.799+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 76338, page 1, number of reviews: 20
+[2024-12-23T13:14:06.800+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 76338, page 2, number of reviews: 18
+[2024-12-23T13:14:06.800+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 5492, page 1, number of reviews: 1
+[2024-12-23T13:14:06.800+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1059128, page 1, number of reviews: 1
+[2024-12-23T13:14:06.800+0000] {subprocess.py:93} INFO - Fetched page 24, number of movies: 20
+[2024-12-23T13:14:06.801+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1059128, page 1, number of reviews: 1
+[2024-12-23T13:14:06.801+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11224, page 1, number of reviews: 2
+[2024-12-23T13:14:06.801+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 244786, page 1, number of reviews: 9
+[2024-12-23T13:14:06.802+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 744276, page 1, number of reviews: 1
+[2024-12-23T13:14:06.802+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1239251, page 1, number of reviews: 1
+[2024-12-23T13:14:06.802+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1062807, page 1, number of reviews: 1
+[2024-12-23T13:14:06.802+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 284054, page 1, number of reviews: 20
+[2024-12-23T13:14:06.803+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 284054, page 2, number of reviews: 2
+[2024-12-23T13:14:06.803+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 324552, page 1, number of reviews: 11
+[2024-12-23T13:14:06.803+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1032823, page 1, number of reviews: 13
+[2024-12-23T13:14:06.803+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 273477, page 1, number of reviews: 4
+[2024-12-23T13:14:06.804+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 333339, page 1, number of reviews: 13
+[2024-12-23T13:14:06.804+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 259693, page 1, number of reviews: 5
+[2024-12-23T13:14:06.804+0000] {subprocess.py:93} INFO - Fetched page 25, number of movies: 20
+[2024-12-23T13:14:06.805+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 527774, page 1, number of reviews: 8
+[2024-12-23T13:14:06.805+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11544, page 1, number of reviews: 4
+[2024-12-23T13:14:06.805+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 12153, page 1, number of reviews: 3
+[2024-12-23T13:14:06.805+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 49521, page 1, number of reviews: 6
+[2024-12-23T13:14:06.806+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 296096, page 1, number of reviews: 1
+[2024-12-23T13:14:06.806+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 20352, page 1, number of reviews: 1
+[2024-12-23T13:14:06.806+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 756999, page 1, number of reviews: 9
+[2024-12-23T13:15:03.247+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 2109, page 1, number of reviews: 3
+[2024-12-23T13:15:03.248+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 99861, page 1, number of reviews: 20
+[2024-12-23T13:15:03.248+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 99861, page 2, number of reviews: 20
+[2024-12-23T13:15:03.249+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 99861, page 3, number of reviews: 1
+[2024-12-23T13:15:03.249+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 508947, page 1, number of reviews: 11
+[2024-12-23T13:15:03.249+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 87101, page 1, number of reviews: 2
+[2024-12-23T13:15:03.250+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 948549, page 1, number of reviews: 3
+[2024-12-23T13:15:03.250+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 769, page 1, number of reviews: 6
+[2024-12-23T13:15:03.250+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1139817, page 1, number of reviews: 1
+[2024-12-23T13:15:03.251+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1075794, page 1, number of reviews: 3
+[2024-12-23T13:15:03.251+0000] {subprocess.py:93} INFO - Fetched page 26, number of movies: 20
+[2024-12-23T13:15:03.251+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 807, page 1, number of reviews: 5
+[2024-12-23T13:15:03.251+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1023922, page 1, number of reviews: 7
+[2024-12-23T13:15:03.252+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 4348, page 1, number of reviews: 5
+[2024-12-23T13:15:03.252+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 937287, page 1, number of reviews: 7
+[2024-12-23T13:15:03.252+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 616037, page 1, number of reviews: 15
+[2024-12-23T13:15:03.252+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 8681, page 1, number of reviews: 7
+[2024-12-23T13:15:03.253+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 453395, page 1, number of reviews: 17
+[2024-12-23T13:15:03.253+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 4935, page 1, number of reviews: 2
+[2024-12-23T13:15:03.253+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 37165, page 1, number of reviews: 9
+[2024-12-23T13:15:03.253+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 135397, page 1, number of reviews: 14
+[2024-12-23T13:15:03.254+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 14160, page 1, number of reviews: 5
+[2024-12-23T13:15:03.254+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1025596, page 1, number of reviews: 1
+[2024-12-23T13:15:03.254+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 4011, page 1, number of reviews: 7
+[2024-12-23T13:15:03.255+0000] {subprocess.py:93} INFO - Fetched page 27, number of movies: 20
+[2024-12-23T13:15:03.255+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 49026, page 1, number of reviews: 11
+[2024-12-23T13:15:03.255+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 615777, page 1, number of reviews: 5
+[2024-12-23T13:15:03.255+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 218, page 1, number of reviews: 7
+[2024-12-23T13:15:03.256+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 758323, page 1, number of reviews: 7
+[2024-12-23T13:15:03.256+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 458156, page 1, number of reviews: 14
+[2024-12-23T13:15:03.256+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 614933, page 1, number of reviews: 5
+[2024-12-23T13:15:03.257+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 353491, page 1, number of reviews: 8
+[2024-12-23T13:15:03.257+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 102382, page 1, number of reviews: 6
+[2024-12-23T13:15:03.257+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 35, page 1, number of reviews: 2
+[2024-12-23T13:15:03.258+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9806, page 1, number of reviews: 3
+[2024-12-23T13:15:03.258+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1062215, page 1, number of reviews: 2
+[2024-12-23T13:15:03.258+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 284053, page 1, number of reviews: 20
+[2024-12-23T13:15:03.258+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 284053, page 2, number of reviews: 18
+[2024-12-23T13:15:03.259+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 260346, page 1, number of reviews: 4
+[2024-12-23T13:15:03.259+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 766507, page 1, number of reviews: 11
+[2024-12-23T13:15:03.259+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11688, page 1, number of reviews: 1
+[2024-12-23T13:15:03.260+0000] {subprocess.py:93} INFO - Fetched page 28, number of movies: 20
+[2024-12-23T13:15:03.260+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 284053, page 1, number of reviews: 20
+[2024-12-23T13:15:03.260+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 284053, page 2, number of reviews: 18
+[2024-12-23T13:15:03.260+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 260346, page 1, number of reviews: 4
+[2024-12-23T13:15:03.261+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 766507, page 1, number of reviews: 11
+[2024-12-23T13:15:03.261+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11688, page 1, number of reviews: 1
+[2024-12-23T13:15:03.261+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 520763, page 1, number of reviews: 9
+[2024-12-23T13:15:03.261+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1087388, page 1, number of reviews: 3
+[2024-12-23T13:15:03.262+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 508943, page 1, number of reviews: 5
+[2024-12-23T13:15:03.262+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 57800, page 1, number of reviews: 2
+[2024-12-23T13:15:03.262+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1207830, page 1, number of reviews: 1
+[2024-12-23T13:15:03.263+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1029575, page 1, number of reviews: 1
+[2024-12-23T13:15:03.263+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 763215, page 1, number of reviews: 9
+[2024-12-23T13:15:03.263+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 50014, page 1, number of reviews: 3
+[2024-12-23T13:15:03.263+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 466420, page 1, number of reviews: 14
+[2024-12-23T13:15:03.264+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 210577, page 1, number of reviews: 5
+[2024-12-23T13:15:03.264+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 168259, page 1, number of reviews: 2
+[2024-12-23T13:15:03.264+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 351286, page 1, number of reviews: 10
+[2024-12-23T13:15:03.264+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9487, page 1, number of reviews: 4
+[2024-12-23T13:15:03.265+0000] {subprocess.py:93} INFO - Fetched page 29, number of movies: 20
+[2024-12-23T13:15:03.265+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1265, page 1, number of reviews: 2
+[2024-12-23T13:15:03.265+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 854, page 1, number of reviews: 3
+[2024-12-23T13:15:03.266+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11324, page 1, number of reviews: 8
+[2024-12-23T13:15:03.266+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 585083, page 1, number of reviews: 2
+[2024-12-23T13:15:03.266+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 111, page 1, number of reviews: 3
+[2024-12-23T13:15:03.266+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10195, page 1, number of reviews: 20
+[2024-12-23T13:15:03.267+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10195, page 2, number of reviews: 18
+[2024-12-23T13:15:03.267+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 858017, page 1, number of reviews: 5
+[2024-12-23T13:15:03.267+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 50619, page 1, number of reviews: 1
+[2024-12-23T13:15:03.268+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 49013, page 1, number of reviews: 5
+[2024-12-23T13:15:03.268+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 112160, page 1, number of reviews: 1
+[2024-12-23T13:15:03.268+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 47971, page 1, number of reviews: 4
+[2024-12-23T13:15:03.268+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 24021, page 1, number of reviews: 1
+[2024-12-23T13:15:03.269+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 4247, page 1, number of reviews: 2
+[2024-12-23T13:15:03.269+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 896151, page 1, number of reviews: 4
+[2024-12-23T13:15:03.269+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 856289, page 1, number of reviews: 2
+[2024-12-23T13:15:03.269+0000] {subprocess.py:93} INFO - Fetched page 30, number of movies: 20
+[2024-12-23T13:15:03.270+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 112160, page 1, number of reviews: 1
+[2024-12-23T13:15:03.270+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 47971, page 1, number of reviews: 4
+[2024-12-23T13:15:03.270+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 24021, page 1, number of reviews: 1
+[2024-12-23T13:15:03.271+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 4247, page 1, number of reviews: 2
+[2024-12-23T13:15:03.271+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 896151, page 1, number of reviews: 4
+[2024-12-23T13:15:03.271+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 856289, page 1, number of reviews: 2
+[2024-12-23T13:15:03.271+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 284052, page 1, number of reviews: 20
+[2024-12-23T13:15:03.272+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 284052, page 2, number of reviews: 8
+[2024-12-23T13:15:03.272+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 438148, page 1, number of reviews: 5
+[2024-12-23T13:15:03.272+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 302946, page 1, number of reviews: 4
+[2024-12-23T13:15:03.272+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 263115, page 1, number of reviews: 12
+[2024-12-23T13:15:03.273+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 336843, page 1, number of reviews: 3
+[2024-12-23T13:15:03.273+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 105, page 1, number of reviews: 7
+[2024-12-23T13:15:03.273+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 835113, page 1, number of reviews: 2
+[2024-12-23T13:15:03.274+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1495, page 1, number of reviews: 2
+[2024-12-23T13:15:03.274+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1573, page 1, number of reviews: 3
+[2024-12-23T13:15:03.274+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 968051, page 1, number of reviews: 4
+[2024-12-23T13:15:03.275+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 140607, page 1, number of reviews: 8
+[2024-12-23T13:15:03.275+0000] {subprocess.py:93} INFO - Fetched page 31, number of movies: 20
+[2024-12-23T13:15:03.275+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 719221, page 1, number of reviews: 7
+[2024-12-23T13:15:03.275+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 467244, page 1, number of reviews: 11
+[2024-12-23T13:15:03.276+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 2105, page 1, number of reviews: 2
+[2024-12-23T13:15:03.276+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 38365, page 1, number of reviews: 1
+[2024-12-23T13:15:03.276+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 436270, page 1, number of reviews: 20
+[2024-12-23T13:15:03.276+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 436270, page 2, number of reviews: 4
+[2024-12-23T13:15:03.277+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 370172, page 1, number of reviews: 8
+[2024-12-23T13:15:03.277+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 205596, page 1, number of reviews: 3
+[2024-12-23T13:15:03.277+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1581, page 1, number of reviews: 1
+[2024-12-23T13:15:03.278+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 820525, page 1, number of reviews: 1
+[2024-12-23T13:15:03.278+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 967847, page 1, number of reviews: 4
+[2024-12-23T13:15:03.278+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 141052, page 1, number of reviews: 20
+[2024-12-23T13:15:03.279+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 141052, page 2, number of reviews: 10
+[2024-12-23T13:15:03.279+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 442249, page 1, number of reviews: 1
+[2024-12-23T13:15:03.279+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 493922, page 1, number of reviews: 7
+[2024-12-23T13:15:03.280+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 969492, page 1, number of reviews: 5
+[2024-12-23T13:15:03.280+0000] {subprocess.py:93} INFO - Fetched page 32, number of movies: 20
+[2024-12-23T13:15:03.280+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 969492, page 1, number of reviews: 5
+[2024-12-23T13:15:03.280+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 718930, page 1, number of reviews: 10
+[2024-12-23T13:15:03.281+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 13313, page 1, number of reviews: 1
+[2024-12-23T13:15:03.281+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 4232, page 1, number of reviews: 2
+[2024-12-23T13:15:03.281+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 398818, page 1, number of reviews: 3
+[2024-12-23T13:15:03.281+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 400928, page 1, number of reviews: 5
+[2024-12-23T13:15:03.282+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 301528, page 1, number of reviews: 6
+[2024-12-23T13:15:03.282+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 512200, page 1, number of reviews: 5
+[2024-12-23T13:15:03.282+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 698508, page 1, number of reviews: 1
+[2024-12-23T13:15:03.282+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 497698, page 1, number of reviews: 14
+[2024-12-23T13:15:03.283+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 840326, page 1, number of reviews: 8
+[2024-12-23T13:15:03.283+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 68718, page 1, number of reviews: 7
+[2024-12-23T13:15:03.283+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11395, page 1, number of reviews: 1
+[2024-12-23T13:15:03.284+0000] {subprocess.py:93} INFO - Fetched page 33, number of movies: 20
+[2024-12-23T13:15:54.492+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 49444, page 1, number of reviews: 3
+[2024-12-23T13:15:54.493+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 335787, page 1, number of reviews: 8
+[2024-12-23T13:15:54.493+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 630, page 1, number of reviews: 5
+[2024-12-23T13:15:54.493+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 739405, page 1, number of reviews: 5
+[2024-12-23T13:15:54.494+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1207898, page 1, number of reviews: 1
+[2024-12-23T13:15:54.494+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 748230, page 1, number of reviews: 4
+[2024-12-23T13:15:54.494+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 103, page 1, number of reviews: 4
+[2024-12-23T13:15:54.495+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 937278, page 1, number of reviews: 6
+[2024-12-23T13:15:54.495+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 12155, page 1, number of reviews: 3
+[2024-12-23T13:15:54.495+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 8355, page 1, number of reviews: 2
+[2024-12-23T13:15:54.496+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 4909, page 1, number of reviews: 2
+[2024-12-23T13:15:54.496+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 900667, page 1, number of reviews: 1
+[2024-12-23T13:15:54.497+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 869291, page 1, number of reviews: 3
+[2024-12-23T13:15:54.497+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 564, page 1, number of reviews: 6
+[2024-12-23T13:15:54.497+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 652, page 1, number of reviews: 5
+[2024-12-23T13:15:54.498+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 646683, page 1, number of reviews: 3
+[2024-12-23T13:15:54.498+0000] {subprocess.py:93} INFO - Fetched page 34, number of movies: 20
+[2024-12-23T13:15:54.498+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 646683, page 1, number of reviews: 3
+[2024-12-23T13:15:54.498+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 14161, page 1, number of reviews: 4
+[2024-12-23T13:15:54.499+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 399579, page 1, number of reviews: 10
+[2024-12-23T13:15:54.499+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 313369, page 1, number of reviews: 9
+[2024-12-23T13:15:54.499+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 423108, page 1, number of reviews: 4
+[2024-12-23T13:15:54.500+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 614930, page 1, number of reviews: 5
+[2024-12-23T13:15:54.500+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 131631, page 1, number of reviews: 3
+[2024-12-23T13:15:54.501+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 985939, page 1, number of reviews: 9
+[2024-12-23T13:15:54.501+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 545611, page 1, number of reviews: 19
+[2024-12-23T13:15:54.502+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 585511, page 1, number of reviews: 4
+[2024-12-23T13:15:54.502+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 838209, page 1, number of reviews: 3
+[2024-12-23T13:15:54.502+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 102651, page 1, number of reviews: 8
+[2024-12-23T13:15:54.502+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 207703, page 1, number of reviews: 8
+[2024-12-23T13:15:54.503+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 32657, page 1, number of reviews: 1
+[2024-12-23T13:15:54.503+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 16869, page 1, number of reviews: 4
+[2024-12-23T13:15:54.503+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 260514, page 1, number of reviews: 6
+[2024-12-23T13:15:54.504+0000] {subprocess.py:93} INFO - Fetched page 35, number of movies: 20
+[2024-12-23T13:15:54.504+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 73723, page 1, number of reviews: 4
+[2024-12-23T13:15:54.504+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 51052, page 1, number of reviews: 2
+[2024-12-23T13:15:54.504+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1094138, page 1, number of reviews: 3
+[2024-12-23T13:15:54.505+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 459151, page 1, number of reviews: 2
+[2024-12-23T13:15:54.505+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 311, page 1, number of reviews: 3
+[2024-12-23T13:15:54.505+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 101, page 1, number of reviews: 2
+[2024-12-23T13:15:54.506+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 408, page 1, number of reviews: 1
+[2024-12-23T13:15:54.506+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 955555, page 1, number of reviews: 1
+[2024-12-23T13:15:54.506+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 934632, page 1, number of reviews: 5
+[2024-12-23T13:15:54.507+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 337401, page 1, number of reviews: 3
+[2024-12-23T13:15:54.507+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 346364, page 1, number of reviews: 9
+[2024-12-23T13:15:54.507+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 331482, page 1, number of reviews: 7
+[2024-12-23T13:15:54.508+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 19913, page 1, number of reviews: 3
+[2024-12-23T13:15:54.508+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1885, page 1, number of reviews: 4
+[2024-12-23T13:15:54.508+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 932086, page 1, number of reviews: 5
+[2024-12-23T13:15:54.509+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 700391, page 1, number of reviews: 7
+[2024-12-23T13:15:54.509+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 914215, page 1, number of reviews: 1
+[2024-12-23T13:15:54.509+0000] {subprocess.py:93} INFO - Fetched page 36, number of movies: 20
+[2024-12-23T13:15:54.509+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 565770, page 1, number of reviews: 8
+[2024-12-23T13:15:54.510+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 140300, page 1, number of reviews: 4
+[2024-12-23T13:15:54.510+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1182047, page 1, number of reviews: 3
+[2024-12-23T13:15:54.510+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 68726, page 1, number of reviews: 8
+[2024-12-23T13:15:54.510+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 76203, page 1, number of reviews: 4
+[2024-12-23T13:15:54.511+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 536554, page 1, number of reviews: 7
+[2024-12-23T13:15:54.511+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 449443, page 1, number of reviews: 4
+[2024-12-23T13:15:54.511+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 49046, page 1, number of reviews: 7
+[2024-12-23T13:15:54.512+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 254128, page 1, number of reviews: 5
+[2024-12-23T13:15:54.512+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 439079, page 1, number of reviews: 7
+[2024-12-23T13:15:54.512+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 93456, page 1, number of reviews: 1
+[2024-12-23T13:15:54.513+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 640, page 1, number of reviews: 5
+[2024-12-23T13:15:54.513+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 695721, page 1, number of reviews: 6
+[2024-12-23T13:15:54.513+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 335797, page 1, number of reviews: 3
+[2024-12-23T13:15:54.514+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 109418, page 1, number of reviews: 1
+[2024-12-23T13:15:54.514+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10830, page 1, number of reviews: 2
+[2024-12-23T13:15:54.514+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 280180, page 1, number of reviews: 6
+[2024-12-23T13:15:54.515+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 476669, page 1, number of reviews: 4
+[2024-12-23T13:15:54.515+0000] {subprocess.py:93} INFO - Fetched page 37, number of movies: 20
+[2024-12-23T13:15:54.515+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 68721, page 1, number of reviews: 12
+[2024-12-23T13:15:54.516+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 283995, page 1, number of reviews: 20
+[2024-12-23T13:15:54.516+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 283995, page 2, number of reviews: 5
+[2024-12-23T13:15:54.517+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1225377, page 1, number of reviews: 2
+[2024-12-23T13:15:54.517+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 614479, page 1, number of reviews: 1
+[2024-12-23T13:15:54.517+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 8363, page 1, number of reviews: 2
+[2024-12-23T13:15:54.517+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 166426, page 1, number of reviews: 5
+[2024-12-23T13:15:54.518+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 679, page 1, number of reviews: 14
+[2024-12-23T13:15:54.518+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 6479, page 1, number of reviews: 3
+[2024-12-23T13:15:54.518+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 807339, page 1, number of reviews: 2
+[2024-12-23T13:15:54.519+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 146233, page 1, number of reviews: 8
+[2024-12-23T13:15:54.519+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 48650, page 1, number of reviews: 1
+[2024-12-23T13:15:54.519+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 75656, page 1, number of reviews: 6
+[2024-12-23T13:15:54.520+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 339846, page 1, number of reviews: 5
+[2024-12-23T13:15:54.520+0000] {subprocess.py:93} INFO - Fetched page 38, number of movies: 20
+[2024-12-23T13:15:54.520+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 38, page 1, number of reviews: 5
+[2024-12-23T13:15:54.521+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1124, page 1, number of reviews: 5
+[2024-12-23T13:15:54.521+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 984324, page 1, number of reviews: 1
+[2024-12-23T13:15:54.521+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 615173, page 1, number of reviews: 2
+[2024-12-23T13:15:54.522+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9820, page 1, number of reviews: 3
+[2024-12-23T13:15:54.522+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 359724, page 1, number of reviews: 9
+[2024-12-23T13:15:54.522+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 489, page 1, number of reviews: 5
+[2024-12-23T13:15:54.523+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 162, page 1, number of reviews: 4
+[2024-12-23T13:15:54.523+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 882059, page 1, number of reviews: 3
+[2024-12-23T13:15:54.524+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 85, page 1, number of reviews: 5
+[2024-12-23T13:15:54.524+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 619979, page 1, number of reviews: 4
+[2024-12-23T13:15:54.524+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 262500, page 1, number of reviews: 5
+[2024-12-23T13:15:54.525+0000] {subprocess.py:93} INFO - Fetched page 39, number of movies: 20
+[2024-12-23T13:15:54.525+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 848326, page 1, number of reviews: 10
+[2024-12-23T13:15:54.525+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 8920, page 1, number of reviews: 2
+[2024-12-23T13:15:54.526+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 345940, page 1, number of reviews: 4
+[2024-12-23T13:15:54.526+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 98566, page 1, number of reviews: 3
+[2024-12-23T13:15:54.527+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 78, page 1, number of reviews: 10
+[2024-12-23T13:15:54.527+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 760104, page 1, number of reviews: 6
+[2024-12-23T13:15:54.527+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 297762, page 1, number of reviews: 13
+[2024-12-23T13:15:54.528+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10510, page 1, number of reviews: 1
+[2024-12-23T13:15:54.528+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 119450, page 1, number of reviews: 3
+[2024-12-23T13:15:54.529+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 840430, page 1, number of reviews: 10
+[2024-12-23T13:15:54.529+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 373571, page 1, number of reviews: 10
+[2024-12-23T13:15:54.529+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 500664, page 1, number of reviews: 6
+[2024-12-23T13:15:54.530+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 270946, page 1, number of reviews: 2
+[2024-12-23T13:15:54.530+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 629542, page 1, number of reviews: 5
+[2024-12-23T13:15:54.530+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1621, page 1, number of reviews: 4
+[2024-12-23T13:15:54.531+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 62835, page 1, number of reviews: 2
+[2024-12-23T13:15:54.531+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 101299, page 1, number of reviews: 7
+[2024-12-23T13:15:54.534+0000] {subprocess.py:93} INFO - Fetched page 40, number of movies: 20
+[2024-12-23T13:15:54.534+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1155089, page 1, number of reviews: 1
+[2024-12-23T13:15:54.534+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 753342, page 1, number of reviews: 11
+[2024-12-23T13:15:54.535+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 455476, page 1, number of reviews: 1
+[2024-12-23T13:15:54.535+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 353486, page 1, number of reviews: 8
+[2024-12-23T13:15:54.536+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 110415, page 1, number of reviews: 2
+[2024-12-23T13:15:54.536+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 882569, page 1, number of reviews: 8
+[2024-12-23T13:15:54.536+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 953, page 1, number of reviews: 2
+[2024-12-23T13:15:54.537+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 272, page 1, number of reviews: 8
+[2024-12-23T13:15:54.537+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 286217, page 1, number of reviews: 8
+[2024-12-23T13:15:54.537+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 13183, page 1, number of reviews: 5
+[2024-12-23T13:15:54.538+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 242582, page 1, number of reviews: 6
+[2024-12-23T13:16:53.455+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9021, page 1, number of reviews: 1
+[2024-12-23T13:16:53.457+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 62177, page 1, number of reviews: 4
+[2024-12-23T13:16:53.459+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 466272, page 1, number of reviews: 13
+[2024-12-23T13:16:53.462+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 290098, page 1, number of reviews: 2
+[2024-12-23T13:16:53.464+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 18240, page 1, number of reviews: 2
+[2024-12-23T13:16:53.466+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 353081, page 1, number of reviews: 7
+[2024-12-23T13:16:53.468+0000] {subprocess.py:93} INFO - Fetched page 41, number of movies: 20
+[2024-12-23T13:16:53.470+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 18240, page 1, number of reviews: 2
+[2024-12-23T13:16:53.473+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 353081, page 1, number of reviews: 7
+[2024-12-23T13:16:53.474+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 950, page 1, number of reviews: 2
+[2024-12-23T13:16:53.475+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 294254, page 1, number of reviews: 6
+[2024-12-23T13:16:53.476+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 949, page 1, number of reviews: 5
+[2024-12-23T13:16:53.477+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9495, page 1, number of reviews: 5
+[2024-12-23T13:16:53.478+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 508442, page 1, number of reviews: 8
+[2024-12-23T13:16:53.479+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 281957, page 1, number of reviews: 10
+[2024-12-23T13:16:53.479+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 529203, page 1, number of reviews: 3
+[2024-12-23T13:16:53.480+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 338953, page 1, number of reviews: 8
+[2024-12-23T13:16:53.481+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1579, page 1, number of reviews: 2
+[2024-12-23T13:16:53.481+0000] {subprocess.py:93} INFO - Fetched page 42, number of movies: 20
+[2024-12-23T13:16:53.482+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1026436, page 1, number of reviews: 2
+[2024-12-23T13:16:53.483+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1152624, page 1, number of reviews: 1
+[2024-12-23T13:16:53.484+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 337339, page 1, number of reviews: 5
+[2024-12-23T13:16:53.484+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 260513, page 1, number of reviews: 4
+[2024-12-23T13:16:53.485+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 44896, page 1, number of reviews: 3
+[2024-12-23T13:16:53.485+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 884605, page 1, number of reviews: 8
+[2024-12-23T13:16:53.486+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 70981, page 1, number of reviews: 7
+[2024-12-23T13:16:53.487+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 635910, page 1, number of reviews: 6
+[2024-12-23T13:16:53.487+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 807172, page 1, number of reviews: 3
+[2024-12-23T13:16:53.488+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 75780, page 1, number of reviews: 4
+[2024-12-23T13:16:53.488+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 480530, page 1, number of reviews: 5
+[2024-12-23T13:16:53.489+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 181808, page 1, number of reviews: 16
+[2024-12-23T13:16:53.490+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1724, page 1, number of reviews: 5
+[2024-12-23T13:16:53.490+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1190868, page 1, number of reviews: 1
+[2024-12-23T13:16:53.491+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 242, page 1, number of reviews: 2
+[2024-12-23T13:16:53.492+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 126889, page 1, number of reviews: 17
+[2024-12-23T13:16:53.492+0000] {subprocess.py:93} INFO - Fetched page 43, number of movies: 20
+[2024-12-23T13:16:53.493+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 300671, page 1, number of reviews: 4
+[2024-12-23T13:16:53.493+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 44115, page 1, number of reviews: 5
+[2024-12-23T13:16:53.494+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 516729, page 1, number of reviews: 1
+[2024-12-23T13:16:53.494+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1214509, page 1, number of reviews: 2
+[2024-12-23T13:16:53.495+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 413846, page 1, number of reviews: 1
+[2024-12-23T13:16:53.495+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 62, page 1, number of reviews: 12
+[2024-12-23T13:16:53.496+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 89, page 1, number of reviews: 5
+[2024-12-23T13:16:53.496+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 273481, page 1, number of reviews: 8
+[2024-12-23T13:16:53.497+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 640146, page 1, number of reviews: 13
+[2024-12-23T13:16:53.497+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 653, page 1, number of reviews: 2
+[2024-12-23T13:16:53.497+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11631, page 1, number of reviews: 5
+[2024-12-23T13:16:53.498+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 57158, page 1, number of reviews: 6
+[2024-12-23T13:16:53.498+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 37799, page 1, number of reviews: 4
+[2024-12-23T13:16:53.499+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 293167, page 1, number of reviews: 8
+[2024-12-23T13:16:53.499+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 389, page 1, number of reviews: 8
+[2024-12-23T13:16:53.500+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 604, page 1, number of reviews: 2
+[2024-12-23T13:16:53.500+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 694, page 1, number of reviews: 7
+[2024-12-23T13:16:53.501+0000] {subprocess.py:93} INFO - Fetched page 44, number of movies: 20
+[2024-12-23T13:16:53.501+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1076364, page 1, number of reviews: 1
+[2024-12-23T13:16:53.502+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 343668, page 1, number of reviews: 4
+[2024-12-23T13:16:53.503+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10585, page 1, number of reviews: 3
+[2024-12-23T13:16:53.504+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 8392, page 1, number of reviews: 5
+[2024-12-23T13:16:53.504+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 974635, page 1, number of reviews: 5
+[2024-12-23T13:16:53.505+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 346672, page 1, number of reviews: 8
+[2024-12-23T13:16:53.505+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11013, page 1, number of reviews: 1
+[2024-12-23T13:16:53.506+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 7980, page 1, number of reviews: 3
+[2024-12-23T13:16:53.506+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 978592, page 1, number of reviews: 1
+[2024-12-23T13:16:53.507+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9647, page 1, number of reviews: 5
+[2024-12-23T13:16:53.507+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 451048, page 1, number of reviews: 10
+[2024-12-23T13:16:53.508+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 897087, page 1, number of reviews: 2
+[2024-12-23T13:16:53.508+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 796, page 1, number of reviews: 1
+[2024-12-23T13:16:53.509+0000] {subprocess.py:93} INFO - Fetched page 45, number of movies: 20
+[2024-12-23T13:16:53.509+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 9880, page 1, number of reviews: 2
+[2024-12-23T13:16:53.510+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 670, page 1, number of reviews: 3
+[2024-12-23T13:16:53.511+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 105864, page 1, number of reviews: 2
+[2024-12-23T13:16:53.512+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 350, page 1, number of reviews: 2
+[2024-12-23T13:16:53.512+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 257211, page 1, number of reviews: 4
+[2024-12-23T13:16:53.513+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 420809, page 1, number of reviews: 5
+[2024-12-23T13:16:53.513+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 381288, page 1, number of reviews: 7
+[2024-12-23T13:16:53.514+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 181812, page 1, number of reviews: 16
+[2024-12-23T13:16:53.515+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 578, page 1, number of reviews: 7
+[2024-12-23T13:16:53.516+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 508439, page 1, number of reviews: 7
+[2024-12-23T13:16:53.517+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 560016, page 1, number of reviews: 9
+[2024-12-23T13:16:53.517+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1891, page 1, number of reviews: 7
+[2024-12-23T13:16:53.517+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 616820, page 1, number of reviews: 8
+[2024-12-23T13:16:53.518+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 37135, page 1, number of reviews: 4
+[2024-12-23T13:16:53.519+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 82690, page 1, number of reviews: 4
+[2024-12-23T13:16:53.519+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 976893, page 1, number of reviews: 4
+[2024-12-23T13:16:53.520+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 45243, page 1, number of reviews: 1
+[2024-12-23T13:16:53.520+0000] {subprocess.py:93} INFO - Fetched page 46, number of movies: 20
+[2024-12-23T13:16:53.521+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1209217, page 1, number of reviews: 1
+[2024-12-23T13:16:53.521+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 857, page 1, number of reviews: 5
+[2024-12-23T13:16:53.521+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 512195, page 1, number of reviews: 5
+[2024-12-23T13:16:53.522+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 80321, page 1, number of reviews: 1
+[2024-12-23T13:16:53.523+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 2454, page 1, number of reviews: 2
+[2024-12-23T13:16:53.523+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 624860, page 1, number of reviews: 9
+[2024-12-23T13:16:53.523+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 530385, page 1, number of reviews: 12
+[2024-12-23T13:16:53.524+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 677179, page 1, number of reviews: 6
+[2024-12-23T13:16:53.524+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 948, page 1, number of reviews: 6
+[2024-12-23T13:16:53.525+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 546554, page 1, number of reviews: 15
+[2024-12-23T13:16:53.526+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 72105, page 1, number of reviews: 3
+[2024-12-23T13:16:53.526+0000] {subprocess.py:93} INFO - Fetched page 47, number of movies: 20
+[2024-12-23T13:16:53.526+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10527, page 1, number of reviews: 1
+[2024-12-23T13:16:53.527+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 11932, page 1, number of reviews: 2
+[2024-12-23T13:16:53.527+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 549053, page 1, number of reviews: 4
+[2024-12-23T13:16:53.528+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 423204, page 1, number of reviews: 5
+[2024-12-23T13:16:53.528+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1366, page 1, number of reviews: 3
+[2024-12-23T13:16:53.529+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 570670, page 1, number of reviews: 14
+[2024-12-23T13:16:53.529+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 273248, page 1, number of reviews: 8
+[2024-12-23T13:16:53.530+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 930094, page 1, number of reviews: 3
+[2024-12-23T13:16:53.530+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 18, page 1, number of reviews: 6
+[2024-12-23T13:16:53.530+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 385128, page 1, number of reviews: 11
+[2024-12-23T13:16:53.531+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 955916, page 1, number of reviews: 2
+[2024-12-23T13:16:53.531+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 6977, page 1, number of reviews: 9
+[2024-12-23T13:16:53.532+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 916433, page 1, number of reviews: 1
+[2024-12-23T13:16:53.532+0000] {subprocess.py:93} INFO - Fetched page 48, number of movies: 20
+[2024-12-23T13:16:53.533+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 14574, page 1, number of reviews: 1
+[2024-12-23T13:16:53.533+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 427641, page 1, number of reviews: 3
+[2024-12-23T13:16:53.533+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 758679, page 1, number of reviews: 1
+[2024-12-23T13:16:53.534+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 49530, page 1, number of reviews: 5
+[2024-12-23T13:16:53.534+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 341174, page 1, number of reviews: 2
+[2024-12-23T13:16:53.535+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 924, page 1, number of reviews: 4
+[2024-12-23T13:16:53.535+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 76492, page 1, number of reviews: 4
+[2024-12-23T13:16:53.535+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 395834, page 1, number of reviews: 7
+[2024-12-23T13:16:53.536+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1040148, page 1, number of reviews: 2
+[2024-12-23T13:16:53.536+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 10386, page 1, number of reviews: 2
+[2024-12-23T13:16:53.537+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 22881, page 1, number of reviews: 1
+[2024-12-23T13:16:53.537+0000] {subprocess.py:93} INFO - Fetched page 49, number of movies: 20
+[2024-12-23T13:16:53.537+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 762504, page 1, number of reviews: 11
+[2024-12-23T13:16:53.538+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 660982, page 1, number of reviews: 3
+[2024-12-23T13:16:53.538+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 158015, page 1, number of reviews: 3
+[2024-12-23T13:16:53.538+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1051891, page 1, number of reviews: 3
+[2024-12-23T13:16:53.539+0000] {subprocess.py:93} INFO - Fetched reviews for movie ID 1086747, page 1, number of reviews: 5
+[2024-12-23T13:17:18.616+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2024-12-23T13:17:18.619+0000] {process_utils.py:131} INFO - Sending 15 to group 348. PIDs of all processes in the group: [350, 348]
+[2024-12-23T13:17:18.624+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 348
+[2024-12-23T13:17:18.626+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-12-23T13:17:18.627+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-12-23T13:17:18.672+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-12-23T13:17:18.685+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_data_etl_workflow, task_id=fetch_rating_data, execution_date=20241223T131018, start_date=20241223T131019, end_date=20241223T131718
+[2024-12-23T13:17:18.736+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 129 for task fetch_rating_data (Task received SIGTERM signal; 348)
+[2024-12-23T13:17:18.764+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=350, status='terminated', started='13:10:19') (350) terminated with exit code None
+[2024-12-23T13:17:18.770+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=348, status='terminated', exitcode=1, started='13:10:19') (348) terminated with exit code 1
+[2024-12-23T13:17:18.772+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2024-12-23T13:17:18.864+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

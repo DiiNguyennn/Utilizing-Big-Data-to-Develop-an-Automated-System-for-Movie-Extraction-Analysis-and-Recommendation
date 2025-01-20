@@ -1,0 +1,64 @@
+[2024-12-23T07:51:38.650+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_workflow.analyze_data manual__2024-12-23T07:51:37.452367+00:00 [queued]>
+[2024-12-23T07:51:38.661+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_workflow.analyze_data manual__2024-12-23T07:51:37.452367+00:00 [queued]>
+[2024-12-23T07:51:38.662+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T07:51:38.678+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): analyze_data> on 2024-12-23 07:51:37.452367+00:00
+[2024-12-23T07:51:38.683+0000] {standard_task_runner.py:57} INFO - Started process 109 to run task
+[2024-12-23T07:51:38.688+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_workflow', 'analyze_data', 'manual__2024-12-23T07:51:37.452367+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpaslrp6a_']
+[2024-12-23T07:51:38.690+0000] {standard_task_runner.py:85} INFO - Job 30: Subtask analyze_data
+[2024-12-23T07:51:38.708+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T07:51:38.749+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_workflow.analyze_data manual__2024-12-23T07:51:37.452367+00:00 [running]> on host 023362aefa72
+[2024-12-23T07:51:38.835+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_workflow' AIRFLOW_CTX_TASK_ID='analyze_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T07:51:37.452367+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-23T07:51:37.452367+00:00'
+[2024-12-23T07:51:38.837+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T07:51:38.838+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'papermill /opt/***/DE_project/DA/DataAnalysis.ipynb /opt/***/DE_project/DA/DataAnalysis_output.ipynb']
+[2024-12-23T07:51:38.847+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T07:51:40.190+0000] {subprocess.py:93} INFO - Input Notebook:  /opt/***/DE_project/DA/DataAnalysis.ipynb
+[2024-12-23T07:51:40.191+0000] {subprocess.py:93} INFO - Output Notebook: /opt/***/DE_project/DA/DataAnalysis_output.ipynb
+[2024-12-23T07:51:40.307+0000] {subprocess.py:93} INFO - Executing:   0%|          | 0/57 [00:00<?, ?cell/s]Traceback (most recent call last):
+[2024-12-23T07:51:40.307+0000] {subprocess.py:93} INFO -   File "/home/***/.local/bin/papermill", line 8, in <module>
+[2024-12-23T07:51:40.308+0000] {subprocess.py:93} INFO -     sys.exit(papermill())
+[2024-12-23T07:51:40.308+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/core.py", line 1157, in __call__
+[2024-12-23T07:51:40.309+0000] {subprocess.py:93} INFO -     return self.main(*args, **kwargs)
+[2024-12-23T07:51:40.310+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/core.py", line 1078, in main
+[2024-12-23T07:51:40.310+0000] {subprocess.py:93} INFO -     rv = self.invoke(ctx)
+[2024-12-23T07:51:40.311+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/core.py", line 1434, in invoke
+[2024-12-23T07:51:40.311+0000] {subprocess.py:93} INFO -     return ctx.invoke(self.callback, **ctx.params)
+[2024-12-23T07:51:40.311+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/core.py", line 783, in invoke
+[2024-12-23T07:51:40.312+0000] {subprocess.py:93} INFO -     return __callback(*args, **kwargs)
+[2024-12-23T07:51:40.312+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/decorators.py", line 33, in new_func
+[2024-12-23T07:51:40.313+0000] {subprocess.py:93} INFO -     return f(get_current_context(), *args, **kwargs)
+[2024-12-23T07:51:40.313+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/cli.py", line 235, in papermill
+[2024-12-23T07:51:40.313+0000] {subprocess.py:93} INFO -     execute_notebook(
+[2024-12-23T07:51:40.314+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/execute.py", line 116, in execute_notebook
+[2024-12-23T07:51:40.314+0000] {subprocess.py:93} INFO -     nb = papermill_engines.execute_notebook_with_engine(
+[2024-12-23T07:51:40.314+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 48, in execute_notebook_with_engine
+[2024-12-23T07:51:40.315+0000] {subprocess.py:93} INFO -     return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
+[2024-12-23T07:51:40.315+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 368, in execute_notebook
+[2024-12-23T07:51:40.315+0000] {subprocess.py:93} INFO -     nb_man.notebook_start()
+[2024-12-23T07:51:40.316+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 76, in wrapper
+[2024-12-23T07:51:40.316+0000] {subprocess.py:93} INFO -     return func(self, *args, **kwargs)
+[2024-12-23T07:51:40.316+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 211, in notebook_start
+[2024-12-23T07:51:40.317+0000] {subprocess.py:93} INFO -     self.save()
+[2024-12-23T07:51:40.317+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 76, in wrapper
+[2024-12-23T07:51:40.318+0000] {subprocess.py:93} INFO -     return func(self, *args, **kwargs)
+[2024-12-23T07:51:40.318+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 152, in save
+[2024-12-23T07:51:40.318+0000] {subprocess.py:93} INFO -     write_ipynb(self.nb, self.output_path)
+[2024-12-23T07:51:40.319+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/iorw.py", line 486, in write_ipynb
+[2024-12-23T07:51:40.319+0000] {subprocess.py:93} INFO -     papermill_io.write(nbformat.writes(nb), path)
+[2024-12-23T07:51:40.320+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/iorw.py", line 102, in write
+[2024-12-23T07:51:40.320+0000] {subprocess.py:93} INFO -     return self.get_handler(path, extensions).write(buf, path)
+[2024-12-23T07:51:40.320+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/iorw.py", line 214, in write
+[2024-12-23T07:51:40.321+0000] {subprocess.py:93} INFO -     with open(path, 'w', encoding="utf-8") as f:
+[2024-12-23T07:51:40.321+0000] {subprocess.py:93} INFO - PermissionError: [Errno 13] Permission denied: '/opt/***/DE_project/DA/DataAnalysis_output.ipynb'
+[2024-12-23T07:51:40.445+0000] {subprocess.py:93} INFO - Executing:   0%|          | 0/57 [00:00<?, ?cell/s]
+[2024-12-23T07:51:40.446+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-12-23T07:51:40.462+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-12-23T07:51:40.468+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_data_workflow, task_id=analyze_data, execution_date=20241223T075137, start_date=20241223T075138, end_date=20241223T075140
+[2024-12-23T07:51:40.483+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 30 for task analyze_data (Bash command failed. The command returned a non-zero exit code 1.; 109)
+[2024-12-23T07:51:40.505+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-23T07:51:40.528+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

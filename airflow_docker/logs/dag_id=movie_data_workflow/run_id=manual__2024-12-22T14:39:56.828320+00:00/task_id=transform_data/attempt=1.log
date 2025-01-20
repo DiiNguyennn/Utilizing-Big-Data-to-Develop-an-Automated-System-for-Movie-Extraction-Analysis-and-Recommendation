@@ -1,0 +1,94 @@
+[2024-12-22T14:39:58.622+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_workflow.transform_data manual__2024-12-22T14:39:56.828320+00:00 [queued]>
+[2024-12-22T14:39:58.634+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_workflow.transform_data manual__2024-12-22T14:39:56.828320+00:00 [queued]>
+[2024-12-22T14:39:58.634+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-22T14:39:58.649+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data> on 2024-12-22 14:39:56.828320+00:00
+[2024-12-22T14:39:58.654+0000] {standard_task_runner.py:57} INFO - Started process 186 to run task
+[2024-12-22T14:39:58.659+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_workflow', 'transform_data', 'manual__2024-12-22T14:39:56.828320+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmp4g9h9nh5']
+[2024-12-22T14:39:58.661+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask transform_data
+[2024-12-22T14:39:58.685+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-22T14:39:58.735+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_workflow.transform_data manual__2024-12-22T14:39:56.828320+00:00 [running]> on host d2f34721e96e
+[2024-12-22T14:39:58.853+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_workflow' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-22T14:39:56.828320+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-22T14:39:56.828320+00:00'
+[2024-12-22T14:39:58.855+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-22T14:39:58.856+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'papermill /opt/***/DE_project/ETL/transform/tranform_moviedf.ipynb /dev/null']
+[2024-12-22T14:39:58.867+0000] {subprocess.py:86} INFO - Output:
+[2024-12-22T14:40:00.579+0000] {subprocess.py:93} INFO - Input Notebook:  /opt/***/DE_project/ETL/transform/tranform_moviedf.ipynb
+[2024-12-22T14:40:00.580+0000] {subprocess.py:93} INFO - Output Notebook: /dev/null
+[2024-12-22T14:40:00.714+0000] {subprocess.py:93} INFO - Executing:   0%|          | 0/13 [00:00<?, ?cell/s]/home/***/.local/lib/python3.8/site-packages/papermill/iorw.py:149: UserWarning: the file is not specified with any extension : null
+[2024-12-22T14:40:00.714+0000] {subprocess.py:93} INFO -   warnings.warn(f"the file is not specified with any extension : {os.path.basename(path)}")
+[2024-12-22T14:40:00.715+0000] {subprocess.py:93} INFO - Kernelspec name python3 cannot be found!
+[2024-12-22T14:40:00.715+0000] {subprocess.py:93} INFO - No such kernel named python3
+[2024-12-22T14:40:00.715+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-12-22T14:40:00.716+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 87, in wrapper
+[2024-12-22T14:40:00.716+0000] {subprocess.py:93} INFO -     out = await method(self, *args, **kwargs)
+[2024-12-22T14:40:00.717+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 435, in _async_start_kernel
+[2024-12-22T14:40:00.717+0000] {subprocess.py:93} INFO -     kernel_cmd, kw = await self._async_pre_start_kernel(**kw)
+[2024-12-22T14:40:00.717+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 397, in _async_pre_start_kernel
+[2024-12-22T14:40:00.718+0000] {subprocess.py:93} INFO -     self.kernel_spec,
+[2024-12-22T14:40:00.718+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 195, in kernel_spec
+[2024-12-22T14:40:00.719+0000] {subprocess.py:93} INFO -     self._kernel_spec = self.kernel_spec_manager.get_kernel_spec(self.kernel_name)
+[2024-12-22T14:40:00.719+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/kernelspec.py", line 285, in get_kernel_spec
+[2024-12-22T14:40:00.720+0000] {subprocess.py:93} INFO -     raise NoSuchKernel(kernel_name)
+[2024-12-22T14:40:00.720+0000] {subprocess.py:93} INFO - jupyter_client.kernelspec.NoSuchKernel: No such kernel named python3
+[2024-12-22T14:40:00.721+0000] {subprocess.py:93} INFO - Executing:   0%|          | 0/13 [00:00<?, ?cell/s]
+[2024-12-22T14:40:00.727+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-12-22T14:40:00.728+0000] {subprocess.py:93} INFO -   File "/home/***/.local/bin/papermill", line 8, in <module>
+[2024-12-22T14:40:00.729+0000] {subprocess.py:93} INFO -     sys.exit(papermill())
+[2024-12-22T14:40:00.729+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/core.py", line 1157, in __call__
+[2024-12-22T14:40:00.730+0000] {subprocess.py:93} INFO -     return self.main(*args, **kwargs)
+[2024-12-22T14:40:00.730+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/core.py", line 1078, in main
+[2024-12-22T14:40:00.730+0000] {subprocess.py:93} INFO -     rv = self.invoke(ctx)
+[2024-12-22T14:40:00.731+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/core.py", line 1434, in invoke
+[2024-12-22T14:40:00.731+0000] {subprocess.py:93} INFO -     return ctx.invoke(self.callback, **ctx.params)
+[2024-12-22T14:40:00.732+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/core.py", line 783, in invoke
+[2024-12-22T14:40:00.732+0000] {subprocess.py:93} INFO -     return __callback(*args, **kwargs)
+[2024-12-22T14:40:00.733+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/click/decorators.py", line 33, in new_func
+[2024-12-22T14:40:00.733+0000] {subprocess.py:93} INFO -     return f(get_current_context(), *args, **kwargs)
+[2024-12-22T14:40:00.734+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/cli.py", line 235, in papermill
+[2024-12-22T14:40:00.734+0000] {subprocess.py:93} INFO -     execute_notebook(
+[2024-12-22T14:40:00.735+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/execute.py", line 116, in execute_notebook
+[2024-12-22T14:40:00.735+0000] {subprocess.py:93} INFO -     nb = papermill_engines.execute_notebook_with_engine(
+[2024-12-22T14:40:00.735+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 48, in execute_notebook_with_engine
+[2024-12-22T14:40:00.736+0000] {subprocess.py:93} INFO -     return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
+[2024-12-22T14:40:00.736+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 370, in execute_notebook
+[2024-12-22T14:40:00.737+0000] {subprocess.py:93} INFO -     cls.execute_managed_notebook(nb_man, kernel_name, log_output=log_output, **kwargs)
+[2024-12-22T14:40:00.737+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/engines.py", line 442, in execute_managed_notebook
+[2024-12-22T14:40:00.738+0000] {subprocess.py:93} INFO -     return PapermillNotebookClient(nb_man, **final_kwargs).execute()
+[2024-12-22T14:40:00.738+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/papermill/clientwrap.py", line 43, in execute
+[2024-12-22T14:40:00.739+0000] {subprocess.py:93} INFO -     with self.setup_kernel(**kwargs):
+[2024-12-22T14:40:00.739+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+[2024-12-22T14:40:00.740+0000] {subprocess.py:93} INFO -     return next(self.gen)
+[2024-12-22T14:40:00.740+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/nbclient/client.py", line 600, in setup_kernel
+[2024-12-22T14:40:00.740+0000] {subprocess.py:93} INFO -     self.start_new_kernel(**kwargs)
+[2024-12-22T14:40:00.741+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+[2024-12-22T14:40:00.741+0000] {subprocess.py:93} INFO -     return loop.run_until_complete(inner)
+[2024-12-22T14:40:00.741+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+[2024-12-22T14:40:00.742+0000] {subprocess.py:93} INFO -     return future.result()
+[2024-12-22T14:40:00.742+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/nbclient/client.py", line 550, in async_start_new_kernel
+[2024-12-22T14:40:00.744+0000] {subprocess.py:93} INFO -     await ensure_async(self.km.start_kernel(extra_arguments=self.extra_arguments, **kwargs))
+[2024-12-22T14:40:00.745+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 198, in ensure_async
+[2024-12-22T14:40:00.745+0000] {subprocess.py:93} INFO -     result = await obj
+[2024-12-22T14:40:00.746+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 96, in wrapper
+[2024-12-22T14:40:00.747+0000] {subprocess.py:93} INFO -     raise e
+[2024-12-22T14:40:00.747+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 87, in wrapper
+[2024-12-22T14:40:00.748+0000] {subprocess.py:93} INFO -     out = await method(self, *args, **kwargs)
+[2024-12-22T14:40:00.748+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 435, in _async_start_kernel
+[2024-12-22T14:40:00.748+0000] {subprocess.py:93} INFO -     kernel_cmd, kw = await self._async_pre_start_kernel(**kw)
+[2024-12-22T14:40:00.749+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 397, in _async_pre_start_kernel
+[2024-12-22T14:40:00.749+0000] {subprocess.py:93} INFO -     self.kernel_spec,
+[2024-12-22T14:40:00.749+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/manager.py", line 195, in kernel_spec
+[2024-12-22T14:40:00.750+0000] {subprocess.py:93} INFO -     self._kernel_spec = self.kernel_spec_manager.get_kernel_spec(self.kernel_name)
+[2024-12-22T14:40:00.750+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/jupyter_client/kernelspec.py", line 285, in get_kernel_spec
+[2024-12-22T14:40:00.751+0000] {subprocess.py:93} INFO -     raise NoSuchKernel(kernel_name)
+[2024-12-22T14:40:00.751+0000] {subprocess.py:93} INFO - jupyter_client.kernelspec.NoSuchKernel: No such kernel named python3
+[2024-12-22T14:40:00.879+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-12-22T14:40:00.898+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-12-22T14:40:00.903+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_data_workflow, task_id=transform_data, execution_date=20241222T143956, start_date=20241222T143958, end_date=20241222T144000
+[2024-12-22T14:40:00.918+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 16 for task transform_data (Bash command failed. The command returned a non-zero exit code 1.; 186)
+[2024-12-22T14:40:00.930+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-22T14:40:00.961+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

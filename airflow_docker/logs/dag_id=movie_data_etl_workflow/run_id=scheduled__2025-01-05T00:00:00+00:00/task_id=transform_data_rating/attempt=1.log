@@ -1,0 +1,100 @@
+[2025-01-17T11:24:05.571+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T11:24:05.582+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.transform_data_rating scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T11:24:05.592+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.transform_data_rating scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T11:24:05.593+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-01-17T11:24:05.608+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data_rating> on 2025-01-05 00:00:00+00:00
+[2025-01-17T11:24:05.612+0000] {standard_task_runner.py:57} INFO - Started process 1331 to run task
+[2025-01-17T11:24:05.615+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'transform_data_rating', 'scheduled__2025-01-05T00:00:00+00:00', '--job-id', '263', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpm4xbox_h']
+[2025-01-17T11:24:05.616+0000] {standard_task_runner.py:85} INFO - Job 263: Subtask transform_data_rating
+[2025-01-17T11:24:05.634+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-01-17T11:24:05.677+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.transform_data_rating scheduled__2025-01-05T00:00:00+00:00 [running]> on host 1d5d3d5ac065
+[2025-01-17T11:24:05.693+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T11:24:05.762+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='transform_data_rating' AIRFLOW_CTX_EXECUTION_DATE='2025-01-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-05T00:00:00+00:00'
+[2025-01-17T11:24:05.764+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-01-17T11:24:05.764+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/transform/transform_ratingdf.py']
+[2025-01-17T11:24:05.773+0000] {subprocess.py:86} INFO - Output:
+[2025-01-17T11:24:08.441+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2025-01-17T11:24:08.442+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2025-01-17T11:24:08.825+0000] {subprocess.py:93} INFO - 25/01/17 11:24:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-01-17T11:24:21.160+0000] {subprocess.py:93} INFO - [Stage 1:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 17:>                                                         (0 + 1) / 1]                                                                                +--------------------+--------+-----------------+-----------------+------+--------------------+
+[2025-01-17T11:24:21.162+0000] {subprocess.py:93} INFO - |         movie_title|movie_id|          user_id|           author|rating|           timestamp|
+[2025-01-17T11:24:21.165+0000] {subprocess.py:93} INFO - +--------------------+--------+-----------------+-----------------+------+--------------------+
+[2025-01-17T11:24:21.166+0000] {subprocess.py:93} INFO - |Sonic the Hedgehog 3|  939243|     Geronimo1967|       CinemaSerf|   6.0|2024-12-24 09:39:...|
+[2025-01-17T11:24:21.168+0000] {subprocess.py:93} INFO - |Mufasa: The Lion ...|  762509|            r96sk|            r96sk|   8.0|2024-12-23 18:13:...|
+[2025-01-17T11:24:21.170+0000] {subprocess.py:93} INFO - |Mufasa: The Lion ...|  762509|     Geronimo1967|       CinemaSerf|   6.0|2024-12-24 08:16:...|
+[2025-01-17T11:24:21.171+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|       msbreviews| Manuel São Bento|   8.0|2024-11-14 08:50:...|
+[2025-01-17T11:24:21.173+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|         Ditendra|             Dean|   1.0|2024-11-14 18:19:...|
+[2025-01-17T11:24:21.175+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|         griggs79|         griggs79|   8.0|2024-11-15 10:44:...|
+[2025-01-17T11:24:21.176+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|            r96sk|            r96sk|   9.0|2024-11-15 19:15:...|
+[2025-01-17T11:24:21.178+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|     Geronimo1967|       CinemaSerf|   6.0|2024-11-16 08:14:...|
+[2025-01-17T11:24:21.179+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|              DWP|              DWP|   7.0|2024-11-19 17:32:...|
+[2025-01-17T11:24:21.181+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|       ChrisSawin|      Chris Sawin|   5.0|2024-11-20 01:01:...|
+[2025-01-17T11:24:21.183+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|GenerationofSwine|GenerationofSwine|   1.0|2024-11-24 21:45:...|
+[2025-01-17T11:24:21.184+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|        MovieGuys|        MovieGuys|   5.0|2024-11-26 00:18:...|
+[2025-01-17T11:24:21.186+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|          Alacaea|  Elif Duru Alaca|   9.0|2024-11-27 23:38:...|
+[2025-01-17T11:24:21.188+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|   chandlerdanier|  Chandler Danier|   4.0|2024-12-14 01:29:...|
+[2025-01-17T11:24:21.190+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|       RalphRahal|       RalphRahal|   5.0|2024-12-29 01:09:...|
+[2025-01-17T11:24:21.192+0000] {subprocess.py:93} INFO - |        Gladiator II|  558449|     FerdinandoLM|     FerdinandoLM|   4.0|2025-01-04 12:27:...|
+[2025-01-17T11:24:21.194+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|            r96sk|            r96sk|   7.0|2024-10-25 18:25:...|
+[2025-01-17T11:24:21.195+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|      Mangoturtle|      Mangoturtle|   2.0|2024-10-27 14:01:...|
+[2025-01-17T11:24:21.197+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|     Geronimo1967|       CinemaSerf|   6.0|2024-10-31 11:02:...|
+[2025-01-17T11:24:21.199+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|   chandlerdanier|  Chandler Danier|   9.0|2024-12-10 04:22:...|
+[2025-01-17T11:24:21.201+0000] {subprocess.py:93} INFO - +--------------------+--------+-----------------+-----------------+------+--------------------+
+[2025-01-17T11:24:21.203+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T11:24:21.205+0000] {subprocess.py:93} INFO - 
+[2025-01-17T11:24:21.206+0000] {subprocess.py:93} INFO - root
+[2025-01-17T11:24:21.208+0000] {subprocess.py:93} INFO -  |-- movie_title: string (nullable = true)
+[2025-01-17T11:24:21.211+0000] {subprocess.py:93} INFO -  |-- movie_id: integer (nullable = true)
+[2025-01-17T11:24:21.215+0000] {subprocess.py:93} INFO -  |-- user_id: string (nullable = true)
+[2025-01-17T11:24:21.217+0000] {subprocess.py:93} INFO -  |-- author: string (nullable = true)
+[2025-01-17T11:24:21.220+0000] {subprocess.py:93} INFO -  |-- rating: double (nullable = true)
+[2025-01-17T11:24:21.222+0000] {subprocess.py:93} INFO -  |-- timestamp: timestamp (nullable = true)
+[2025-01-17T11:24:21.224+0000] {subprocess.py:93} INFO - 
+[2025-01-17T11:24:21.226+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+
+[2025-01-17T11:24:21.228+0000] {subprocess.py:93} INFO - |movie_title|movie_id|user_id|author|rating|timestamp|
+[2025-01-17T11:24:21.229+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+
+[2025-01-17T11:24:21.231+0000] {subprocess.py:93} INFO - |          0|       0|      0|     0|     0|        0|
+[2025-01-17T11:24:21.231+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+
+[2025-01-17T11:24:21.232+0000] {subprocess.py:93} INFO - 
+[2025-01-17T11:24:21.233+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+-----+
+[2025-01-17T11:24:21.234+0000] {subprocess.py:93} INFO - |movie_title|movie_id|user_id|author|rating|timestamp|count|
+[2025-01-17T11:24:21.236+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+-----+
+[2025-01-17T11:24:21.237+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+-----+
+[2025-01-17T11:24:21.238+0000] {subprocess.py:93} INFO - 
+[2025-01-17T11:24:21.239+0000] {subprocess.py:93} INFO - +--------------------+--------+----------------+--------------------+------+----+-----+---+----+
+[2025-01-17T11:24:21.241+0000] {subprocess.py:93} INFO - |         movie_title|movie_id|         user_id|              author|rating|year|month|day|hour|
+[2025-01-17T11:24:21.242+0000] {subprocess.py:93} INFO - +--------------------+--------+----------------+--------------------+------+----+-----+---+----+
+[2025-01-17T11:24:21.242+0000] {subprocess.py:93} INFO - |           Elemental|  976573|      msbreviews|    Manuel São Bento|   8.0|2023|    7| 20|   9|
+[2025-01-17T11:24:21.243+0000] {subprocess.py:93} INFO - |            Zootopia|  269149|    Geronimo1967|          CinemaSerf|   7.0|2024|    1|  2|   8|
+[2025-01-17T11:24:21.244+0000] {subprocess.py:93} INFO - |               Alien|     348|     Otokichi786|      Patrick E. Abe|   8.0|2016|    9| 21|   8|
+[2025-01-17T11:24:21.245+0000] {subprocess.py:93} INFO - |          Cinderella|   11224|    Geronimo1967|          CinemaSerf|   7.0|2022|   12| 27|  13|
+[2025-01-17T11:24:21.245+0000] {subprocess.py:93} INFO - |      Anyone But You| 1072790|    Geronimo1967|          CinemaSerf|   7.0|2023|   12| 30|  11|
+[2025-01-17T11:24:21.246+0000] {subprocess.py:93} INFO - |Mission: Impossib...|  575264|       mooney240|       The Movie Mob|   7.0|2023|    7| 12|   5|
+[2025-01-17T11:24:21.247+0000] {subprocess.py:93} INFO - |              Cars 3|  260514|           r96sk|               r96sk|   7.0|2020|    8| 11|  13|
+[2025-01-17T11:24:21.248+0000] {subprocess.py:93} INFO - |  The Little Mermaid|  447277|   screenzealots|Louisa Moore - Sc...|   6.0|2023|    8|  4|   7|
+[2025-01-17T11:24:21.250+0000] {subprocess.py:93} INFO - |Terminator 2: Jud...|     280|    BryceSpencer|        BryceSpencer|  10.0|2023|    1| 29|   0|
+[2025-01-17T11:24:21.252+0000] {subprocess.py:93} INFO - |        Blade Runner|      78|      portman123|          portman123|  10.0|2024|    1| 13|  16|
+[2025-01-17T11:24:21.253+0000] {subprocess.py:93} INFO - |Once Upon a Time....|  466272|      narrator56|        Peter McGinn|   9.0|2020|    4|  3|  13|
+[2025-01-17T11:24:21.254+0000] {subprocess.py:93} INFO - |            The Town|   23168|      John Chard|          John Chard|   9.0|2019|    5|  7|   6|
+[2025-01-17T11:24:21.255+0000] {subprocess.py:93} INFO - |          Past Lives|  666277|      BornKnight|          BornKnight|  10.0|2024|    1| 28|  17|
+[2025-01-17T11:24:21.256+0000] {subprocess.py:93} INFO - |               Logan|  263115|       Dark Jedi|  Per Gunnar Jonsson|   4.0|2017|    7| 21|  12|
+[2025-01-17T11:24:21.257+0000] {subprocess.py:93} INFO - |John Wick: Chapte...|  458156|    tmdb47396461|        tmdb47396461|   4.0|2019|    5| 17|   2|
+[2025-01-17T11:24:21.257+0000] {subprocess.py:93} INFO - |        12 Angry Men|     389|           tanty|        Andres Gomez|  10.0|2013|    5| 13|  15|
+[2025-01-17T11:24:21.258+0000] {subprocess.py:93} INFO - |2001: A Space Ody...|      62|FilipeManuelNeto|  Filipe Manuel Neto|   2.0|2022|   12| 23|  20|
+[2025-01-17T11:24:21.259+0000] {subprocess.py:93} INFO - |Ant-Man and the W...|  640146|   screenzealots|Louisa Moore - Sc...|   3.0|2023|    4| 23|   6|
+[2025-01-17T11:24:21.260+0000] {subprocess.py:93} INFO - |Star Wars: The La...|  181808|       Dark Jedi|  Per Gunnar Jonsson|  10.0|2017|   12| 27|  14|
+[2025-01-17T11:24:21.260+0000] {subprocess.py:93} INFO - |xXx: Return of Xa...|   47971|       Dark Jedi|  Per Gunnar Jonsson|   4.0|2017|    6| 12|  10|
+[2025-01-17T11:24:21.261+0000] {subprocess.py:93} INFO - +--------------------+--------+----------------+--------------------+------+----+-----+---+----+
+[2025-01-17T11:24:21.262+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T11:24:21.262+0000] {subprocess.py:93} INFO - 
+[2025-01-17T11:24:21.263+0000] {subprocess.py:93} INFO - Data successfully transformed and saved to: /opt/***/DE_project/data/parquet/rating.parquet
+[2025-01-17T11:24:21.728+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-01-17T11:24:21.780+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow, task_id=transform_data_rating, execution_date=20250105T000000, start_date=20250117T112405, end_date=20250117T112421
+[2025-01-17T11:24:21.836+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-01-17T11:24:21.873+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

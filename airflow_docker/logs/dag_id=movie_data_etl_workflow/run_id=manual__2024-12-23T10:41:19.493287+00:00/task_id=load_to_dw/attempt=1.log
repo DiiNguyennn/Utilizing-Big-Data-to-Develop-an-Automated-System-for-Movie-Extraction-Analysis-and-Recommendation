@@ -1,0 +1,72 @@
+[2024-12-23T10:42:31.793+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.load_to_dw manual__2024-12-23T10:41:19.493287+00:00 [queued]>
+[2024-12-23T10:42:31.809+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.load_to_dw manual__2024-12-23T10:41:19.493287+00:00 [queued]>
+[2024-12-23T10:42:31.809+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T10:42:31.823+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): load_to_dw> on 2024-12-23 10:41:19.493287+00:00
+[2024-12-23T10:42:31.830+0000] {standard_task_runner.py:57} INFO - Started process 449 to run task
+[2024-12-23T10:42:31.834+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'load_to_dw', 'manual__2024-12-23T10:41:19.493287+00:00', '--job-id', '83', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpp9v4bp8n']
+[2024-12-23T10:42:31.835+0000] {standard_task_runner.py:85} INFO - Job 83: Subtask load_to_dw
+[2024-12-23T10:42:31.854+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T10:42:31.900+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.load_to_dw manual__2024-12-23T10:41:19.493287+00:00 [running]> on host 399229bc87a5
+[2024-12-23T10:42:31.999+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='load_to_dw' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T10:41:19.493287+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-23T10:41:19.493287+00:00'
+[2024-12-23T10:42:32.001+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T10:42:32.002+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/load/load_moviedf_to_dw.py']
+[2024-12-23T10:42:32.013+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T10:42:35.619+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-12-23T10:42:35.619+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-12-23T10:42:35.816+0000] {subprocess.py:93} INFO - 24/12/23 10:42:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-12-23T10:42:48.495+0000] {subprocess.py:93} INFO - [Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1]                                                                                root
+[2024-12-23T10:42:48.499+0000] {subprocess.py:93} INFO -  |-- id: integer (nullable = true)
+[2024-12-23T10:42:48.500+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2024-12-23T10:42:48.500+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2024-12-23T10:42:48.501+0000] {subprocess.py:93} INFO -  |-- vote_average: double (nullable = true)
+[2024-12-23T10:42:48.501+0000] {subprocess.py:93} INFO -  |-- vote_count: integer (nullable = true)
+[2024-12-23T10:42:48.502+0000] {subprocess.py:93} INFO -  |-- popularity: double (nullable = true)
+[2024-12-23T10:42:48.502+0000] {subprocess.py:93} INFO -  |-- runtime: integer (nullable = true)
+[2024-12-23T10:42:48.502+0000] {subprocess.py:93} INFO -  |-- genre: string (nullable = true)
+[2024-12-23T10:42:48.503+0000] {subprocess.py:93} INFO -  |-- release_year: integer (nullable = true)
+[2024-12-23T10:42:48.503+0000] {subprocess.py:93} INFO -  |-- release_month: integer (nullable = true)
+[2024-12-23T10:42:48.504+0000] {subprocess.py:93} INFO -  |-- release_day: integer (nullable = true)
+[2024-12-23T10:42:48.505+0000] {subprocess.py:93} INFO - 
+[2024-12-23T10:42:48.505+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T10:42:48.506+0000] {subprocess.py:93} INFO - |     id|               title|original_language|vote_average|vote_count|popularity|runtime|          genre|release_year|release_month|release_day|
+[2024-12-23T10:42:48.506+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T10:42:48.506+0000] {subprocess.py:93} INFO - |1038263|               Maria|               en|         6.8|        45|   202.988|    123|          Drama|        2024|           11|         27|
+[2024-12-23T10:42:48.507+0000] {subprocess.py:93} INFO - |1038263|               Maria|               en|         6.8|        45|   202.988|    123|          Music|        2024|           11|         27|
+[2024-12-23T10:42:48.508+0000] {subprocess.py:93} INFO - |1125510|      The Platform 2|               es|       5.573|       953|   279.024|    101|Science Fiction|        2024|            9|         27|
+[2024-12-23T10:42:48.508+0000] {subprocess.py:93} INFO - |1125510|      The Platform 2|               es|       5.573|       953|   279.024|    101|         Horror|        2024|            9|         27|
+[2024-12-23T10:42:48.509+0000] {subprocess.py:93} INFO - |1125510|      The Platform 2|               es|       5.573|       953|   279.024|    101|       Thriller|        2024|            9|         27|
+[2024-12-23T10:42:48.510+0000] {subprocess.py:93} INFO - |1287717|        Do Not Enter|               es|         7.2|        93|   216.018|     80|         Horror|        2024|            8|          6|
+[2024-12-23T10:42:48.510+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|               en|         8.0|        33|   197.496|     99|         Comedy|        2024|           11|          7|
+[2024-12-23T10:42:48.510+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|               en|         8.0|        33|   197.496|     99|          Drama|        2024|           11|          7|
+[2024-12-23T10:42:48.511+0000] {subprocess.py:93} INFO - |1206617|The Best Christma...|               en|         8.0|        33|   197.496|     99|         Family|        2024|           11|          7|
+[2024-12-23T10:42:48.511+0000] {subprocess.py:93} INFO - | 365177|         Borderlands|               en|       5.798|       874|   226.192|    101|         Action|        2024|            8|          7|
+[2024-12-23T10:42:48.512+0000] {subprocess.py:93} INFO - | 365177|         Borderlands|               en|       5.798|       874|   226.192|    101|Science Fiction|        2024|            8|          7|
+[2024-12-23T10:42:48.514+0000] {subprocess.py:93} INFO - | 365177|         Borderlands|               en|       5.798|       874|   226.192|    101|         Comedy|        2024|            8|          7|
+[2024-12-23T10:42:48.514+0000] {subprocess.py:93} INFO - | 502356|The Super Mario B...|               en|       7.642|      9228|   177.016|     93|      Animation|        2023|            4|          5|
+[2024-12-23T10:42:48.515+0000] {subprocess.py:93} INFO - | 502356|The Super Mario B...|               en|       7.642|      9228|   177.016|     93|         Family|        2023|            4|          5|
+[2024-12-23T10:42:48.515+0000] {subprocess.py:93} INFO - | 502356|The Super Mario B...|               en|       7.642|      9228|   177.016|     93|      Adventure|        2023|            4|          5|
+[2024-12-23T10:42:48.516+0000] {subprocess.py:93} INFO - | 502356|The Super Mario B...|               en|       7.642|      9228|   177.016|     93|        Fantasy|        2023|            4|          5|
+[2024-12-23T10:42:48.516+0000] {subprocess.py:93} INFO - | 502356|The Super Mario B...|               en|       7.642|      9228|   177.016|     93|         Comedy|        2023|            4|          5|
+[2024-12-23T10:42:48.516+0000] {subprocess.py:93} INFO - | 482600|        Japanese Mom|               ko|         6.2|        30|   343.962|     91|        Romance|        2017|            2|          9|
+[2024-12-23T10:42:48.517+0000] {subprocess.py:93} INFO - | 482600|        Japanese Mom|               ko|         6.2|        30|   343.962|     91|          Drama|        2017|            2|          9|
+[2024-12-23T10:42:48.517+0000] {subprocess.py:93} INFO - | 360920|          The Grinch|               en|         6.9|      3999|   407.762|     85|      Animation|        2018|           11|          8|
+[2024-12-23T10:42:48.518+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2024-12-23T10:42:48.518+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-23T10:42:48.519+0000] {subprocess.py:93} INFO - 
+[2024-12-23T10:42:48.519+0000] {subprocess.py:93} INFO - Data has been successfully inserted into table movie in DuckDB!
+[2024-12-23T10:42:48.519+0000] {subprocess.py:93} INFO - (1038263, 'Maria', 'en', Decimal('6.8'), 45, Decimal('202.99'), 123, 'Drama', 2024, 11, 27)
+[2024-12-23T10:42:48.520+0000] {subprocess.py:93} INFO - (1038263, 'Maria', 'en', Decimal('6.8'), 45, Decimal('202.99'), 123, 'Music', 2024, 11, 27)
+[2024-12-23T10:42:48.520+0000] {subprocess.py:93} INFO - (1125510, 'The Platform 2', 'es', Decimal('5.6'), 953, Decimal('279.02'), 101, 'Science Fiction', 2024, 9, 27)
+[2024-12-23T10:42:48.520+0000] {subprocess.py:93} INFO - (1125510, 'The Platform 2', 'es', Decimal('5.6'), 953, Decimal('279.02'), 101, 'Horror', 2024, 9, 27)
+[2024-12-23T10:42:48.522+0000] {subprocess.py:93} INFO - (1125510, 'The Platform 2', 'es', Decimal('5.6'), 953, Decimal('279.02'), 101, 'Thriller', 2024, 9, 27)
+[2024-12-23T10:42:48.524+0000] {subprocess.py:93} INFO - (1287717, 'Do Not Enter', 'es', Decimal('7.2'), 93, Decimal('216.02'), 80, 'Horror', 2024, 8, 6)
+[2024-12-23T10:42:48.524+0000] {subprocess.py:93} INFO - (1206617, 'The Best Christmas Pageant Ever', 'en', Decimal('8.0'), 33, Decimal('197.50'), 99, 'Comedy', 2024, 11, 7)
+[2024-12-23T10:42:48.525+0000] {subprocess.py:93} INFO - (1206617, 'The Best Christmas Pageant Ever', 'en', Decimal('8.0'), 33, Decimal('197.50'), 99, 'Drama', 2024, 11, 7)
+[2024-12-23T10:42:48.525+0000] {subprocess.py:93} INFO - (1206617, 'The Best Christmas Pageant Ever', 'en', Decimal('8.0'), 33, Decimal('197.50'), 99, 'Family', 2024, 11, 7)
+[2024-12-23T10:42:48.526+0000] {subprocess.py:93} INFO - (365177, 'Borderlands', 'en', Decimal('5.8'), 874, Decimal('226.19'), 101, 'Action', 2024, 8, 7)
+[2024-12-23T10:42:49.058+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-23T10:42:49.092+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow, task_id=load_to_dw, execution_date=20241223T104119, start_date=20241223T104231, end_date=20241223T104249
+[2024-12-23T10:42:49.135+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-23T10:42:49.157+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

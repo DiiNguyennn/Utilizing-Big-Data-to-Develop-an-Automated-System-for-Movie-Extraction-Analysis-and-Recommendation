@@ -1,0 +1,101 @@
+[2024-12-24T06:06:38.196+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_etl_workflow.transform_data_movie manual__2024-12-24T06:04:49.066957+00:00 [queued]>
+[2024-12-24T06:06:38.212+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_etl_workflow.transform_data_movie manual__2024-12-24T06:04:49.066957+00:00 [queued]>
+[2024-12-24T06:06:38.214+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-24T06:06:38.235+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data_movie> on 2024-12-24 06:04:49.066957+00:00
+[2024-12-24T06:06:38.244+0000] {standard_task_runner.py:57} INFO - Started process 778 to run task
+[2024-12-24T06:06:38.250+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_etl_workflow', 'transform_data_movie', 'manual__2024-12-24T06:04:49.066957+00:00', '--job-id', '198', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpo619ql6h']
+[2024-12-24T06:06:38.252+0000] {standard_task_runner.py:85} INFO - Job 198: Subtask transform_data_movie
+[2024-12-24T06:06:38.277+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-24T06:06:38.349+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_etl_workflow.transform_data_movie manual__2024-12-24T06:04:49.066957+00:00 [running]> on host 4170f75a0525
+[2024-12-24T06:06:38.521+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_etl_workflow' AIRFLOW_CTX_TASK_ID='transform_data_movie' AIRFLOW_CTX_EXECUTION_DATE='2024-12-24T06:04:49.066957+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-24T06:04:49.066957+00:00'
+[2024-12-24T06:06:38.535+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-24T06:06:38.538+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/transform/transform_moviedf.py']
+[2024-12-24T06:06:38.565+0000] {subprocess.py:86} INFO - Output:
+[2024-12-24T06:07:14.898+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-12-24T06:07:14.902+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-12-24T06:07:15.231+0000] {subprocess.py:93} INFO - 24/12/24 06:07:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-12-24T06:08:23.676+0000] {subprocess.py:93} INFO - [Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 6:>                                                          (0 + 1) / 1]ERROR:root:Exception while sending command.
+[2024-12-24T06:08:23.686+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-12-24T06:08:23.688+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/py4j/clientserver.py", line 516, in send_command
+[2024-12-24T06:08:23.692+0000] {subprocess.py:93} INFO -     raise Py4JNetworkError("Answer from Java side is empty")
+[2024-12-24T06:08:23.694+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+[2024-12-24T06:08:23.701+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:08:23.710+0000] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2024-12-24T06:08:23.718+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:08:23.719+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-12-24T06:08:23.721+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1038, in send_command
+[2024-12-24T06:08:23.723+0000] {subprocess.py:93} INFO -     response = connection.send_command(command)
+[2024-12-24T06:08:23.726+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/py4j/clientserver.py", line 539, in send_command
+[2024-12-24T06:08:23.728+0000] {subprocess.py:93} INFO -     raise Py4JNetworkError(
+[2024-12-24T06:08:23.732+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JNetworkError: Error while sending or receiving
+[2024-12-24T06:08:23.738+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:08:23.740+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2024-12-24T06:08:23.749+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:08:23.751+0000] {subprocess.py:93} INFO - | 845781|             Red One|  2024-10-31|               en|       6.962|      1207|  6140.642|    124|false|Action, Fantasy, ...|After Santa Claus...|
+[2024-12-24T06:08:23.752+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|  2024-10-22|               en|       6.783|      1807|  4438.575|    109|false|Action, Science F...|Eddie and Venom a...|
+[2024-12-24T06:08:23.756+0000] {subprocess.py:93} INFO - | 762509|Mufasa: The Lion ...|  2024-12-18|               en|         7.1|       160|  3060.267|    118|false|Adventure, Family...|Told in flashback...|
+[2024-12-24T06:08:23.757+0000] {subprocess.py:93} INFO - |1241982|             Moana 2|  2024-11-21|               en|       6.953|       581|  2817.589|    100|false|Animation, Advent...|After receiving a...|
+[2024-12-24T06:08:23.760+0000] {subprocess.py:93} INFO - |1005331|            Carry-On|  2024-12-05|               en|       6.994|       817|  2554.211|    119|false|Action, Mystery, ...|An airport securi...|
+[2024-12-24T06:08:23.760+0000] {subprocess.py:93} INFO - | 939243|Sonic the Hedgehog 3|  2024-12-19|               en|         8.0|        63|  2200.927|    110|false|Science Fiction, ...|Sonic, Knuckles, ...|
+[2024-12-24T06:08:23.761+0000] {subprocess.py:93} INFO - |1043905|        Dirty Angels|  2024-12-11|               en|         6.0|        27|  1758.726|    104|false|Action, Drama, Th...|During the United...|
+[2024-12-24T06:08:23.763+0000] {subprocess.py:93} INFO - |1035048|           Elevation|  2024-11-07|               en|         6.3|       186|  1386.513|     91|false|Action, Science F...|A single father a...|
+[2024-12-24T06:08:23.766+0000] {subprocess.py:93} INFO - |1000075|The Price of Mone...|  2024-07-31|               fr|         5.6|        56|  1181.322|    100|false|Action, Adventure...|Largo Winch, deva...|
+[2024-12-24T06:08:23.771+0000] {subprocess.py:93} INFO - | 974453|          Absolution|  2024-10-31|               en|         6.1|       154|  1126.387|    112|false|Action, Crime, Th...|An aging ex-boxer...|
+[2024-12-24T06:08:23.779+0000] {subprocess.py:93} INFO - | 539972|   Kraven the Hunter|  2024-12-11|               en|         5.8|       190|  1133.345|    127|false|Action, Adventure...|Kraven Kravinoff'...|
+[2024-12-24T06:08:23.784+0000] {subprocess.py:93} INFO - | 558449|        Gladiator II|  2024-11-05|               en|         6.7|      1176|  1091.838|    148|false|Action, Adventure...|Years after witne...|
+[2024-12-24T06:08:23.787+0000] {subprocess.py:93} INFO - |1184918|      The Wild Robot|  2024-09-08|               en|       8.385|      3574|   978.986|    102|false|Animation, Action...|After a shipwreck...|
+[2024-12-24T06:08:23.792+0000] {subprocess.py:93} INFO - |1182387|               Armor|  2024-10-30|               en|       5.494|        80|   750.154|     89|false|Action, Crime, Th...|Armored truck sec...|
+[2024-12-24T06:08:23.795+0000] {subprocess.py:93} INFO - | 645757|      That Christmas|  2024-11-27|               en|         7.3|       207|   716.747|     96|false|Animation, Comedy...|It's an unforgett...|
+[2024-12-24T06:08:23.799+0000] {subprocess.py:93} INFO - |1010581|            My Fault|  2023-06-08|               es|         7.9|      3145|   828.998|    117|false|      Romance, Drama|Noah must leave h...|
+[2024-12-24T06:08:23.800+0000] {subprocess.py:93} INFO - | 933260|       The Substance|  2024-09-07|               en|         7.2|      2721|   723.909|    141|false|Horror, Science F...|A fading celebrit...|
+[2024-12-24T06:08:23.801+0000] {subprocess.py:93} INFO - | 533535|Deadpool & Wolverine|  2024-07-24|               en|         7.7|      6011|   755.195|    128|false|Action, Comedy, S...|A listless Wade W...|
+[2024-12-24T06:08:23.808+0000] {subprocess.py:93} INFO - |1034541|         Terrifier 3|  2024-10-09|               en|       6.871|      1272|   771.444|    125|false|    Horror, Thriller|Five years after ...|
+[2024-12-24T06:08:23.811+0000] {subprocess.py:93} INFO - |1299652|Watchmen: Chapter II|  2024-11-25|               en|       7.518|        56|   693.497|     89|false|Animation, Myster...|Suspicious of the...|
+[2024-12-24T06:08:23.812+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2024-12-24T06:08:23.814+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T06:08:23.817+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:08:23.818+0000] {subprocess.py:93} INFO - root
+[2024-12-24T06:08:23.818+0000] {subprocess.py:93} INFO -  |-- id: integer (nullable = true)
+[2024-12-24T06:08:23.819+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2024-12-24T06:08:23.820+0000] {subprocess.py:93} INFO -  |-- release_date: date (nullable = true)
+[2024-12-24T06:08:23.824+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2024-12-24T06:08:23.825+0000] {subprocess.py:93} INFO -  |-- vote_average: double (nullable = true)
+[2024-12-24T06:08:23.826+0000] {subprocess.py:93} INFO -  |-- vote_count: integer (nullable = true)
+[2024-12-24T06:08:23.826+0000] {subprocess.py:93} INFO -  |-- popularity: double (nullable = true)
+[2024-12-24T06:08:23.827+0000] {subprocess.py:93} INFO -  |-- runtime: integer (nullable = true)
+[2024-12-24T06:08:23.828+0000] {subprocess.py:93} INFO -  |-- adult: boolean (nullable = true)
+[2024-12-24T06:08:23.829+0000] {subprocess.py:93} INFO -  |-- genres: string (nullable = true)
+[2024-12-24T06:08:23.837+0000] {subprocess.py:93} INFO -  |-- overview: string (nullable = true)
+[2024-12-24T06:08:23.854+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:08:23.857+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:08:23.860+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2024-12-24T06:08:23.861+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:08:23.863+0000] {subprocess.py:93} INFO - |  0|    0|           0|                0|           0|         0|         0|      0|    0|     0|       1|
+[2024-12-24T06:08:23.864+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2024-12-24T06:08:23.866+0000] {subprocess.py:93} INFO - 
+[2024-12-24T06:08:23.869+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-12-24T06:08:23.870+0000] {subprocess.py:93} INFO -   File "/opt/***/DE_project/ETL/transform/transform_moviedf.py", line 29, in <module>
+[2024-12-24T06:08:23.873+0000] {subprocess.py:93} INFO -     check_duplicate_data.show()
+[2024-12-24T06:08:23.878+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/sql/dataframe.py", line 947, in show
+[2024-12-24T06:08:23.879+0000] {subprocess.py:93} INFO -     print(self._show_string(n, truncate, vertical))
+[2024-12-24T06:08:23.880+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/sql/dataframe.py", line 965, in _show_string
+[2024-12-24T06:08:23.882+0000] {subprocess.py:93} INFO -     return self._jdf.showString(n, 20, vertical)
+[2024-12-24T06:08:23.886+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1322, in __call__
+[2024-12-24T06:08:23.888+0000] {subprocess.py:93} INFO -     return_value = get_return_value(
+[2024-12-24T06:08:23.892+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2024-12-24T06:08:23.893+0000] {subprocess.py:93} INFO -     return f(*a, **kw)
+[2024-12-24T06:08:23.897+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/py4j/protocol.py", line 334, in get_return_value
+[2024-12-24T06:08:23.899+0000] {subprocess.py:93} INFO -     raise Py4JError(
+[2024-12-24T06:08:23.900+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JError: An error occurred while calling o108.showString
+[2024-12-24T06:08:24.079+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-12-24T06:08:24.160+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-12-24T06:08:24.177+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_etl_workflow, task_id=transform_data_movie, execution_date=20241224T060449, start_date=20241224T060638, end_date=20241224T060824
+[2024-12-24T06:08:24.225+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 198 for task transform_data_movie (Bash command failed. The command returned a non-zero exit code 1.; 778)
+[2024-12-24T06:08:24.261+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-24T06:08:24.340+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

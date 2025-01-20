@@ -1,0 +1,26 @@
+[2024-12-23T07:48:59.417+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_workflow.analyze_data manual__2024-12-23T07:48:57.986648+00:00 [queued]>
+[2024-12-23T07:48:59.427+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_workflow.analyze_data manual__2024-12-23T07:48:57.986648+00:00 [queued]>
+[2024-12-23T07:48:59.428+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T07:48:59.441+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): analyze_data> on 2024-12-23 07:48:57.986648+00:00
+[2024-12-23T07:48:59.445+0000] {standard_task_runner.py:57} INFO - Started process 67 to run task
+[2024-12-23T07:48:59.449+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_workflow', 'analyze_data', 'manual__2024-12-23T07:48:57.986648+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmp5nt0mxmc']
+[2024-12-23T07:48:59.451+0000] {standard_task_runner.py:85} INFO - Job 28: Subtask analyze_data
+[2024-12-23T07:48:59.467+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T07:48:59.504+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_workflow.analyze_data manual__2024-12-23T07:48:57.986648+00:00 [running]> on host 023362aefa72
+[2024-12-23T07:48:59.595+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_workflow' AIRFLOW_CTX_TASK_ID='analyze_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T07:48:57.986648+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-23T07:48:57.986648+00:00'
+[2024-12-23T07:48:59.598+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T07:48:59.599+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'papermill /opt/***/DE_project/DA/DataAnalysis.ipynb /opt/***/DE_project/DA/DataAnalysis_output.ipynb']
+[2024-12-23T07:48:59.610+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T07:48:59.612+0000] {subprocess.py:93} INFO - /bin/bash: line 1: papermill: command not found
+[2024-12-23T07:48:59.613+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2024-12-23T07:48:59.627+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2024-12-23T07:48:59.633+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_data_workflow, task_id=analyze_data, execution_date=20241223T074857, start_date=20241223T074859, end_date=20241223T074859
+[2024-12-23T07:48:59.645+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 28 for task analyze_data (Bash command failed. The command returned a non-zero exit code 127.; 67)
+[2024-12-23T07:48:59.670+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-23T07:48:59.690+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

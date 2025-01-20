@@ -1,0 +1,35 @@
+[2024-12-23T08:03:54.319+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T08:03:54.351+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: workflow.load_to_dw scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T08:03:54.374+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: workflow.load_to_dw scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T08:03:54.377+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T08:03:54.409+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): load_to_dw> on 2024-12-22 00:00:00+00:00
+[2024-12-23T08:03:54.422+0000] {standard_task_runner.py:57} INFO - Started process 169 to run task
+[2024-12-23T08:03:54.432+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'workflow', 'load_to_dw', 'scheduled__2024-12-22T00:00:00+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmp4afcsa06']
+[2024-12-23T08:03:54.433+0000] {standard_task_runner.py:85} INFO - Job 39: Subtask load_to_dw
+[2024-12-23T08:03:54.488+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T08:03:54.567+0000] {task_command.py:415} INFO - Running <TaskInstance: workflow.load_to_dw scheduled__2024-12-22T00:00:00+00:00 [running]> on host 023362aefa72
+[2024-12-23T08:03:54.586+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T08:03:54.670+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='workflow' AIRFLOW_CTX_TASK_ID='load_to_dw' AIRFLOW_CTX_EXECUTION_DATE='2024-12-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-22T00:00:00+00:00'
+[2024-12-23T08:03:54.672+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T08:03:54.673+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/load/load_moviedf_to_dw.py']
+[2024-12-23T08:03:54.685+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T08:03:54.838+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-12-23T08:03:54.838+0000] {subprocess.py:93} INFO -   File "/opt/***/DE_project/ETL/load/load_moviedf_to_dw.py", line 3, in <module>
+[2024-12-23T08:03:54.839+0000] {subprocess.py:93} INFO -     import duckdb
+[2024-12-23T08:03:54.840+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'duckdb'
+[2024-12-23T08:03:54.843+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-12-23T08:03:54.868+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-12-23T08:03:54.876+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=workflow, task_id=load_to_dw, execution_date=20241222T000000, start_date=20241223T080354, end_date=20241223T080354
+[2024-12-23T08:03:54.897+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 39 for task load_to_dw (Bash command failed. The command returned a non-zero exit code 1.; 169)
+[2024-12-23T08:03:54.942+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-23T08:03:54.971+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

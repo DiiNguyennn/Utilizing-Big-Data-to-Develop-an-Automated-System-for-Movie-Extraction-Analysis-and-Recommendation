@@ -1,0 +1,14 @@
+[2025-01-16T08:04:08.479+0000] {processor.py:157} INFO - Started process (PID=32) to work on /opt/airflow/dags/movie_data_workflow.py
+[2025-01-16T08:04:08.482+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/movie_data_workflow.py for tasks to queue
+[2025-01-16T08:04:08.488+0000] {logging_mixin.py:151} INFO - [2025-01-16T08:04:08.487+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/movie_data_workflow.py
+[2025-01-16T08:04:08.521+0000] {processor.py:839} INFO - DAG(s) dict_keys(['movie_data_etl_workflow']) retrieved from /opt/airflow/dags/movie_data_workflow.py
+[2025-01-16T08:04:08.587+0000] {logging_mixin.py:151} INFO - [2025-01-16T08:04:08.586+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2025-01-16T08:04:08.620+0000] {logging_mixin.py:151} INFO - [2025-01-16T08:04:08.619+0000] {dag.py:3677} INFO - Setting next_dagrun for movie_data_etl_workflow to 2025-01-05T00:00:00+00:00, run_after=2025-01-12T00:00:00+00:00
+[2025-01-16T08:04:08.645+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/movie_data_workflow.py took 0.173 seconds
+[2025-01-16T08:04:38.793+0000] {processor.py:157} INFO - Started process (PID=33) to work on /opt/airflow/dags/movie_data_workflow.py
+[2025-01-16T08:04:38.796+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/movie_data_workflow.py for tasks to queue
+[2025-01-16T08:04:38.802+0000] {logging_mixin.py:151} INFO - [2025-01-16T08:04:38.801+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/movie_data_workflow.py
+[2025-01-16T08:04:38.828+0000] {processor.py:839} INFO - DAG(s) dict_keys(['movie_data_etl_workflow']) retrieved from /opt/airflow/dags/movie_data_workflow.py
+[2025-01-16T08:04:38.874+0000] {logging_mixin.py:151} INFO - [2025-01-16T08:04:38.873+0000] {dag.py:2907} INFO - Sync 1 DAGs
+[2025-01-16T08:04:38.901+0000] {logging_mixin.py:151} INFO - [2025-01-16T08:04:38.901+0000] {dag.py:3677} INFO - Setting next_dagrun for movie_data_etl_workflow to 2025-01-05T00:00:00+00:00, run_after=2025-01-12T00:00:00+00:00
+[2025-01-16T08:04:38.922+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/movie_data_workflow.py took 0.141 seconds

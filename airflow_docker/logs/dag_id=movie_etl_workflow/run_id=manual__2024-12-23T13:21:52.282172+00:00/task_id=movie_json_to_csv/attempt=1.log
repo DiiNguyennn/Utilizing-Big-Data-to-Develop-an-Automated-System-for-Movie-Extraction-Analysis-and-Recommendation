@@ -1,0 +1,20 @@
+[2024-12-23T13:22:15.637+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_etl_workflow.movie_json_to_csv manual__2024-12-23T13:21:52.282172+00:00 [queued]>
+[2024-12-23T13:22:15.646+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_etl_workflow.movie_json_to_csv manual__2024-12-23T13:21:52.282172+00:00 [queued]>
+[2024-12-23T13:22:15.647+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T13:22:15.662+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): movie_json_to_csv> on 2024-12-23 13:21:52.282172+00:00
+[2024-12-23T13:22:15.667+0000] {standard_task_runner.py:57} INFO - Started process 1233 to run task
+[2024-12-23T13:22:15.672+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_etl_workflow', 'movie_json_to_csv', 'manual__2024-12-23T13:21:52.282172+00:00', '--job-id', '146', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmp8571xc46']
+[2024-12-23T13:22:15.673+0000] {standard_task_runner.py:85} INFO - Job 146: Subtask movie_json_to_csv
+[2024-12-23T13:22:15.693+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T13:22:15.732+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_etl_workflow.movie_json_to_csv manual__2024-12-23T13:21:52.282172+00:00 [running]> on host c498c9d7df3d
+[2024-12-23T13:22:15.817+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_etl_workflow' AIRFLOW_CTX_TASK_ID='movie_json_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2024-12-23T13:21:52.282172+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-23T13:21:52.282172+00:00'
+[2024-12-23T13:22:15.819+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T13:22:15.820+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/JSON_to_CSV/JSON_to_CSV_movie.py']
+[2024-12-23T13:22:15.829+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T13:22:15.958+0000] {subprocess.py:93} INFO - Conversion complete. CSV file saved as 'movies_data.csv'
+[2024-12-23T13:22:15.963+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-23T13:22:15.998+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_etl_workflow, task_id=movie_json_to_csv, execution_date=20241223T132152, start_date=20241223T132215, end_date=20241223T132215
+[2024-12-23T13:22:16.015+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-23T13:22:16.044+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

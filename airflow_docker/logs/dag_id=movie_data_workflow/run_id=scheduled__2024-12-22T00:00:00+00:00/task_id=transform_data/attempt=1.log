@@ -1,0 +1,32 @@
+[2024-12-23T07:48:18.444+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T07:48:18.461+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_workflow.transform_data scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T07:48:18.479+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_workflow.transform_data scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T07:48:18.482+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T07:48:18.510+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data> on 2024-12-22 00:00:00+00:00
+[2024-12-23T07:48:18.518+0000] {standard_task_runner.py:57} INFO - Started process 57 to run task
+[2024-12-23T07:48:18.523+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_workflow', 'transform_data', 'scheduled__2024-12-22T00:00:00+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpg45obtk_']
+[2024-12-23T07:48:18.525+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask transform_data
+[2024-12-23T07:48:18.561+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T07:48:18.656+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_workflow.transform_data scheduled__2024-12-22T00:00:00+00:00 [running]> on host 023362aefa72
+[2024-12-23T07:48:18.682+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T07:48:18.808+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_workflow' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-12-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-22T00:00:00+00:00'
+[2024-12-23T07:48:18.810+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T07:48:18.812+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'papermill /opt/***/DE_project/ETL/transform/tranform_moviedf.ipynb /dev/null']
+[2024-12-23T07:48:18.828+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T07:48:18.831+0000] {subprocess.py:93} INFO - /bin/bash: line 1: papermill: command not found
+[2024-12-23T07:48:18.832+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2024-12-23T07:48:18.858+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2024-12-23T07:48:18.866+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_data_workflow, task_id=transform_data, execution_date=20241222T000000, start_date=20241223T074818, end_date=20241223T074818
+[2024-12-23T07:48:18.885+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 24 for task transform_data (Bash command failed. The command returned a non-zero exit code 127.; 57)
+[2024-12-23T07:48:18.913+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-23T07:48:18.961+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

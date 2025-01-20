@@ -1,0 +1,32 @@
+[2024-12-23T12:24:47.637+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T12:24:47.648+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.transform_data_rating scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T12:24:47.657+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.transform_data_rating scheduled__2024-12-22T00:00:00+00:00 [queued]>
+[2024-12-23T12:24:47.657+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2024-12-23T12:24:47.669+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data_rating> on 2024-12-22 00:00:00+00:00
+[2024-12-23T12:24:47.673+0000] {standard_task_runner.py:57} INFO - Started process 441 to run task
+[2024-12-23T12:24:47.676+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'transform_data_rating', 'scheduled__2024-12-22T00:00:00+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpq8gwpn_z']
+[2024-12-23T12:24:47.677+0000] {standard_task_runner.py:85} INFO - Job 95: Subtask transform_data_rating
+[2024-12-23T12:24:47.694+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-23T12:24:47.735+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.transform_data_rating scheduled__2024-12-22T00:00:00+00:00 [running]> on host 4c2bdc2e079f
+[2024-12-23T12:24:47.751+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2024-12-23T12:24:47.817+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='transform_data_rating' AIRFLOW_CTX_EXECUTION_DATE='2024-12-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-22T00:00:00+00:00'
+[2024-12-23T12:24:47.820+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-23T12:24:47.820+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/transform/tranform_ratingdf.py']
+[2024-12-23T12:24:47.829+0000] {subprocess.py:86} INFO - Output:
+[2024-12-23T12:24:47.926+0000] {subprocess.py:93} INFO - python3: can't open file '/opt/***/DE_project/ETL/transform/tranform_ratingdf.py': [Errno 2] No such file or directory
+[2024-12-23T12:24:47.929+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2024-12-23T12:24:47.944+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2024-12-23T12:24:47.950+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=movie_data_etl_workflow, task_id=transform_data_rating, execution_date=20241222T000000, start_date=20241223T122447, end_date=20241223T122447
+[2024-12-23T12:24:47.962+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 95 for task transform_data_rating (Bash command failed. The command returned a non-zero exit code 2.; 441)
+[2024-12-23T12:24:47.977+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-12-23T12:24:48.004+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

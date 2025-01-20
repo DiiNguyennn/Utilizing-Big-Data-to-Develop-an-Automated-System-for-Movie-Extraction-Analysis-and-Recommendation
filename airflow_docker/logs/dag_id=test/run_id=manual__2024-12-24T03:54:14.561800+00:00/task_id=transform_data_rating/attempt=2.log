@@ -1,0 +1,94 @@
+[2024-12-24T03:59:19.012+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test.transform_data_rating manual__2024-12-24T03:54:14.561800+00:00 [queued]>
+[2024-12-24T03:59:19.024+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test.transform_data_rating manual__2024-12-24T03:54:14.561800+00:00 [queued]>
+[2024-12-24T03:59:19.024+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2024-12-24T03:59:19.040+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data_rating> on 2024-12-24 03:54:14.561800+00:00
+[2024-12-24T03:59:19.044+0000] {standard_task_runner.py:57} INFO - Started process 641 to run task
+[2024-12-24T03:59:19.049+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'test', 'transform_data_rating', 'manual__2024-12-24T03:54:14.561800+00:00', '--job-id', '169', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmphgbzjqrd']
+[2024-12-24T03:59:19.050+0000] {standard_task_runner.py:85} INFO - Job 169: Subtask transform_data_rating
+[2024-12-24T03:59:19.069+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-12-24T03:59:19.110+0000] {task_command.py:415} INFO - Running <TaskInstance: test.transform_data_rating manual__2024-12-24T03:54:14.561800+00:00 [running]> on host 8870ce439a17
+[2024-12-24T03:59:19.228+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='test' AIRFLOW_CTX_TASK_ID='transform_data_rating' AIRFLOW_CTX_EXECUTION_DATE='2024-12-24T03:54:14.561800+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-24T03:54:14.561800+00:00'
+[2024-12-24T03:59:19.230+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-24T03:59:19.231+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/transform/transform_ratingdf.py']
+[2024-12-24T03:59:19.242+0000] {subprocess.py:86} INFO - Output:
+[2024-12-24T03:59:21.649+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2024-12-24T03:59:21.650+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2024-12-24T03:59:21.850+0000] {subprocess.py:93} INFO - 24/12/24 03:59:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-12-24T03:59:33.117+0000] {subprocess.py:93} INFO - [Stage 17:>                                                         (0 + 1) / 1]                                                                                +--------------------+--------+--------------+----------------+------+--------------------+
+[2024-12-24T03:59:33.119+0000] {subprocess.py:93} INFO - |         movie_title|movie_id|       user_id|          author|rating|           timestamp|
+[2024-12-24T03:59:33.120+0000] {subprocess.py:93} INFO - +--------------------+--------+--------------+----------------+------+--------------------+
+[2024-12-24T03:59:33.122+0000] {subprocess.py:93} INFO - |             Red One|  845781|  Geronimo1967|      CinemaSerf|   6.0|2024-11-10 06:23:...|
+[2024-12-24T03:59:33.123+0000] {subprocess.py:93} INFO - |             Red One|  845781|    msbreviews|Manuel São Bento|   4.0|2024-11-14 08:59:...|
+[2024-12-24T03:59:33.124+0000] {subprocess.py:93} INFO - |             Red One|  845781|         r96sk|           r96sk|   7.0|2024-11-22 00:57:...|
+[2024-12-24T03:59:33.125+0000] {subprocess.py:93} INFO - |             Red One|  845781|        Wuchak|          Wuchak|   9.0|2024-12-16 23:20:...|
+[2024-12-24T03:59:33.126+0000] {subprocess.py:93} INFO - |             Red One|  845781|    RalphRahal|      RalphRahal|   2.0|2024-12-21 11:48:...|
+[2024-12-24T03:59:33.127+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|         r96sk|           r96sk|   7.0|2024-10-25 18:25:...|
+[2024-12-24T03:59:33.128+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|   Mangoturtle|     Mangoturtle|   2.0|2024-10-27 14:01:...|
+[2024-12-24T03:59:33.129+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|  Geronimo1967|      CinemaSerf|   6.0|2024-10-31 11:02:...|
+[2024-12-24T03:59:33.130+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|chandlerdanier| Chandler Danier|   9.0|2024-12-10 04:22:...|
+[2024-12-24T03:59:33.130+0000] {subprocess.py:93} INFO - |Venom: The Last D...|  912649|     MovieGuys|       MovieGuys|   6.0|2024-12-16 21:17:...|
+[2024-12-24T03:59:33.131+0000] {subprocess.py:93} INFO - |Mufasa: The Lion ...|  762509|          NULL|            NULL|  NULL|                NULL|
+[2024-12-24T03:59:33.132+0000] {subprocess.py:93} INFO - |             Moana 2| 1241982|  Geronimo1967|      CinemaSerf|   7.0|2024-11-30 10:01:...|
+[2024-12-24T03:59:33.132+0000] {subprocess.py:93} INFO - |Sonic the Hedgehog 3|  939243|          NULL|            NULL|  NULL|                NULL|
+[2024-12-24T03:59:33.133+0000] {subprocess.py:93} INFO - |            Carry-On| 1005331|    aholejones|      aholejones|   1.0|2024-12-15 11:03:...|
+[2024-12-24T03:59:33.134+0000] {subprocess.py:93} INFO - |            Carry-On| 1005331|      dumasori|        dumasori|   1.0|2024-12-18 07:16:...|
+[2024-12-24T03:59:33.135+0000] {subprocess.py:93} INFO - |            Carry-On| 1005331|    RalphRahal|      RalphRahal|   7.0|2024-12-20 07:51:...|
+[2024-12-24T03:59:33.135+0000] {subprocess.py:93} INFO - |            Carry-On| 1005331|chandlerdanier| Chandler Danier|   6.0|2024-12-21 15:11:...|
+[2024-12-24T03:59:33.136+0000] {subprocess.py:93} INFO - |           Elevation| 1035048|     MovieGuys|       MovieGuys|   6.0|2024-12-05 07:01:...|
+[2024-12-24T03:59:33.137+0000] {subprocess.py:93} INFO - |The Price of Mone...| 1000075|     MovieGuys|       MovieGuys|   4.0|2024-11-30 22:58:...|
+[2024-12-24T03:59:33.138+0000] {subprocess.py:93} INFO - |        Dirty Angels| 1043905|     MovieGuys|       MovieGuys|   4.0|2024-12-14 20:07:...|
+[2024-12-24T03:59:33.138+0000] {subprocess.py:93} INFO - +--------------------+--------+--------------+----------------+------+--------------------+
+[2024-12-24T03:59:33.139+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T03:59:33.139+0000] {subprocess.py:93} INFO - 
+[2024-12-24T03:59:33.140+0000] {subprocess.py:93} INFO - root
+[2024-12-24T03:59:33.141+0000] {subprocess.py:93} INFO -  |-- movie_title: string (nullable = true)
+[2024-12-24T03:59:33.141+0000] {subprocess.py:93} INFO -  |-- movie_id: integer (nullable = true)
+[2024-12-24T03:59:33.142+0000] {subprocess.py:93} INFO -  |-- user_id: string (nullable = true)
+[2024-12-24T03:59:33.142+0000] {subprocess.py:93} INFO -  |-- author: string (nullable = true)
+[2024-12-24T03:59:33.143+0000] {subprocess.py:93} INFO -  |-- rating: double (nullable = true)
+[2024-12-24T03:59:33.143+0000] {subprocess.py:93} INFO -  |-- timestamp: timestamp (nullable = true)
+[2024-12-24T03:59:33.145+0000] {subprocess.py:93} INFO - 
+[2024-12-24T03:59:33.145+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+
+[2024-12-24T03:59:33.146+0000] {subprocess.py:93} INFO - |movie_title|movie_id|user_id|author|rating|timestamp|
+[2024-12-24T03:59:33.147+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+
+[2024-12-24T03:59:33.148+0000] {subprocess.py:93} INFO - |          0|       0|      0|     0|     0|        0|
+[2024-12-24T03:59:33.148+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+
+[2024-12-24T03:59:33.149+0000] {subprocess.py:93} INFO - 
+[2024-12-24T03:59:33.150+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+-----+
+[2024-12-24T03:59:33.150+0000] {subprocess.py:93} INFO - |movie_title|movie_id|user_id|author|rating|timestamp|count|
+[2024-12-24T03:59:33.151+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+-----+
+[2024-12-24T03:59:33.152+0000] {subprocess.py:93} INFO - +-----------+--------+-------+------+------+---------+-----+
+[2024-12-24T03:59:33.152+0000] {subprocess.py:93} INFO - 
+[2024-12-24T03:59:33.153+0000] {subprocess.py:93} INFO - +--------------------+--------+--------------------+--------------------+------+----+-----+---+----+
+[2024-12-24T03:59:33.154+0000] {subprocess.py:93} INFO - |         movie_title|movie_id|             user_id|              author|rating|year|month|day|hour|
+[2024-12-24T03:59:33.155+0000] {subprocess.py:93} INFO - +--------------------+--------+--------------------+--------------------+------+----+-----+---+----+
+[2024-12-24T03:59:33.155+0000] {subprocess.py:93} INFO - |   The Polar Express|    5255|      Peter89Spencer|      Peter89Spencer|  10.0|2020|   12| 13|  13|
+[2024-12-24T03:59:33.157+0000] {subprocess.py:93} INFO - |            Twisters|  718821|      Brent_Marchant|      Brent Marchant|   6.0|2024|    7| 21|  21|
+[2024-12-24T03:59:33.157+0000] {subprocess.py:93} INFO - |Furiosa: A Mad Ma...|  786892|           MovieGuys|           MovieGuys|   6.0|2024|    5| 30|   4|
+[2024-12-24T03:59:33.158+0000] {subprocess.py:93} INFO - |Furiosa: A Mad Ma...|  786892|               r96sk|               r96sk|   8.0|2024|    5| 31|  19|
+[2024-12-24T03:59:33.158+0000] {subprocess.py:93} INFO - |How the Grinch St...|    8871|        SoSmooth1982|      Andre Gonzales|   7.0|2023|    6| 27|  12|
+[2024-12-24T03:59:33.159+0000] {subprocess.py:93} INFO - |       The Godfather|     238|         Suresh17511|               Surya|   9.0|2023|    6| 11|   9|
+[2024-12-24T03:59:33.160+0000] {subprocess.py:93} INFO - |           Civil War|  929590|               r96sk|               r96sk|   9.0|2024|    4| 12|  17|
+[2024-12-24T03:59:33.161+0000] {subprocess.py:93} INFO - |           Civil War|  929590|        Geronimo1967|          CinemaSerf|   6.0|2024|    4| 13|   8|
+[2024-12-24T03:59:33.161+0000] {subprocess.py:93} INFO - |Avatar: The Way o...|   76600|gaitanoayieko@gma...|            TimeZone|  10.0|2022|   12| 19|   6|
+[2024-12-24T03:59:33.161+0000] {subprocess.py:93} INFO - |            Pleasure|  592695|               r96sk|               r96sk|   7.0|2023|    2| 22|   3|
+[2024-12-24T03:59:33.162+0000] {subprocess.py:93} INFO - |              Fast X|  385687|        Geronimo1967|          CinemaSerf|   6.0|2023|    5| 22|   9|
+[2024-12-24T03:59:33.162+0000] {subprocess.py:93} INFO - |  Sonic the Hedgehog|  454626|          msbreviews|    Manuel São Bento|   5.0|2020|    4|  5|  15|
+[2024-12-24T03:59:33.163+0000] {subprocess.py:93} INFO - |            Arcadian| 1051896|        Geronimo1967|          CinemaSerf|   7.0|2024|    6| 20|  16|
+[2024-12-24T03:59:33.163+0000] {subprocess.py:93} INFO - |Godzilla x Kong: ...|  823464|            Denishux|            Denishux|   6.0|2024|    5| 21|  18|
+[2024-12-24T03:59:33.164+0000] {subprocess.py:93} INFO - |The Shawshank Red...|     278|            Leezannn|              Leezan|  10.0|2024|    9| 17|  12|
+[2024-12-24T03:59:33.164+0000] {subprocess.py:93} INFO - |Avengers: Infinit...|  299536|           jmquint00|           jmquint00|  10.0|2018|    5| 22|  15|
+[2024-12-24T03:59:33.165+0000] {subprocess.py:93} INFO - |BLUE LOCK THE MOV...| 1104844|        Geronimo1967|          CinemaSerf|   7.0|2024|    7|  5|   6|
+[2024-12-24T03:59:33.166+0000] {subprocess.py:93} INFO - |The Lord of the R...|     120|               r96sk|               r96sk|  10.0|2021|    2| 16|   1|
+[2024-12-24T03:59:33.167+0000] {subprocess.py:93} INFO - |  Sonic the Hedgehog|  454626|       screenzealots|Louisa Moore - Sc...|   6.0|2020|    3| 27|   1|
+[2024-12-24T03:59:33.167+0000] {subprocess.py:93} INFO - |Avengers: Infinit...|  299536|           chwalid13|            Ch Walid|   9.5|2018|    4| 30|  20|
+[2024-12-24T03:59:33.168+0000] {subprocess.py:93} INFO - +--------------------+--------+--------------------+--------------------+------+----+-----+---+----+
+[2024-12-24T03:59:33.169+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2024-12-24T03:59:33.171+0000] {subprocess.py:93} INFO - 
+[2024-12-24T03:59:33.172+0000] {subprocess.py:93} INFO - Data successfully transformed and saved to: /opt/***/DE_project/data/parquet/rating.parquet
+[2024-12-24T03:59:33.641+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-12-24T03:59:33.685+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=test, task_id=transform_data_rating, execution_date=20241224T035414, start_date=20241224T035919, end_date=20241224T035933
+[2024-12-24T03:59:33.711+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-12-24T03:59:33.736+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

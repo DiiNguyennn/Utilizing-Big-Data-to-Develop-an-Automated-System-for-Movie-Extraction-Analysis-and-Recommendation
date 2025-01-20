@@ -1,0 +1,378 @@
+[2025-01-17T09:09:18.494+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T09:09:18.511+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.transform_data_movie scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T09:09:18.524+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.transform_data_movie scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T09:09:18.524+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-01-17T09:09:18.539+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data_movie> on 2025-01-05 00:00:00+00:00
+[2025-01-17T09:09:18.544+0000] {standard_task_runner.py:57} INFO - Started process 79 to run task
+[2025-01-17T09:09:18.548+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'transform_data_movie', 'scheduled__2025-01-05T00:00:00+00:00', '--job-id', '255', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpij1uvohm']
+[2025-01-17T09:09:18.549+0000] {standard_task_runner.py:85} INFO - Job 255: Subtask transform_data_movie
+[2025-01-17T09:09:18.566+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-01-17T09:09:18.609+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.transform_data_movie scheduled__2025-01-05T00:00:00+00:00 [running]> on host 1d5d3d5ac065
+[2025-01-17T09:09:18.624+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T09:09:18.701+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='transform_data_movie' AIRFLOW_CTX_EXECUTION_DATE='2025-01-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-05T00:00:00+00:00'
+[2025-01-17T09:09:18.703+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-01-17T09:09:18.704+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/transform/transform_moviedf.py']
+[2025-01-17T09:09:18.715+0000] {subprocess.py:86} INFO - Output:
+[2025-01-17T09:09:22.386+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2025-01-17T09:09:22.386+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2025-01-17T09:09:22.641+0000] {subprocess.py:93} INFO - 25/01/17 09:09:22 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-01-17T09:09:33.180+0000] {subprocess.py:93} INFO - [Stage 3:>                                                          (0 + 1) / 1]                                                                                +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T09:09:33.183+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2025-01-17T09:09:33.184+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T09:09:33.185+0000] {subprocess.py:93} INFO - | 939243|Sonic the Hedgehog 3|  2024-12-19|               en|         7.6|       589|  2525.912|    110|False|Action, Science F...|Sonic, Knuckles, ...|
+[2025-01-17T09:09:33.185+0000] {subprocess.py:93} INFO - | 762509|Mufasa: The Lion ...|  2024-12-18|               en|         7.4|       681|  2393.715|    118|False|Adventure, Family...|Mufasa, a cub los...|
+[2025-01-17T09:09:33.186+0000] {subprocess.py:93} INFO - | 558449|        Gladiator II|  2024-11-05|               en|       6.756|      2343|  1720.821|    148|False|Action, Adventure...|Years after witne...|
+[2025-01-17T09:09:33.186+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|  2024-10-22|               en|        6.81|      2371|  1694.909|    109|False|Action, Science F...|Eddie and Venom a...|
+[2025-01-17T09:09:33.187+0000] {subprocess.py:93} INFO - |1241982|             Moana 2|  2024-11-21|               en|         7.0|       849|  1432.939|    100|False|Animation, Advent...|After receiving a...|
+[2025-01-17T09:09:33.187+0000] {subprocess.py:93} INFO - |1222248|           Number 24|  2024-10-30|               no|       7.424|       118|  1373.294|    112|False| War, History, Drama|On the brink of t...|
+[2025-01-17T09:09:33.188+0000] {subprocess.py:93} INFO - | 402431|              Wicked|  2024-11-20|               en|         7.2|      1289|   1270.61|    162|False|Drama, Romance, F...|In the land of Oz...|
+[2025-01-17T09:09:33.188+0000] {subprocess.py:93} INFO - | 539972|   Kraven the Hunter|  2024-12-11|               en|       6.167|       426|  1682.267|    127|False|Action, Adventure...|Kraven Kravinoff'...|
+[2025-01-17T09:09:33.189+0000] {subprocess.py:93} INFO - | 970450|          Werewolves|  2024-12-04|               en|         6.5|       188|   1096.46|     94|False|Action, Horror, T...|A year after a su...|
+[2025-01-17T09:09:33.190+0000] {subprocess.py:93} INFO - | 845781|             Red One|  2024-10-31|               en|       7.071|      2034|    972.76|    124|False|Action, Fantasy, ...|After Santa Claus...|
+[2025-01-17T09:09:33.190+0000] {subprocess.py:93} INFO - | 839033|The Lord of the R...|  2024-12-05|               en|         6.5|       314|  1049.714|    134|False|Animation, Fantas...|A sudden attack b...|
+[2025-01-17T09:09:33.191+0000] {subprocess.py:93} INFO - |1156593|          Your Fault|  2024-12-26|               es|         7.1|       864|  1035.271|    120|False|      Romance, Drama|The love between ...|
+[2025-01-17T09:09:33.193+0000] {subprocess.py:93} INFO - |1357633|Solo Leveling -Re...|  2024-11-26|               ja|         7.0|        72|   930.553|    116|False|Action, Adventure...|Over a decade aft...|
+[2025-01-17T09:09:33.193+0000] {subprocess.py:93} INFO - |1035048|           Elevation|  2024-11-07|               en|       6.261|       332|    808.58|     91|False|Action, Science F...|A single father a...|
+[2025-01-17T09:09:33.194+0000] {subprocess.py:93} INFO - |1043905|        Dirty Angels|  2024-12-11|               en|       6.427|       131|   740.205|    104|False|Action, Drama, Th...|During the United...|
+[2025-01-17T09:09:33.196+0000] {subprocess.py:93} INFO - |1235623|    Eye for an Eye 2|  2024-07-21|               zh|         7.0|         8|   647.826|     90|False|       Action, Drama|The blind swordsm...|
+[2025-01-17T09:09:33.197+0000] {subprocess.py:93} INFO - | 933260|       The Substance|  2024-09-07|               en|       7.127|      3272|   727.215|    141|False|Horror, Science F...|A fading celebrit...|
+[2025-01-17T09:09:33.199+0000] {subprocess.py:93} INFO - |1005331|            Carry-On|  2024-12-05|               en|       6.931|      1647|   627.522|    120|False|    Thriller, Action|An airport securi...|
+[2025-01-17T09:09:33.202+0000] {subprocess.py:93} INFO - | 823219|                Flow|  2024-08-29|               lv|       8.399|       766|   635.112|     85|False|Animation, Fantas...|A solitary cat, d...|
+[2025-01-17T09:09:33.205+0000] {subprocess.py:93} INFO - |1010581|            My Fault|  2023-06-08|               es|       7.879|      3390|   591.473|    117|False|      Romance, Drama|Noah must leave h...|
+[2025-01-17T09:09:33.206+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T09:09:33.207+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T09:09:33.208+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:33.209+0000] {subprocess.py:93} INFO - root
+[2025-01-17T09:09:33.210+0000] {subprocess.py:93} INFO -  |-- id: string (nullable = true)
+[2025-01-17T09:09:33.211+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2025-01-17T09:09:33.212+0000] {subprocess.py:93} INFO -  |-- release_date: string (nullable = true)
+[2025-01-17T09:09:33.213+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2025-01-17T09:09:33.214+0000] {subprocess.py:93} INFO -  |-- vote_average: string (nullable = true)
+[2025-01-17T09:09:33.215+0000] {subprocess.py:93} INFO -  |-- vote_count: string (nullable = true)
+[2025-01-17T09:09:33.216+0000] {subprocess.py:93} INFO -  |-- popularity: string (nullable = true)
+[2025-01-17T09:09:33.217+0000] {subprocess.py:93} INFO -  |-- runtime: string (nullable = true)
+[2025-01-17T09:09:33.218+0000] {subprocess.py:93} INFO -  |-- adult: string (nullable = true)
+[2025-01-17T09:09:33.219+0000] {subprocess.py:93} INFO -  |-- genres: string (nullable = true)
+[2025-01-17T09:09:33.220+0000] {subprocess.py:93} INFO -  |-- overview: string (nullable = true)
+[2025-01-17T09:09:33.220+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:33.221+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T09:09:33.223+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2025-01-17T09:09:33.223+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T09:09:33.225+0000] {subprocess.py:93} INFO - |  0|    3|          20|                5|           7|         9|         9|      9|   11|    47|      62|
+[2025-01-17T09:09:33.225+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T09:09:33.226+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:36.766+0000] {subprocess.py:93} INFO - [Stage 18:>                                                         (0 + 1) / 1]                                                                                +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2025-01-17T09:09:36.770+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|count|
+[2025-01-17T09:09:36.770+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2025-01-17T09:09:36.772+0000] {subprocess.py:93} INFO - |   9899|       The Producers|  2005-12-25|               en|       6.179|       469|     14.56|    135|False|              Comedy|Broadway producer...|    2|
+[2025-01-17T09:09:36.773+0000] {subprocess.py:93} INFO - | 997265|             Rule 34|  2023-01-19|               pt|       5.618|        17|    54.715|    101|False|               Drama|Simone is a young...|    2|
+[2025-01-17T09:09:36.774+0000] {subprocess.py:93} INFO - | 507903|       Spoiler Alert|  2022-12-02|               en|       7.018|       140|    10.522|    110|False|Romance, Comedy, ...|Journalist Michae...|    2|
+[2025-01-17T09:09:36.778+0000] {subprocess.py:93} INFO - |  16866|           Planet 51|  2009-11-19|               en|       5.857|      2031|    17.868|     91|False|Animation, Family...|When Earth astron...|    2|
+[2025-01-17T09:09:36.780+0000] {subprocess.py:93} INFO - | 842942|              Bandit|  2022-09-23|               en|       6.221|       339|     19.78|    126|False|Crime, Drama, Thr...|After escaping a ...|    2|
+[2025-01-17T09:09:36.781+0000] {subprocess.py:93} INFO - | 973468|                WILL|  2023-09-27|               nl|       6.559|        93|    12.965|    114|False| Drama, War, History|Two young police ...|    2|
+[2025-01-17T09:09:36.783+0000] {subprocess.py:93} INFO - |    553|            Dogville|  2003-05-21|               en|         7.8|      2425|    17.787|    178|False|Crime, Drama, Thr...|When a beautiful ...|    2|
+[2025-01-17T09:09:36.784+0000] {subprocess.py:93} INFO - |   4836|          Layer Cake|  2004-09-30|               en|       6.921|      2113|    23.856|    105|False|Drama, Thriller, ...|When a seemingly ...|    2|
+[2025-01-17T09:09:36.785+0000] {subprocess.py:93} INFO - |  13969|      First Daughter|  2004-09-24|               en|         6.2|       925|    19.722|    105|False|Family, Comedy, D...|Samantha MacKenzi...|    2|
+[2025-01-17T09:09:36.785+0000] {subprocess.py:93} INFO - |  13595|            Airheads|  1994-08-05|               en|         6.1|       734|    15.125|     92|False|Comedy, Crime, Music|The Lone Rangers ...|    2|
+[2025-01-17T09:09:36.786+0000] {subprocess.py:93} INFO - |  25239|    Day of the Woman|  1978-11-02|               en|         6.0|       632|    38.639|    101|False|    Horror, Thriller|A young, beautifu...|    2|
+[2025-01-17T09:09:36.786+0000] {subprocess.py:93} INFO - |1224993|           Dark Nuns|  2025-01-24|               ko|         0.0|         0|    18.304|    115|False|Thriller, Horror,...|Desperation drive...|    2|
+[2025-01-17T09:09:36.787+0000] {subprocess.py:93} INFO - | 750253|              My Son|  2021-09-23|               en|         6.2|       462|    14.185|     95|False|Thriller, Crime, ...|When a man's only...|    2|
+[2025-01-17T09:09:36.788+0000] {subprocess.py:93} INFO - |  10649|        The Enforcer|  1976-12-16|               en|       6.732|       878|    18.075|     96|False|       Crime, Action|Dirty Harry Calla...|    2|
+[2025-01-17T09:09:36.788+0000] {subprocess.py:93} INFO - | 859882|     NUREOCHITA DOJO|  2019-01-31|               ja|         0.0|         0|    19.842|      0|False|                NULL|                NULL|    2|
+[2025-01-17T09:09:36.789+0000] {subprocess.py:93} INFO - | 203696|Scooby-Doo! Stage...|  2013-08-10|               en|         7.6|       215|    17.397|     75|False|Family, Adventure...|Join Scooby-Doo, ...|    2|
+[2025-01-17T09:09:36.789+0000] {subprocess.py:93} INFO - |  10339|           Moby Dick|  1956-06-27|               en|       7.049|       417|    20.833|    116|False|    Adventure, Drama|In 1841, young Is...|    2|
+[2025-01-17T09:09:36.790+0000] {subprocess.py:93} INFO - | 351962|Hentai byôtô: Hak...|  1988-07-28|               ja|         5.6|         7|    13.361|     61|False|Mystery, Drama, H...|Japanese cult fil...|    2|
+[2025-01-17T09:09:36.791+0000] {subprocess.py:93} INFO - |  89501|   Nameless Gangster|  2012-02-02|               ko|       6.911|       175|    17.187|    133|False|     Crime, Thriller|A corrupt customs...|    2|
+[2025-01-17T09:09:36.791+0000] {subprocess.py:93} INFO - |  22787|            Whiteout|  2009-09-09|               en|         5.6|       758|    17.024|    101|False|Action, Crime, My...|The only U.S. Mar...|    2|
+[2025-01-17T09:09:36.792+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2025-01-17T09:09:36.792+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T09:09:36.793+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:36.793+0000] {subprocess.py:93} INFO - +------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T09:09:36.794+0000] {subprocess.py:93} INFO - |    id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2025-01-17T09:09:36.795+0000] {subprocess.py:93} INFO - +------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T09:09:36.795+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|Family, Adventure...|The circle of lif...|
+[2025-01-17T09:09:36.795+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|Animation, Comedy...|Welcome to Hotel ...|
+[2025-01-17T09:09:36.796+0000] {subprocess.py:93} INFO - |955916|                Lift|  2024-01-10|               en|         6.5|      1249|    62.726|    107|False|Action, Comedy, C...|An international ...|
+[2025-01-17T09:09:36.797+0000] {subprocess.py:93} INFO - |  7214|        Coach Carter|  2005-01-14|               en|       7.582|      2971|    39.233|    136|False|      Drama, History|Based on a true s...|
+[2025-01-17T09:09:36.797+0000] {subprocess.py:93} INFO - |297761|       Suicide Squad|  2016-08-03|               en|       5.921|     21183|    44.835|    122|False|Action, Adventure...|From DC Comics co...|
+[2025-01-17T09:09:36.799+0000] {subprocess.py:93} INFO - |  9398|           Zoolander|  2001-09-28|               en|       6.204|      4485|    30.971|     89|False|              Comedy|Clear the runway ...|
+[2025-01-17T09:09:36.800+0000] {subprocess.py:93} INFO - | 18823| Clash of the Titans|  2010-03-26|               en|       5.907|      6253|    41.637|    106|False|Adventure, Fantas...|Born of a god but...|
+[2025-01-17T09:09:36.802+0000] {subprocess.py:93} INFO - |530915|                1917|  2019-12-25|               en|        7.99|     12493|    47.907|    119|False|War, History, Thr...|At the height of ...|
+[2025-01-17T09:09:36.803+0000] {subprocess.py:93} INFO - |271718|          Trainwreck|  2015-07-17|               en|       5.805|      2574|    33.121|    125|False|     Comedy, Romance|Having thought th...|
+[2025-01-17T09:09:36.805+0000] {subprocess.py:93} INFO - |502235|Purpose of Reunion 3|  2018-02-20|               ko|         5.3|         9|    54.228|     80|False|      Drama, Romance|Sung-hyeon reunit...|
+[2025-01-17T09:09:36.805+0000] {subprocess.py:93} INFO - | 23483|            Kick-Ass|  2010-03-26|               en|         7.1|     11670|    32.379|    117|False|       Action, Crime|Dave Lizewski is ...|
+[2025-01-17T09:09:36.806+0000] {subprocess.py:93} INFO - |111190|               Adore|  2013-04-03|               en|         6.1|       971|    34.614|    100|False|               Drama|Lil and Roz are t...|
+[2025-01-17T09:09:36.806+0000] {subprocess.py:93} INFO - |690957|    Pushpa: The Rise|  2021-12-16|               te|         7.0|       138|    30.909|    179|False|Action, Drama, Th...|Pushpa Raj is a c...|
+[2025-01-17T09:09:36.807+0000] {subprocess.py:93} INFO - | 87818|            Movie 43|  2013-01-24|               en|       4.606|      2323|    25.221|     94|False|              Comedy|A series of inter...|
+[2025-01-17T09:09:36.809+0000] {subprocess.py:93} INFO - |283378|              Fallen|  2016-11-10|               en|         6.1|      1586|    21.068|     91|False|Drama, Fantasy, R...|Lucinda Price is ...|
+[2025-01-17T09:09:36.811+0000] {subprocess.py:93} INFO - |242224|        The Babadook|  2014-05-22|               en|       6.518|      5997|    41.137|     94|False|       Drama, Horror|A single mother, ...|
+[2025-01-17T09:09:36.811+0000] {subprocess.py:93} INFO - |  1893|Star Wars: Episod...|  1999-05-19|               en|         6.6|     14712|    39.879|    136|False|Adventure, Action...|Anakin Skywalker,...|
+[2025-01-17T09:09:36.812+0000] {subprocess.py:93} INFO - |276126|      Young Mother 2|  2014-05-29|               ko|         6.1|        15|    31.083|     89|False|      Drama, Romance|Yeong-gil is in g...|
+[2025-01-17T09:09:36.812+0000] {subprocess.py:93} INFO - | 12106|The Quick and the...|  1995-02-09|               en|        6.55|      1734|    23.068|    107|False|     Western, Action|A mysterious woma...|
+[2025-01-17T09:09:36.812+0000] {subprocess.py:93} INFO - | 10947| High School Musical|  2006-01-20|               en|       6.556|      4577|    25.683|     98|False|Comedy, Drama, Fa...|A popular high sc...|
+[2025-01-17T09:09:36.813+0000] {subprocess.py:93} INFO - +------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T09:09:36.813+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T09:09:36.814+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:36.815+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T09:09:36.816+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2025-01-17T09:09:36.816+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T09:09:36.817+0000] {subprocess.py:93} INFO - |  0|    0|           0|                0|           0|         0|         0|      0|    0|     0|       0|
+[2025-01-17T09:09:36.818+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T09:09:36.818+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:41.585+0000] {subprocess.py:93} INFO - [Stage 37:>                                                         (0 + 2) / 2]                                                                                +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2025-01-17T09:09:41.586+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|count|
+[2025-01-17T09:09:41.586+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2025-01-17T09:09:41.587+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2025-01-17T09:09:41.588+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:41.589+0000] {subprocess.py:93} INFO - +------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------+
+[2025-01-17T09:09:41.591+0000] {subprocess.py:93} INFO - |    id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|    genre|
+[2025-01-17T09:09:41.593+0000] {subprocess.py:93} INFO - +------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------+
+[2025-01-17T09:09:41.594+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|   Family|
+[2025-01-17T09:09:41.597+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|Adventure|
+[2025-01-17T09:09:41.598+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|Animation|
+[2025-01-17T09:09:41.598+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|   Action|
+[2025-01-17T09:09:41.599+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|Animation|
+[2025-01-17T09:09:41.599+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|   Comedy|
+[2025-01-17T09:09:41.602+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|   Family|
+[2025-01-17T09:09:41.603+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|  Fantasy|
+[2025-01-17T09:09:41.604+0000] {subprocess.py:93} INFO - |955916|                Lift|  2024-01-10|               en|         6.5|      1249|    62.726|    107|False|   Action|
+[2025-01-17T09:09:41.605+0000] {subprocess.py:93} INFO - |955916|                Lift|  2024-01-10|               en|         6.5|      1249|    62.726|    107|False|   Comedy|
+[2025-01-17T09:09:41.605+0000] {subprocess.py:93} INFO - |955916|                Lift|  2024-01-10|               en|         6.5|      1249|    62.726|    107|False|    Crime|
+[2025-01-17T09:09:41.606+0000] {subprocess.py:93} INFO - |  7214|        Coach Carter|  2005-01-14|               en|       7.582|      2971|    39.233|    136|False|    Drama|
+[2025-01-17T09:09:41.607+0000] {subprocess.py:93} INFO - |  7214|        Coach Carter|  2005-01-14|               en|       7.582|      2971|    39.233|    136|False|  History|
+[2025-01-17T09:09:41.607+0000] {subprocess.py:93} INFO - |297761|       Suicide Squad|  2016-08-03|               en|       5.921|     21183|    44.835|    122|False|   Action|
+[2025-01-17T09:09:41.608+0000] {subprocess.py:93} INFO - |297761|       Suicide Squad|  2016-08-03|               en|       5.921|     21183|    44.835|    122|False|Adventure|
+[2025-01-17T09:09:41.609+0000] {subprocess.py:93} INFO - |297761|       Suicide Squad|  2016-08-03|               en|       5.921|     21183|    44.835|    122|False|  Fantasy|
+[2025-01-17T09:09:41.609+0000] {subprocess.py:93} INFO - |  9398|           Zoolander|  2001-09-28|               en|       6.204|      4485|    30.971|     89|False|   Comedy|
+[2025-01-17T09:09:41.609+0000] {subprocess.py:93} INFO - | 18823| Clash of the Titans|  2010-03-26|               en|       5.907|      6253|    41.637|    106|False|Adventure|
+[2025-01-17T09:09:41.610+0000] {subprocess.py:93} INFO - | 18823| Clash of the Titans|  2010-03-26|               en|       5.907|      6253|    41.637|    106|False|  Fantasy|
+[2025-01-17T09:09:41.611+0000] {subprocess.py:93} INFO - | 18823| Clash of the Titans|  2010-03-26|               en|       5.907|      6253|    41.637|    106|False|   Action|
+[2025-01-17T09:09:41.612+0000] {subprocess.py:93} INFO - +------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------+
+[2025-01-17T09:09:41.612+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T09:09:41.613+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:41.614+0000] {subprocess.py:93} INFO - +------+--------------------+-----------------+------------+----------+----------+-------+---------+------------+-------------+-----------+
+[2025-01-17T09:09:41.614+0000] {subprocess.py:93} INFO - |    id|               title|original_language|vote_average|vote_count|popularity|runtime|    genre|release_year|release_month|release_day|
+[2025-01-17T09:09:41.615+0000] {subprocess.py:93} INFO - +------+--------------------+-----------------+------------+----------+----------+-------+---------+------------+-------------+-----------+
+[2025-01-17T09:09:41.615+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|               en|         6.9|      4418|    89.506|     81|   Family|        1998|           10|         24|
+[2025-01-17T09:09:41.616+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|               en|         6.9|      4418|    89.506|     81|Adventure|        1998|           10|         24|
+[2025-01-17T09:09:41.616+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|               en|         6.9|      4418|    89.506|     81|Animation|        1998|           10|         24|
+[2025-01-17T09:09:41.617+0000] {subprocess.py:93} INFO - |  9732|The Lion King II:...|               en|         6.9|      4418|    89.506|     81|   Action|        1998|           10|         24|
+[2025-01-17T09:09:41.617+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|               en|       6.958|      8659|    51.671|     91|Animation|        2012|            9|         20|
+[2025-01-17T09:09:41.618+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|               en|       6.958|      8659|    51.671|     91|   Comedy|        2012|            9|         20|
+[2025-01-17T09:09:41.618+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|               en|       6.958|      8659|    51.671|     91|   Family|        2012|            9|         20|
+[2025-01-17T09:09:41.619+0000] {subprocess.py:93} INFO - | 76492|  Hotel Transylvania|               en|       6.958|      8659|    51.671|     91|  Fantasy|        2012|            9|         20|
+[2025-01-17T09:09:41.619+0000] {subprocess.py:93} INFO - |955916|                Lift|               en|         6.5|      1249|    62.726|    107|   Action|        2024|            1|         10|
+[2025-01-17T09:09:41.619+0000] {subprocess.py:93} INFO - |955916|                Lift|               en|         6.5|      1249|    62.726|    107|   Comedy|        2024|            1|         10|
+[2025-01-17T09:09:41.619+0000] {subprocess.py:93} INFO - |955916|                Lift|               en|         6.5|      1249|    62.726|    107|    Crime|        2024|            1|         10|
+[2025-01-17T09:09:41.620+0000] {subprocess.py:93} INFO - |  7214|        Coach Carter|               en|       7.582|      2971|    39.233|    136|    Drama|        2005|            1|         14|
+[2025-01-17T09:09:41.620+0000] {subprocess.py:93} INFO - |  7214|        Coach Carter|               en|       7.582|      2971|    39.233|    136|  History|        2005|            1|         14|
+[2025-01-17T09:09:41.620+0000] {subprocess.py:93} INFO - |297761|       Suicide Squad|               en|       5.921|     21183|    44.835|    122|   Action|        2016|            8|          3|
+[2025-01-17T09:09:41.621+0000] {subprocess.py:93} INFO - |297761|       Suicide Squad|               en|       5.921|     21183|    44.835|    122|Adventure|        2016|            8|          3|
+[2025-01-17T09:09:41.621+0000] {subprocess.py:93} INFO - |297761|       Suicide Squad|               en|       5.921|     21183|    44.835|    122|  Fantasy|        2016|            8|          3|
+[2025-01-17T09:09:41.622+0000] {subprocess.py:93} INFO - |  9398|           Zoolander|               en|       6.204|      4485|    30.971|     89|   Comedy|        2001|            9|         28|
+[2025-01-17T09:09:41.623+0000] {subprocess.py:93} INFO - | 18823| Clash of the Titans|               en|       5.907|      6253|    41.637|    106|Adventure|        2010|            3|         26|
+[2025-01-17T09:09:41.624+0000] {subprocess.py:93} INFO - | 18823| Clash of the Titans|               en|       5.907|      6253|    41.637|    106|  Fantasy|        2010|            3|         26|
+[2025-01-17T09:09:41.624+0000] {subprocess.py:93} INFO - | 18823| Clash of the Titans|               en|       5.907|      6253|    41.637|    106|   Action|        2010|            3|         26|
+[2025-01-17T09:09:41.625+0000] {subprocess.py:93} INFO - +------+--------------------+-----------------+------------+----------+----------+-------+---------+------------+-------------+-----------+
+[2025-01-17T09:09:41.625+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T09:09:41.626+0000] {subprocess.py:93} INFO - 
+[2025-01-17T09:09:41.626+0000] {subprocess.py:93} INFO - Data successfully transformed and saved to: /opt/***/DE_project/data/parquet/movie.parquet
+[2025-01-17T09:09:42.047+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-01-17T09:09:42.081+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow, task_id=transform_data_movie, execution_date=20250105T000000, start_date=20250117T090918, end_date=20250117T090942
+[2025-01-17T09:09:42.121+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-01-17T09:09:42.146+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-01-17T10:20:06.516+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T10:20:06.531+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.transform_data_movie scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T10:20:06.545+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.transform_data_movie scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T10:20:06.545+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-01-17T10:20:06.560+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_data_movie> on 2025-01-05 00:00:00+00:00
+[2025-01-17T10:20:06.565+0000] {standard_task_runner.py:57} INFO - Started process 710 to run task
+[2025-01-17T10:20:06.570+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'transform_data_movie', 'scheduled__2025-01-05T00:00:00+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpkpp5srxa']
+[2025-01-17T10:20:06.571+0000] {standard_task_runner.py:85} INFO - Job 260: Subtask transform_data_movie
+[2025-01-17T10:20:06.588+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-01-17T10:20:06.633+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.transform_data_movie scheduled__2025-01-05T00:00:00+00:00 [running]> on host 1d5d3d5ac065
+[2025-01-17T10:20:06.650+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T10:20:06.720+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='transform_data_movie' AIRFLOW_CTX_EXECUTION_DATE='2025-01-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-05T00:00:00+00:00'
+[2025-01-17T10:20:06.723+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-01-17T10:20:06.724+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/transform/transform_moviedf.py']
+[2025-01-17T10:20:06.733+0000] {subprocess.py:86} INFO - Output:
+[2025-01-17T10:20:09.272+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2025-01-17T10:20:09.272+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2025-01-17T10:20:09.454+0000] {subprocess.py:93} INFO - 25/01/17 10:20:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-01-17T10:20:19.862+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T10:20:19.863+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2025-01-17T10:20:19.864+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T10:20:19.865+0000] {subprocess.py:93} INFO - | 939243|Sonic the Hedgehog 3|  2024-12-19|               en|       7.602|       596|  2525.912|    110|False|Action, Science F...|Sonic, Knuckles, ...|
+[2025-01-17T10:20:19.869+0000] {subprocess.py:93} INFO - | 762509|Mufasa: The Lion ...|  2024-12-18|               en|       7.429|       686|  2393.715|    118|False|Adventure, Family...|Mufasa, a cub los...|
+[2025-01-17T10:20:19.870+0000] {subprocess.py:93} INFO - | 558449|        Gladiator II|  2024-11-05|               en|       6.754|      2345|  1720.821|    148|False|Action, Adventure...|Years after witne...|
+[2025-01-17T10:20:19.871+0000] {subprocess.py:93} INFO - | 912649|Venom: The Last D...|  2024-10-22|               en|         6.8|      2373|  1694.909|    109|False|Action, Science F...|Eddie and Venom a...|
+[2025-01-17T10:20:19.872+0000] {subprocess.py:93} INFO - |1241982|             Moana 2|  2024-11-21|               en|         7.0|       849|  1432.939|    100|False|Animation, Advent...|After receiving a...|
+[2025-01-17T10:20:19.873+0000] {subprocess.py:93} INFO - |1222248|           Number 24|  2024-10-30|               no|         7.4|       118|  1373.294|    112|False| War, History, Drama|On the brink of t...|
+[2025-01-17T10:20:19.874+0000] {subprocess.py:93} INFO - | 402431|              Wicked|  2024-11-20|               en|       7.123|      1301|   1270.61|    162|False|Drama, Romance, F...|In the land of Oz...|
+[2025-01-17T10:20:19.874+0000] {subprocess.py:93} INFO - | 539972|   Kraven the Hunter|  2024-12-11|               en|       6.222|       441|  1682.267|    127|False|Action, Adventure...|Kraven Kravinoff'...|
+[2025-01-17T10:20:19.875+0000] {subprocess.py:93} INFO - | 970450|          Werewolves|  2024-12-04|               en|       6.511|       189|   1096.46|     94|False|Action, Horror, T...|A year after a su...|
+[2025-01-17T10:20:19.876+0000] {subprocess.py:93} INFO - | 845781|             Red One|  2024-10-31|               en|       7.078|      2039|    972.76|    124|False|Action, Fantasy, ...|After Santa Claus...|
+[2025-01-17T10:20:19.877+0000] {subprocess.py:93} INFO - | 839033|The Lord of the R...|  2024-12-05|               en|         6.5|       315|  1049.714|    134|False|Animation, Fantas...|A sudden attack b...|
+[2025-01-17T10:20:19.879+0000] {subprocess.py:93} INFO - |1156593|          Your Fault|  2024-12-26|               es|         7.2|       865|  1035.271|    120|False|      Romance, Drama|The love between ...|
+[2025-01-17T10:20:19.882+0000] {subprocess.py:93} INFO - |1357633|Solo Leveling -Re...|  2024-11-26|               ja|         7.0|        72|   930.553|    116|False|Action, Adventure...|Over a decade aft...|
+[2025-01-17T10:20:19.883+0000] {subprocess.py:93} INFO - |1035048|           Elevation|  2024-11-07|               en|       6.261|       332|    808.58|     91|False|Action, Science F...|A single father a...|
+[2025-01-17T10:20:19.883+0000] {subprocess.py:93} INFO - |1043905|        Dirty Angels|  2024-12-11|               en|         6.4|       131|   740.205|    104|False|Action, Drama, Th...|During the United...|
+[2025-01-17T10:20:19.884+0000] {subprocess.py:93} INFO - |1235623|    Eye for an Eye 2|  2024-07-21|               zh|         7.0|         8|   647.826|     90|False|       Action, Drama|The blind swordsm...|
+[2025-01-17T10:20:19.884+0000] {subprocess.py:93} INFO - | 933260|       The Substance|  2024-09-07|               en|         7.1|      3274|   727.215|    141|False|Horror, Science F...|A fading celebrit...|
+[2025-01-17T10:20:19.885+0000] {subprocess.py:93} INFO - | 823219|                Flow|  2024-08-29|               lv|       8.406|       769|   635.112|     85|False|Animation, Fantas...|A solitary cat, d...|
+[2025-01-17T10:20:19.886+0000] {subprocess.py:93} INFO - |1005331|            Carry-On|  2024-12-05|               en|       6.929|      1652|   627.522|    120|False|    Thriller, Action|An airport securi...|
+[2025-01-17T10:20:19.887+0000] {subprocess.py:93} INFO - |1010581|            My Fault|  2023-06-08|               es|       7.879|      3391|   591.473|    117|False|      Romance, Drama|Noah must leave h...|
+[2025-01-17T10:20:19.888+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T10:20:19.889+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T10:20:19.890+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:19.890+0000] {subprocess.py:93} INFO - root
+[2025-01-17T10:20:19.894+0000] {subprocess.py:93} INFO -  |-- id: string (nullable = true)
+[2025-01-17T10:20:19.898+0000] {subprocess.py:93} INFO -  |-- title: string (nullable = true)
+[2025-01-17T10:20:19.899+0000] {subprocess.py:93} INFO -  |-- release_date: string (nullable = true)
+[2025-01-17T10:20:19.899+0000] {subprocess.py:93} INFO -  |-- original_language: string (nullable = true)
+[2025-01-17T10:20:19.900+0000] {subprocess.py:93} INFO -  |-- vote_average: string (nullable = true)
+[2025-01-17T10:20:19.900+0000] {subprocess.py:93} INFO -  |-- vote_count: string (nullable = true)
+[2025-01-17T10:20:19.900+0000] {subprocess.py:93} INFO -  |-- popularity: string (nullable = true)
+[2025-01-17T10:20:19.901+0000] {subprocess.py:93} INFO -  |-- runtime: string (nullable = true)
+[2025-01-17T10:20:19.903+0000] {subprocess.py:93} INFO -  |-- adult: string (nullable = true)
+[2025-01-17T10:20:19.903+0000] {subprocess.py:93} INFO -  |-- genres: string (nullable = true)
+[2025-01-17T10:20:19.905+0000] {subprocess.py:93} INFO -  |-- overview: string (nullable = true)
+[2025-01-17T10:20:19.909+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:19.910+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T10:20:19.910+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2025-01-17T10:20:19.911+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T10:20:19.911+0000] {subprocess.py:93} INFO - |  0|    3|          22|                6|           8|        10|        10|     10|   13|    49|      64|
+[2025-01-17T10:20:19.912+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T10:20:19.913+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:22.451+0000] {subprocess.py:93} INFO - +-------+-----------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2025-01-17T10:20:22.453+0000] {subprocess.py:93} INFO - |     id|            title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|count|
+[2025-01-17T10:20:22.457+0000] {subprocess.py:93} INFO - +-------+-----------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2025-01-17T10:20:22.458+0000] {subprocess.py:93} INFO - |   9899|    The Producers|  2005-12-25|               en|       6.179|       469|     14.56|    135|False|              Comedy|Broadway producer...|    2|
+[2025-01-17T10:20:22.460+0000] {subprocess.py:93} INFO - | 463053|            Ibiza|  2018-05-25|               en|       5.716|      1163|    12.869|     94|False|     Comedy, Romance|She could do the ...|    2|
+[2025-01-17T10:20:22.460+0000] {subprocess.py:93} INFO - | 997265|          Rule 34|  2023-01-19|               pt|       5.618|        17|    54.715|    101|False|               Drama|Simone is a young...|    2|
+[2025-01-17T10:20:22.461+0000] {subprocess.py:93} INFO - |  77930|       Magic Mike|  2012-06-28|               en|         6.2|      2937|    19.864|    110|False|       Drama, Comedy|Mike, an experien...|    2|
+[2025-01-17T10:20:22.462+0000] {subprocess.py:93} INFO - | 351044|Welcome to Marwen|  2018-12-21|               en|       6.531|      1139|    15.165|    116|False|       Drama, Comedy|When a devastatin...|    2|
+[2025-01-17T10:20:22.462+0000] {subprocess.py:93} INFO - | 507903|    Spoiler Alert|  2022-12-02|               en|       7.018|       140|    10.522|    110|False|Romance, Comedy, ...|Journalist Michae...|    2|
+[2025-01-17T10:20:22.464+0000] {subprocess.py:93} INFO - |  16866|        Planet 51|  2009-11-19|               en|       5.857|      2031|    17.868|     91|False|Animation, Family...|When Earth astron...|    2|
+[2025-01-17T10:20:22.465+0000] {subprocess.py:93} INFO - |  11504|Suburban Commando|  1991-10-04|               en|         4.7|       181|    11.312|     88|False|Action, Comedy, F...|Shep Ramsey is an...|    2|
+[2025-01-17T10:20:22.465+0000] {subprocess.py:93} INFO - | 617502|             Jolt|  2021-07-15|               en|         6.6|      1261|    24.128|     91|False|    Action, Thriller|A bouncer with an...|    2|
+[2025-01-17T10:20:22.466+0000] {subprocess.py:93} INFO - |    553|         Dogville|  2003-05-21|               en|         7.8|      2425|    17.787|    178|False|Crime, Drama, Thr...|When a beautiful ...|    2|
+[2025-01-17T10:20:22.467+0000] {subprocess.py:93} INFO - |  14013|      BASEketball|  1998-07-28|               en|         6.1|       582|     15.22|    103|False|              Comedy|Two losers from M...|    2|
+[2025-01-17T10:20:22.468+0000] {subprocess.py:93} INFO - |  10337|            Bugsy|  1991-12-10|               en|        6.36|       390|     12.59|    134|False|Crime, Drama, Mys...|New York gangster...|    2|
+[2025-01-17T10:20:22.469+0000] {subprocess.py:93} INFO - | 238713|              Spy|  2015-05-06|               en|       6.832|      6013|    39.438|    120|False|Action, Comedy, C...|A desk-bound CIA ...|    2|
+[2025-01-17T10:20:22.469+0000] {subprocess.py:93} INFO - |   4836|       Layer Cake|  2004-09-30|               en|       6.921|      2113|    23.856|    105|False|Drama, Thriller, ...|When a seemingly ...|    2|
+[2025-01-17T10:20:22.470+0000] {subprocess.py:93} INFO - |  13969|   First Daughter|  2004-09-24|               en|         6.2|       925|    19.722|    105|False|Family, Comedy, D...|Samantha MacKenzi...|    2|
+[2025-01-17T10:20:22.471+0000] {subprocess.py:93} INFO - |  13595|         Airheads|  1994-08-05|               en|         6.1|       734|    15.125|     92|False|Comedy, Crime, Music|The Lone Rangers ...|    2|
+[2025-01-17T10:20:22.472+0000] {subprocess.py:93} INFO - |  25239| Day of the Woman|  1978-11-02|               en|         6.0|       632|    38.639|    101|False|    Horror, Thriller|A young, beautifu...|    2|
+[2025-01-17T10:20:22.473+0000] {subprocess.py:93} INFO - |1224993|        Dark Nuns|  2025-01-24|               ko|         0.0|         0|    18.304|    115|False|Thriller, Horror,...|Desperation drive...|    2|
+[2025-01-17T10:20:22.474+0000] {subprocess.py:93} INFO - | 222936|            Aloha|  2015-05-29|               en|       5.508|      2035|     18.61|    105|False|Drama, Comedy, Ro...|A celebrated mili...|    2|
+[2025-01-17T10:20:22.475+0000] {subprocess.py:93} INFO - |  10733|        The Alamo|  2004-04-07|               en|         5.8|       333|    14.381|    137|False| History, War, Drama|Based on the 1836...|    2|
+[2025-01-17T10:20:22.476+0000] {subprocess.py:93} INFO - +-------+-----------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+-----+
+[2025-01-17T10:20:22.477+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T10:20:22.479+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:22.481+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T10:20:22.482+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|              genres|            overview|
+[2025-01-17T10:20:22.483+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T10:20:22.484+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|Family, Adventure...|The circle of lif...|
+[2025-01-17T10:20:22.486+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|Animation, Comedy...|Welcome to Hotel ...|
+[2025-01-17T10:20:22.487+0000] {subprocess.py:93} INFO - | 955916|                Lift|  2024-01-10|               en|         6.5|      1249|    62.726|    107|False|Action, Comedy, C...|An international ...|
+[2025-01-17T10:20:22.488+0000] {subprocess.py:93} INFO - |1140648|        Double Blind|  2024-02-09|               en|         5.9|       110|    63.935|     90|False|Science Fiction, ...|After an experime...|
+[2025-01-17T10:20:22.489+0000] {subprocess.py:93} INFO - |   7214|        Coach Carter|  2005-01-14|               en|       7.582|      2971|    39.233|    136|False|      Drama, History|Based on a true s...|
+[2025-01-17T10:20:22.493+0000] {subprocess.py:93} INFO - | 297761|       Suicide Squad|  2016-08-03|               en|       5.921|     21183|    44.835|    122|False|Action, Adventure...|From DC Comics co...|
+[2025-01-17T10:20:22.494+0000] {subprocess.py:93} INFO - |   1372|       Blood Diamond|  2006-12-08|               en|       7.544|      7646|    40.233|    143|False|Drama, Thriller, ...|An ex-mercenary t...|
+[2025-01-17T10:20:22.494+0000] {subprocess.py:93} INFO - |  18823| Clash of the Titans|  2010-03-26|               en|       5.907|      6253|    41.637|    106|False|Adventure, Fantas...|Born of a god but...|
+[2025-01-17T10:20:22.495+0000] {subprocess.py:93} INFO - | 271718|          Trainwreck|  2015-07-17|               en|       5.805|      2574|    33.121|    125|False|     Comedy, Romance|Having thought th...|
+[2025-01-17T10:20:22.496+0000] {subprocess.py:93} INFO - | 502235|Purpose of Reunion 3|  2018-02-20|               ko|         5.3|         9|    54.228|     80|False|      Drama, Romance|Sung-hyeon reunit...|
+[2025-01-17T10:20:22.498+0000] {subprocess.py:93} INFO - |  23483|            Kick-Ass|  2010-03-26|               en|         7.1|     11670|    32.379|    117|False|       Action, Crime|Dave Lizewski is ...|
+[2025-01-17T10:20:22.499+0000] {subprocess.py:93} INFO - | 111190|               Adore|  2013-04-03|               en|         6.1|       971|    34.614|    100|False|               Drama|Lil and Roz are t...|
+[2025-01-17T10:20:22.500+0000] {subprocess.py:93} INFO - | 690957|    Pushpa: The Rise|  2021-12-16|               te|         7.0|       138|    30.909|    179|False|Action, Drama, Th...|Pushpa Raj is a c...|
+[2025-01-17T10:20:22.500+0000] {subprocess.py:93} INFO - |  16366|Joseph: King of D...|  2000-11-07|               en|       6.845|      1008|    29.821|     74|False|Family, Animation...|In this animated ...|
+[2025-01-17T10:20:22.501+0000] {subprocess.py:93} INFO - | 283378|              Fallen|  2016-11-10|               en|         6.1|      1586|    21.068|     91|False|Drama, Fantasy, R...|Lucinda Price is ...|
+[2025-01-17T10:20:22.502+0000] {subprocess.py:93} INFO - | 242224|        The Babadook|  2014-05-22|               en|       6.518|      5997|    41.137|     94|False|       Drama, Horror|A single mother, ...|
+[2025-01-17T10:20:22.503+0000] {subprocess.py:93} INFO - |  77887|   Hawaiian Vacation|  2011-06-16|               en|       6.971|       663|    24.516|      7|False|Animation, Family...|The toys throw Ke...|
+[2025-01-17T10:20:22.503+0000] {subprocess.py:93} INFO - |   1893|Star Wars: Episod...|  1999-05-19|               en|         6.6|     14712|    39.879|    136|False|Adventure, Action...|Anakin Skywalker,...|
+[2025-01-17T10:20:22.504+0000] {subprocess.py:93} INFO - | 276126|      Young Mother 2|  2014-05-29|               ko|         6.1|        15|    31.083|     89|False|      Drama, Romance|Yeong-gil is in g...|
+[2025-01-17T10:20:22.504+0000] {subprocess.py:93} INFO - |  12106|The Quick and the...|  1995-02-09|               en|        6.55|      1734|    23.068|    107|False|     Western, Action|A mysterious woma...|
+[2025-01-17T10:20:22.505+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+--------------------+--------------------+
+[2025-01-17T10:20:22.506+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T10:20:22.507+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:22.508+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T10:20:22.509+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|
+[2025-01-17T10:20:22.510+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T10:20:22.512+0000] {subprocess.py:93} INFO - |  0|    0|           0|                0|           0|         0|         0|      0|    0|     0|       0|
+[2025-01-17T10:20:22.512+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+
+[2025-01-17T10:20:22.514+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:27.211+0000] {subprocess.py:93} INFO - [Stage 37:>                                                         (0 + 2) / 2]                                                                                +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2025-01-17T10:20:27.212+0000] {subprocess.py:93} INFO - | id|title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|genres|overview|count|
+[2025-01-17T10:20:27.212+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2025-01-17T10:20:27.213+0000] {subprocess.py:93} INFO - +---+-----+------------+-----------------+------------+----------+----------+-------+-----+------+--------+-----+
+[2025-01-17T10:20:27.213+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:27.214+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2025-01-17T10:20:27.214+0000] {subprocess.py:93} INFO - |     id|               title|release_date|original_language|vote_average|vote_count|popularity|runtime|adult|          genre|
+[2025-01-17T10:20:27.215+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2025-01-17T10:20:27.215+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|         Family|
+[2025-01-17T10:20:27.216+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|      Adventure|
+[2025-01-17T10:20:27.219+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|      Animation|
+[2025-01-17T10:20:27.220+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|  1998-10-24|               en|         6.9|      4418|    89.506|     81|False|         Action|
+[2025-01-17T10:20:27.221+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|      Animation|
+[2025-01-17T10:20:27.221+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|         Comedy|
+[2025-01-17T10:20:27.222+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|         Family|
+[2025-01-17T10:20:27.225+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|  2012-09-20|               en|       6.958|      8659|    51.671|     91|False|        Fantasy|
+[2025-01-17T10:20:27.226+0000] {subprocess.py:93} INFO - | 955916|                Lift|  2024-01-10|               en|         6.5|      1249|    62.726|    107|False|         Action|
+[2025-01-17T10:20:27.226+0000] {subprocess.py:93} INFO - | 955916|                Lift|  2024-01-10|               en|         6.5|      1249|    62.726|    107|False|         Comedy|
+[2025-01-17T10:20:27.227+0000] {subprocess.py:93} INFO - | 955916|                Lift|  2024-01-10|               en|         6.5|      1249|    62.726|    107|False|          Crime|
+[2025-01-17T10:20:27.228+0000] {subprocess.py:93} INFO - |1140648|        Double Blind|  2024-02-09|               en|         5.9|       110|    63.935|     90|False|Science Fiction|
+[2025-01-17T10:20:27.228+0000] {subprocess.py:93} INFO - |1140648|        Double Blind|  2024-02-09|               en|         5.9|       110|    63.935|     90|False|         Horror|
+[2025-01-17T10:20:27.228+0000] {subprocess.py:93} INFO - |1140648|        Double Blind|  2024-02-09|               en|         5.9|       110|    63.935|     90|False|       Thriller|
+[2025-01-17T10:20:27.231+0000] {subprocess.py:93} INFO - |   7214|        Coach Carter|  2005-01-14|               en|       7.582|      2971|    39.233|    136|False|          Drama|
+[2025-01-17T10:20:27.231+0000] {subprocess.py:93} INFO - |   7214|        Coach Carter|  2005-01-14|               en|       7.582|      2971|    39.233|    136|False|        History|
+[2025-01-17T10:20:27.232+0000] {subprocess.py:93} INFO - | 297761|       Suicide Squad|  2016-08-03|               en|       5.921|     21183|    44.835|    122|False|         Action|
+[2025-01-17T10:20:27.232+0000] {subprocess.py:93} INFO - | 297761|       Suicide Squad|  2016-08-03|               en|       5.921|     21183|    44.835|    122|False|      Adventure|
+[2025-01-17T10:20:27.233+0000] {subprocess.py:93} INFO - | 297761|       Suicide Squad|  2016-08-03|               en|       5.921|     21183|    44.835|    122|False|        Fantasy|
+[2025-01-17T10:20:27.233+0000] {subprocess.py:93} INFO - |   1372|       Blood Diamond|  2006-12-08|               en|       7.544|      7646|    40.233|    143|False|          Drama|
+[2025-01-17T10:20:27.234+0000] {subprocess.py:93} INFO - +-------+--------------------+------------+-----------------+------------+----------+----------+-------+-----+---------------+
+[2025-01-17T10:20:27.237+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T10:20:27.238+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:27.238+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2025-01-17T10:20:27.239+0000] {subprocess.py:93} INFO - |     id|               title|original_language|vote_average|vote_count|popularity|runtime|          genre|release_year|release_month|release_day|
+[2025-01-17T10:20:27.240+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2025-01-17T10:20:27.240+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|               en|         6.9|      4418|    89.506|     81|         Family|        1998|           10|         24|
+[2025-01-17T10:20:27.241+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|               en|         6.9|      4418|    89.506|     81|      Adventure|        1998|           10|         24|
+[2025-01-17T10:20:27.244+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|               en|         6.9|      4418|    89.506|     81|      Animation|        1998|           10|         24|
+[2025-01-17T10:20:27.245+0000] {subprocess.py:93} INFO - |   9732|The Lion King II:...|               en|         6.9|      4418|    89.506|     81|         Action|        1998|           10|         24|
+[2025-01-17T10:20:27.246+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|               en|       6.958|      8659|    51.671|     91|      Animation|        2012|            9|         20|
+[2025-01-17T10:20:27.246+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|               en|       6.958|      8659|    51.671|     91|         Comedy|        2012|            9|         20|
+[2025-01-17T10:20:27.247+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|               en|       6.958|      8659|    51.671|     91|         Family|        2012|            9|         20|
+[2025-01-17T10:20:27.250+0000] {subprocess.py:93} INFO - |  76492|  Hotel Transylvania|               en|       6.958|      8659|    51.671|     91|        Fantasy|        2012|            9|         20|
+[2025-01-17T10:20:27.251+0000] {subprocess.py:93} INFO - | 955916|                Lift|               en|         6.5|      1249|    62.726|    107|         Action|        2024|            1|         10|
+[2025-01-17T10:20:27.251+0000] {subprocess.py:93} INFO - | 955916|                Lift|               en|         6.5|      1249|    62.726|    107|         Comedy|        2024|            1|         10|
+[2025-01-17T10:20:27.252+0000] {subprocess.py:93} INFO - | 955916|                Lift|               en|         6.5|      1249|    62.726|    107|          Crime|        2024|            1|         10|
+[2025-01-17T10:20:27.253+0000] {subprocess.py:93} INFO - |1140648|        Double Blind|               en|         5.9|       110|    63.935|     90|Science Fiction|        2024|            2|          9|
+[2025-01-17T10:20:27.254+0000] {subprocess.py:93} INFO - |1140648|        Double Blind|               en|         5.9|       110|    63.935|     90|         Horror|        2024|            2|          9|
+[2025-01-17T10:20:27.255+0000] {subprocess.py:93} INFO - |1140648|        Double Blind|               en|         5.9|       110|    63.935|     90|       Thriller|        2024|            2|          9|
+[2025-01-17T10:20:27.255+0000] {subprocess.py:93} INFO - |   7214|        Coach Carter|               en|       7.582|      2971|    39.233|    136|          Drama|        2005|            1|         14|
+[2025-01-17T10:20:27.256+0000] {subprocess.py:93} INFO - |   7214|        Coach Carter|               en|       7.582|      2971|    39.233|    136|        History|        2005|            1|         14|
+[2025-01-17T10:20:27.257+0000] {subprocess.py:93} INFO - | 297761|       Suicide Squad|               en|       5.921|     21183|    44.835|    122|         Action|        2016|            8|          3|
+[2025-01-17T10:20:27.258+0000] {subprocess.py:93} INFO - | 297761|       Suicide Squad|               en|       5.921|     21183|    44.835|    122|      Adventure|        2016|            8|          3|
+[2025-01-17T10:20:27.259+0000] {subprocess.py:93} INFO - | 297761|       Suicide Squad|               en|       5.921|     21183|    44.835|    122|        Fantasy|        2016|            8|          3|
+[2025-01-17T10:20:27.261+0000] {subprocess.py:93} INFO - |   1372|       Blood Diamond|               en|       7.544|      7646|    40.233|    143|          Drama|        2006|           12|          8|
+[2025-01-17T10:20:27.262+0000] {subprocess.py:93} INFO - +-------+--------------------+-----------------+------------+----------+----------+-------+---------------+------------+-------------+-----------+
+[2025-01-17T10:20:27.263+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T10:20:27.263+0000] {subprocess.py:93} INFO - 
+[2025-01-17T10:20:27.265+0000] {subprocess.py:93} INFO - Data successfully transformed and saved to: /opt/***/DE_project/data/parquet/movie.parquet
+[2025-01-17T10:20:27.744+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-01-17T10:20:27.781+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow, task_id=transform_data_movie, execution_date=20250105T000000, start_date=20250117T102006, end_date=20250117T102027
+[2025-01-17T10:20:27.818+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-01-17T10:20:27.840+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

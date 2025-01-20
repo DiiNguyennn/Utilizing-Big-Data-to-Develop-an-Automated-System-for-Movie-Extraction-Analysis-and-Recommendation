@@ -1,0 +1,52 @@
+[2025-01-17T09:09:16.831+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T09:09:16.845+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.movie_json_to_csv scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T09:09:16.855+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.movie_json_to_csv scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T09:09:16.855+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-01-17T09:09:16.867+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): movie_json_to_csv> on 2025-01-05 00:00:00+00:00
+[2025-01-17T09:09:16.871+0000] {standard_task_runner.py:57} INFO - Started process 76 to run task
+[2025-01-17T09:09:16.875+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'movie_json_to_csv', 'scheduled__2025-01-05T00:00:00+00:00', '--job-id', '254', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmpuft2nmd0']
+[2025-01-17T09:09:16.877+0000] {standard_task_runner.py:85} INFO - Job 254: Subtask movie_json_to_csv
+[2025-01-17T09:09:16.898+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-01-17T09:09:16.950+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.movie_json_to_csv scheduled__2025-01-05T00:00:00+00:00 [running]> on host 1d5d3d5ac065
+[2025-01-17T09:09:16.966+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T09:09:17.075+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='movie_json_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-01-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-05T00:00:00+00:00'
+[2025-01-17T09:09:17.081+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-01-17T09:09:17.084+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/JSON_to_CSV/JSON_to_CSV_movie.py']
+[2025-01-17T09:09:17.112+0000] {subprocess.py:86} INFO - Output:
+[2025-01-17T09:09:17.865+0000] {subprocess.py:93} INFO - Conversion complete. CSV file saved as 'movies_data.csv'
+[2025-01-17T09:09:17.883+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-01-17T09:09:17.930+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow, task_id=movie_json_to_csv, execution_date=20250105T000000, start_date=20250117T090916, end_date=20250117T090917
+[2025-01-17T09:09:17.956+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-01-17T09:09:17.991+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-17T10:20:05.017+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T10:20:05.030+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.movie_json_to_csv scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T10:20:05.039+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.movie_json_to_csv scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T10:20:05.040+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-01-17T10:20:05.055+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): movie_json_to_csv> on 2025-01-05 00:00:00+00:00
+[2025-01-17T10:20:05.060+0000] {standard_task_runner.py:57} INFO - Started process 707 to run task
+[2025-01-17T10:20:05.063+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'movie_json_to_csv', 'scheduled__2025-01-05T00:00:00+00:00', '--job-id', '259', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmp0010druc']
+[2025-01-17T10:20:05.064+0000] {standard_task_runner.py:85} INFO - Job 259: Subtask movie_json_to_csv
+[2025-01-17T10:20:05.087+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-01-17T10:20:05.131+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.movie_json_to_csv scheduled__2025-01-05T00:00:00+00:00 [running]> on host 1d5d3d5ac065
+[2025-01-17T10:20:05.147+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T10:20:05.220+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='movie_json_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-01-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-05T00:00:00+00:00'
+[2025-01-17T10:20:05.222+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-01-17T10:20:05.223+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/JSON_to_CSV/JSON_to_CSV_movie.py']
+[2025-01-17T10:20:05.232+0000] {subprocess.py:86} INFO - Output:
+[2025-01-17T10:20:05.967+0000] {subprocess.py:93} INFO - Conversion complete. CSV file saved as 'movies_data.csv'
+[2025-01-17T10:20:05.982+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-01-17T10:20:06.016+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow, task_id=movie_json_to_csv, execution_date=20250105T000000, start_date=20250117T102005, end_date=20250117T102006
+[2025-01-17T10:20:06.066+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-01-17T10:20:06.096+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

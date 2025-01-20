@@ -1,0 +1,76 @@
+[2025-01-17T11:24:22.546+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T11:24:22.559+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movie_data_etl_workflow.load_rating_to_dw scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T11:24:22.568+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movie_data_etl_workflow.load_rating_to_dw scheduled__2025-01-05T00:00:00+00:00 [queued]>
+[2025-01-17T11:24:22.568+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2025-01-17T11:24:22.580+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): load_rating_to_dw> on 2025-01-05 00:00:00+00:00
+[2025-01-17T11:24:22.584+0000] {standard_task_runner.py:57} INFO - Started process 1613 to run task
+[2025-01-17T11:24:22.588+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'movie_data_etl_workflow', 'load_rating_to_dw', 'scheduled__2025-01-05T00:00:00+00:00', '--job-id', '264', '--raw', '--subdir', 'DAGS_FOLDER/movie_data_workflow.py', '--cfg-path', '/tmp/tmphv6ycim8']
+[2025-01-17T11:24:22.589+0000] {standard_task_runner.py:85} INFO - Job 264: Subtask load_rating_to_dw
+[2025-01-17T11:24:22.606+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-01-17T11:24:22.646+0000] {task_command.py:415} INFO - Running <TaskInstance: movie_data_etl_workflow.load_rating_to_dw scheduled__2025-01-05T00:00:00+00:00 [running]> on host 1d5d3d5ac065
+[2025-01-17T11:24:22.662+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2025-01-17T11:24:22.731+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='diinguyen' AIRFLOW_CTX_DAG_ID='movie_data_etl_workflow' AIRFLOW_CTX_TASK_ID='load_rating_to_dw' AIRFLOW_CTX_EXECUTION_DATE='2025-01-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-05T00:00:00+00:00'
+[2025-01-17T11:24:22.733+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-01-17T11:24:22.734+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/DE_project/ETL/load/load_ratingdf_to_dw.py']
+[2025-01-17T11:24:22.743+0000] {subprocess.py:86} INFO - Output:
+[2025-01-17T11:24:25.219+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2025-01-17T11:24:25.219+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2025-01-17T11:24:25.463+0000] {subprocess.py:93} INFO - 25/01/17 11:24:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-01-17T11:24:33.736+0000] {subprocess.py:93} INFO - root
+[2025-01-17T11:24:33.737+0000] {subprocess.py:93} INFO -  |-- movie_title: string (nullable = true)
+[2025-01-17T11:24:33.737+0000] {subprocess.py:93} INFO -  |-- movie_id: integer (nullable = true)
+[2025-01-17T11:24:33.738+0000] {subprocess.py:93} INFO -  |-- user_id: string (nullable = true)
+[2025-01-17T11:24:33.738+0000] {subprocess.py:93} INFO -  |-- author: string (nullable = true)
+[2025-01-17T11:24:33.739+0000] {subprocess.py:93} INFO -  |-- rating: double (nullable = true)
+[2025-01-17T11:24:33.739+0000] {subprocess.py:93} INFO -  |-- year: integer (nullable = true)
+[2025-01-17T11:24:33.740+0000] {subprocess.py:93} INFO -  |-- month: integer (nullable = true)
+[2025-01-17T11:24:33.741+0000] {subprocess.py:93} INFO -  |-- day: integer (nullable = true)
+[2025-01-17T11:24:33.741+0000] {subprocess.py:93} INFO -  |-- hour: integer (nullable = true)
+[2025-01-17T11:24:33.741+0000] {subprocess.py:93} INFO - 
+[2025-01-17T11:24:33.742+0000] {subprocess.py:93} INFO - +--------------------+--------+----------------+--------------------+------+----+-----+---+----+
+[2025-01-17T11:24:33.742+0000] {subprocess.py:93} INFO - |         movie_title|movie_id|         user_id|              author|rating|year|month|day|hour|
+[2025-01-17T11:24:33.743+0000] {subprocess.py:93} INFO - +--------------------+--------+----------------+--------------------+------+----+-----+---+----+
+[2025-01-17T11:24:33.743+0000] {subprocess.py:93} INFO - |           Elemental|  976573|      msbreviews|    Manuel São Bento|   8.0|2023|    7| 20|   9|
+[2025-01-17T11:24:33.744+0000] {subprocess.py:93} INFO - |            Zootopia|  269149|    Geronimo1967|          CinemaSerf|   7.0|2024|    1|  2|   8|
+[2025-01-17T11:24:33.744+0000] {subprocess.py:93} INFO - |               Alien|     348|     Otokichi786|      Patrick E. Abe|   8.0|2016|    9| 21|   8|
+[2025-01-17T11:24:33.744+0000] {subprocess.py:93} INFO - |          Cinderella|   11224|    Geronimo1967|          CinemaSerf|   7.0|2022|   12| 27|  13|
+[2025-01-17T11:24:33.745+0000] {subprocess.py:93} INFO - |      Anyone But You| 1072790|    Geronimo1967|          CinemaSerf|   7.0|2023|   12| 30|  11|
+[2025-01-17T11:24:33.745+0000] {subprocess.py:93} INFO - |Mission: Impossib...|  575264|       mooney240|       The Movie Mob|   7.0|2023|    7| 12|   5|
+[2025-01-17T11:24:33.745+0000] {subprocess.py:93} INFO - |              Cars 3|  260514|           r96sk|               r96sk|   7.0|2020|    8| 11|  13|
+[2025-01-17T11:24:33.746+0000] {subprocess.py:93} INFO - |  The Little Mermaid|  447277|   screenzealots|Louisa Moore - Sc...|   6.0|2023|    8|  4|   7|
+[2025-01-17T11:24:33.746+0000] {subprocess.py:93} INFO - |Terminator 2: Jud...|     280|    BryceSpencer|        BryceSpencer|  10.0|2023|    1| 29|   0|
+[2025-01-17T11:24:33.746+0000] {subprocess.py:93} INFO - |        Blade Runner|      78|      portman123|          portman123|  10.0|2024|    1| 13|  16|
+[2025-01-17T11:24:33.747+0000] {subprocess.py:93} INFO - |Once Upon a Time....|  466272|      narrator56|        Peter McGinn|   9.0|2020|    4|  3|  13|
+[2025-01-17T11:24:33.747+0000] {subprocess.py:93} INFO - |            The Town|   23168|      John Chard|          John Chard|   9.0|2019|    5|  7|   6|
+[2025-01-17T11:24:33.747+0000] {subprocess.py:93} INFO - |          Past Lives|  666277|      BornKnight|          BornKnight|  10.0|2024|    1| 28|  17|
+[2025-01-17T11:24:33.748+0000] {subprocess.py:93} INFO - |               Logan|  263115|       Dark Jedi|  Per Gunnar Jonsson|   4.0|2017|    7| 21|  12|
+[2025-01-17T11:24:33.748+0000] {subprocess.py:93} INFO - |John Wick: Chapte...|  458156|    tmdb47396461|        tmdb47396461|   4.0|2019|    5| 17|   2|
+[2025-01-17T11:24:33.749+0000] {subprocess.py:93} INFO - |        12 Angry Men|     389|           tanty|        Andres Gomez|  10.0|2013|    5| 13|  15|
+[2025-01-17T11:24:33.749+0000] {subprocess.py:93} INFO - |2001: A Space Ody...|      62|FilipeManuelNeto|  Filipe Manuel Neto|   2.0|2022|   12| 23|  20|
+[2025-01-17T11:24:33.749+0000] {subprocess.py:93} INFO - |Ant-Man and the W...|  640146|   screenzealots|Louisa Moore - Sc...|   3.0|2023|    4| 23|   6|
+[2025-01-17T11:24:33.750+0000] {subprocess.py:93} INFO - |Star Wars: The La...|  181808|       Dark Jedi|  Per Gunnar Jonsson|  10.0|2017|   12| 27|  14|
+[2025-01-17T11:24:33.750+0000] {subprocess.py:93} INFO - |xXx: Return of Xa...|   47971|       Dark Jedi|  Per Gunnar Jonsson|   4.0|2017|    6| 12|  10|
+[2025-01-17T11:24:33.750+0000] {subprocess.py:93} INFO - +--------------------+--------+----------------+--------------------+------+----+-----+---+----+
+[2025-01-17T11:24:33.751+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2025-01-17T11:24:33.751+0000] {subprocess.py:93} INFO - 
+[2025-01-17T11:24:33.751+0000] {subprocess.py:93} INFO - Data has been successfully inserted into table rating in DuckDB!
+[2025-01-17T11:24:33.752+0000] {subprocess.py:93} INFO - ('Elemental', 976573, 'msbreviews', 'Manuel São Bento', Decimal('8.00'), 2023, 7, 20, 9)
+[2025-01-17T11:24:33.752+0000] {subprocess.py:93} INFO - ('Zootopia', 269149, 'Geronimo1967', 'CinemaSerf', Decimal('7.00'), 2024, 1, 2, 8)
+[2025-01-17T11:24:33.752+0000] {subprocess.py:93} INFO - ('Alien', 348, 'Otokichi786', 'Patrick E. Abe', Decimal('8.00'), 2016, 9, 21, 8)
+[2025-01-17T11:24:33.753+0000] {subprocess.py:93} INFO - ('Cinderella', 11224, 'Geronimo1967', 'CinemaSerf', Decimal('7.00'), 2022, 12, 27, 13)
+[2025-01-17T11:24:33.753+0000] {subprocess.py:93} INFO - ('Anyone But You', 1072790, 'Geronimo1967', 'CinemaSerf', Decimal('7.00'), 2023, 12, 30, 11)
+[2025-01-17T11:24:33.753+0000] {subprocess.py:93} INFO - ('Mission: Impossible - Dead Reckoning Part One', 575264, 'mooney240', 'The Movie Mob', Decimal('7.00'), 2023, 7, 12, 5)
+[2025-01-17T11:24:33.754+0000] {subprocess.py:93} INFO - ('Cars 3', 260514, 'r96sk', 'r96sk', Decimal('7.00'), 2020, 8, 11, 13)
+[2025-01-17T11:24:33.754+0000] {subprocess.py:93} INFO - ('The Little Mermaid', 447277, 'screenzealots', 'Louisa Moore - Screen Zealots', Decimal('6.00'), 2023, 8, 4, 7)
+[2025-01-17T11:24:33.754+0000] {subprocess.py:93} INFO - ('Terminator 2: Judgment Day', 280, 'BryceSpencer', 'BryceSpencer', Decimal('10.00'), 2023, 1, 29, 0)
+[2025-01-17T11:24:33.755+0000] {subprocess.py:93} INFO - ('Blade Runner', 78, 'portman123', 'portman123', Decimal('10.00'), 2024, 1, 13, 16)
+[2025-01-17T11:24:34.252+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-01-17T11:24:34.285+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=movie_data_etl_workflow, task_id=load_rating_to_dw, execution_date=20250105T000000, start_date=20250117T112422, end_date=20250117T112434
+[2025-01-17T11:24:34.323+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-01-17T11:24:34.343+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
