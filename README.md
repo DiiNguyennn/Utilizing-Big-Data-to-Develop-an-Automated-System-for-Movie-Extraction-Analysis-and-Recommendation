@@ -54,7 +54,7 @@ Chi tiết: ![Data_Analysis](DE_project/DA/DataAnalysis.ipynb)
 # Mô hình gợi ý phim
 Việc so sánh giữa thuật toán ALS và SGD đánh giá giá trị RMSE cũng như trực quan hóa giá trị này lên biểu đồ, đề đánh giá các thuật toán sẽ phù hợp với các bộ dữ liệu như thế nào từ đó đưa ra mô hình gợi ý phim hiệu quả nhất đến người dùng. 
 
-Chi tiết: ![Recommender_system](DE_project/Recommender_System/ML_Recommender_system.ipynb) 
+Chi tiết: ![Recommender_system](DE_project/Recommender_System/ML_Recommender_system.ipynb)
 
 # Cài đặt và chạy dự án:
 Để có thể chạy dự án cần thực hiện các bước sau:
