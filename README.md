@@ -1,4 +1,4 @@
-# Introduction
+# Introduction.
 
 ### Research Subject  
 The dataset consists of movie data from 500 pages, totaling approximately 10,000 movies released up to 2024, collected via a public API, specifically **The Movie Database (TMDB)** API. The dataset includes information such as movie IDs, titles, genres, release years, durations, ratings, and other relevant attributes.  
@@ -41,7 +41,7 @@ This project focuses on building and deploying an **ETL (Extract-Transform-Load)
 The workflow is automated using DAGs in Apache Airflow to systematically collect, process, and load data from The Movie Database API.  
 <img src="image/DAGs.png" alt="DAGs Design">
 
-# Movie Data Analysis  
+# Movie Data Analysis.  
 Data analysis is conducted using **Python** for data processing and **Matplotlib** for visualization to address the following questions:  
 
 1. **What is the most common language in movies?**  
@@ -53,12 +53,12 @@ Data analysis is conducted using **Python** for data processing and **Matplotlib
 
 Details: ![Data_Analysis](DE_project/DA/DataAnalysis.ipynb)
 
-# Mô hình gợi ý phim
+# Movie recommendation model.  
 The system evaluates the performance of **ALS** and **SGD** algorithms based on RMSE and visualizes the results to determine the most effective model for recommending movies to users.  
 
 Details: ![Recommender_system](DE_project/Recommender_System/ML_Recommender_System.ipynb)
 
-# Project Setup and Execution  
+# Project Setup and Execution.  
 
 To run the project, follow these steps:  
 1. Install [Docker](https://docs.docker.com/engine/install/).  
