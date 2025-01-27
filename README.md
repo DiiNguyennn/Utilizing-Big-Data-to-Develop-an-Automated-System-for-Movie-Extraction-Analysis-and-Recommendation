@@ -11,7 +11,7 @@ This project focuses on building and deploying an **ETL (Extract-Transform-Load)
 - **Data Analysis and Machine Learning**: Using Apache Spark to analyze data and implement recommendation algorithms.  
 - **Automation System**: Automating the workflow with **Apache Airflow** deployed on **Docker**.  
 
-# System Workflow 
+# System Workflow. 
 <img src="image/taskflow.png" alt="Task Flow">
 
 ### 1. Data Extraction (Extract)  
